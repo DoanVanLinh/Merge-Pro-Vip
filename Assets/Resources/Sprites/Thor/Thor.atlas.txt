@@ -1,0 +1,83 @@
+
+Thor.png
+size: 1920,324
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Back hair
+  rotate: true
+  xy: 683, 25
+  size: 294, 264
+  orig: 294, 264
+  offset: 0, 0
+  index: -1
+Body
+  rotate: false
+  xy: 1401, 2
+  size: 173, 317
+  orig: 173, 317
+  offset: 0, 0
+  index: -1
+Hammer
+  rotate: true
+  xy: 345, 45
+  size: 274, 336
+  orig: 274, 336
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 2, 6
+  size: 341, 313
+  orig: 341, 313
+  offset: 0, 0
+  index: -1
+L Foot
+  rotate: true
+  xy: 949, 21
+  size: 148, 249
+  orig: 148, 249
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: false
+  xy: 1688, 226
+  size: 227, 93
+  orig: 227, 93
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: false
+  xy: 1799, 62
+  size: 109, 162
+  orig: 109, 162
+  offset: 0, 0
+  index: -1
+R Foot
+  rotate: false
+  xy: 1576, 68
+  size: 110, 251
+  orig: 110, 251
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: false
+  xy: 1200, 4
+  size: 197, 165
+  orig: 197, 165
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: false
+  xy: 1688, 51
+  size: 109, 173
+  orig: 109, 173
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 949, 171
+  size: 450, 148
+  orig: 450, 148
+  offset: 0, 0
+  index: -1

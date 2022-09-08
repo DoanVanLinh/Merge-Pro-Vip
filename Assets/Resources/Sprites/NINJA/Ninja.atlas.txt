@@ -1,0 +1,76 @@
+
+Ninja.png
+size: 596,1004
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: true
+  xy: 2, 2
+  size: 173, 320
+  orig: 173, 320
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 2, 177
+  size: 336, 302
+  orig: 336, 302
+  offset: 0, 0
+  index: -1
+L foot
+  rotate: true
+  xy: 340, 117
+  size: 148, 249
+  orig: 148, 249
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: false
+  xy: 376, 679
+  size: 201, 164
+  orig: 201, 164
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: true
+  xy: 376, 381
+  size: 134, 178
+  orig: 134, 178
+  offset: 0, 0
+  index: -1
+R foot
+  rotate: true
+  xy: 340, 267
+  size: 112, 250
+  orig: 112, 250
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: false
+  xy: 376, 517
+  size: 194, 160
+  orig: 194, 160
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: true
+  xy: 454, 845
+  size: 155, 138
+  orig: 155, 138
+  offset: 0, 0
+  index: -1
+Shuriken
+  rotate: false
+  xy: 2, 481
+  size: 372, 369
+  orig: 372, 369
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 852
+  size: 450, 148
+  orig: 450, 148
+  offset: 0, 0
+  index: -1

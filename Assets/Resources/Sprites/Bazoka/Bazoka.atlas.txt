@@ -1,0 +1,90 @@
+
+Bazoka.png
+size: 1240,576
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Bazooka
+  rotate: false
+  xy: 344, 331
+  size: 493, 243
+  orig: 493, 243
+  offset: 0, 0
+  index: -1
+Body
+  rotate: true
+  xy: 459, 6
+  size: 173, 320
+  orig: 173, 320
+  offset: 0, 0
+  index: -1
+Bullet
+  rotate: false
+  xy: 2, 2
+  size: 455, 152
+  orig: 455, 152
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 2, 156
+  size: 418, 340
+  orig: 418, 340
+  offset: 0, 0
+  index: -1
+L foot
+  rotate: true
+  xy: 781, 31
+  size: 148, 249
+  orig: 148, 249
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: false
+  xy: 1032, 4
+  size: 183, 185
+  orig: 183, 185
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: true
+  xy: 988, 357
+  size: 103, 194
+  orig: 103, 194
+  offset: 0, 0
+  index: -1
+Layer 1
+  rotate: false
+  xy: 796, 191
+  size: 243, 138
+  orig: 243, 138
+  offset: 0, 0
+  index: -1
+R foot
+  rotate: true
+  xy: 988, 462
+  size: 112, 250
+  orig: 112, 250
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: true
+  xy: 839, 364
+  size: 210, 147
+  orig: 210, 147
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: true
+  xy: 1041, 250
+  size: 105, 181
+  orig: 105, 181
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 344, 181
+  size: 450, 148
+  orig: 450, 148
+  offset: 0, 0
+  index: -1

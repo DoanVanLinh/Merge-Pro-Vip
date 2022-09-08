@@ -1,0 +1,118 @@
+
+MachineGun.png
+size: 816,748
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 0, 399
+  size: 287, 347
+  orig: 287, 347
+  offset: 0, 0
+  index: -1
+Fire
+  rotate: false
+  xy: 609, 448
+  size: 128, 73
+  orig: 128, 73
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 288, 447
+  size: 320, 299
+  orig: 320, 299
+  offset: 0, 0
+  index: -1
+L Hand
+  rotate: false
+  xy: 675, 87
+  size: 107, 139
+  orig: 107, 139
+  offset: 0, 0
+  index: -1
+L foot
+  rotate: false
+  xy: 410, 166
+  size: 135, 230
+  orig: 135, 230
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: false
+  xy: 675, 17
+  size: 86, 69
+  orig: 86, 69
+  offset: 0, 0
+  index: -1
+R foot
+  rotate: false
+  xy: 546, 166
+  size: 102, 230
+  orig: 102, 230
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: false
+  xy: 451, 0
+  size: 171, 165
+  orig: 171, 165
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: false
+  xy: 649, 227
+  size: 82, 169
+  orig: 82, 169
+  offset: 0, 0
+  index: -1
+a
+  rotate: false
+  xy: 0, 149
+  size: 250, 249
+  orig: 250, 249
+  offset: 0, 0
+  index: -1
+nep a
+  rotate: false
+  xy: 764, 583
+  size: 51, 163
+  orig: 51, 163
+  offset: 0, 0
+  index: -1
+nep b
+  rotate: false
+  xy: 623, 2
+  size: 51, 163
+  orig: 51, 163
+  offset: 0, 0
+  index: -1
+nong sung
+  rotate: false
+  xy: 288, 397
+  size: 386, 49
+  orig: 386, 49
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 0, 0
+  size: 450, 148
+  orig: 450, 148
+  offset: 0, 0
+  index: -1
+side hair
+  rotate: false
+  xy: 609, 522
+  size: 154, 224
+  orig: 154, 224
+  offset: 0, 0
+  index: -1
+side hair copy
+  rotate: false
+  xy: 251, 176
+  size: 158, 220
+  orig: 158, 220
+  offset: 0, 0
+  index: -1

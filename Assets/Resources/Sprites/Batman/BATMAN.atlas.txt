@@ -1,0 +1,90 @@
+
+BATMAN.png
+size: 1924,396
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 1488, 40
+  size: 176, 353
+  orig: 176, 353
+  offset: 0, 0
+  index: -1
+Cape
+  rotate: true
+  xy: 635, 114
+  size: 279, 399
+  orig: 279, 399
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 2, 46
+  size: 330, 347
+  orig: 330, 347
+  offset: 0, 0
+  index: -1
+L Foot
+  rotate: true
+  xy: 1666, 9
+  size: 147, 250
+  orig: 147, 250
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: true
+  xy: 1204, 2
+  size: 122, 224
+  orig: 122, 224
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: true
+  xy: 816, 2
+  size: 110, 173
+  orig: 110, 173
+  offset: 0, 0
+  index: -1
+R Foot
+  rotate: true
+  xy: 1204, 126
+  size: 117, 255
+  orig: 117, 255
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: true
+  xy: 1036, 59
+  size: 184, 166
+  orig: 184, 166
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: true
+  xy: 635, 4
+  size: 108, 179
+  orig: 108, 179
+  offset: 0, 0
+  index: -1
+Slash
+  rotate: false
+  xy: 1666, 158
+  size: 254, 235
+  orig: 254, 235
+  offset: 0, 0
+  index: -1
+knife
+  rotate: true
+  xy: 334, 17
+  size: 376, 299
+  orig: 376, 299
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 1036, 245
+  size: 450, 148
+  orig: 450, 148
+  offset: 0, 0
+  index: -1

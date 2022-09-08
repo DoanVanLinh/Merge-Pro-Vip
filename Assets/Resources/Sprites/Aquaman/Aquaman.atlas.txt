@@ -1,0 +1,83 @@
+
+Aquaman.png
+size: 880,1064
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 702, 214
+  size: 173, 335
+  orig: 173, 335
+  offset: 0, 0
+  index: -1
+FX
+  rotate: false
+  xy: 370, 487
+  size: 330, 217
+  orig: 330, 217
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 370, 706
+  size: 357, 355
+  orig: 357, 355
+  offset: 0, 0
+  index: -1
+L foot
+  rotate: false
+  xy: 729, 810
+  size: 148, 251
+  orig: 148, 251
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: false
+  xy: 454, 3
+  size: 207, 209
+  orig: 207, 209
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: false
+  xy: 370, 294
+  size: 113, 191
+  orig: 113, 191
+  offset: 0, 0
+  index: -1
+R foot
+  rotate: false
+  xy: 729, 551
+  size: 112, 257
+  orig: 112, 257
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: false
+  xy: 663, 18
+  size: 199, 194
+  orig: 199, 194
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: false
+  xy: 485, 351
+  size: 151, 134
+  orig: 151, 134
+  offset: 0, 0
+  index: -1
+Trifdent 2
+  rotate: false
+  xy: 2, 152
+  size: 366, 909
+  orig: 366, 909
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 2
+  size: 450, 148
+  orig: 450, 148
+  offset: 0, 0
+  index: -1

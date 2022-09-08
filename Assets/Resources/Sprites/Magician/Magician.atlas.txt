@@ -1,0 +1,76 @@
+
+Magician.png
+size: 1680,668
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 1014, 182
+  size: 285, 485
+  orig: 285, 485
+  offset: 0, 0
+  index: -1
+L foot
+  rotate: false
+  xy: 1300, 417
+  size: 148, 250
+  orig: 148, 250
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: false
+  xy: 1449, 523
+  size: 224, 144
+  orig: 224, 144
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: false
+  xy: 1300, 237
+  size: 134, 179
+  orig: 134, 179
+  offset: 0, 0
+  index: -1
+R foot
+  rotate: false
+  xy: 1520, 123
+  size: 112, 259
+  orig: 112, 259
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: false
+  xy: 1465, 383
+  size: 215, 139
+  orig: 215, 139
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: false
+  xy: 1435, 197
+  size: 84, 185
+  orig: 84, 185
+  offset: 0, 0
+  index: -1
+Wand
+  rotate: false
+  xy: 725, 12
+  size: 288, 655
+  orig: 288, 655
+  offset: 0, 0
+  index: -1
+hair
+  rotate: false
+  xy: 0, 0
+  size: 724, 667
+  orig: 724, 667
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 1014, 33
+  size: 450, 148
+  orig: 450, 148
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,90 @@
+
+Hulk.png
+size: 2036,400
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: true
+  xy: 1311, 160
+  size: 238, 411
+  orig: 238, 411
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 366, 22
+  size: 376, 362
+  orig: 376, 362
+  offset: 0, 0
+  index: -1
+Head Angry
+  rotate: true
+  xy: 2, 2
+  size: 396, 362
+  orig: 396, 362
+  offset: 0, 0
+  index: -1
+L foot
+  rotate: false
+  xy: 980, 149
+  size: 148, 249
+  orig: 148, 249
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: true
+  xy: 1799, 25
+  size: 201, 185
+  orig: 201, 185
+  offset: 0, 0
+  index: -1
+L hand a_1
+  rotate: false
+  xy: 730, 140
+  size: 248, 258
+  orig: 248, 258
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: true
+  xy: 730, 15
+  size: 123, 179
+  orig: 123, 179
+  offset: 0, 0
+  index: -1
+L hand b_1
+  rotate: true
+  xy: 1130, 157
+  size: 241, 179
+  orig: 241, 179
+  offset: 0, 0
+  index: -1
+Layer 2
+  rotate: false
+  xy: 1345, 8
+  size: 452, 150
+  orig: 452, 150
+  offset: 0, 0
+  index: -1
+R foot
+  rotate: true
+  xy: 911, 26
+  size: 112, 250
+  orig: 112, 250
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: true
+  xy: 1799, 228
+  size: 170, 234
+  orig: 170, 234
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: false
+  xy: 1163, 3
+  size: 180, 152
+  orig: 180, 152
+  offset: 0, 0
+  index: -1

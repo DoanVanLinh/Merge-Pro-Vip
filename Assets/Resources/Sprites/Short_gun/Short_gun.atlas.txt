@@ -1,0 +1,83 @@
+
+Short_gun.png
+size: 920,640
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 466, 250
+  size: 173, 318
+  orig: 173, 318
+  offset: 0, 0
+  index: -1
+Fire
+  rotate: false
+  xy: 753, 351
+  size: 128, 73
+  orig: 128, 73
+  offset: 0, 0
+  index: -1
+Gun
+  rotate: false
+  xy: 0, 14
+  size: 419, 236
+  orig: 419, 236
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 0, 251
+  size: 465, 389
+  orig: 465, 389
+  offset: 0, 0
+  index: -1
+L foot
+  rotate: false
+  xy: 420, 0
+  size: 148, 249
+  orig: 148, 249
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: false
+  xy: 656, 17
+  size: 216, 138
+  orig: 216, 138
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: false
+  xy: 569, 52
+  size: 86, 197
+  orig: 86, 197
+  offset: 0, 0
+  index: -1
+R foot
+  rotate: false
+  xy: 640, 317
+  size: 112, 251
+  orig: 112, 251
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: false
+  xy: 656, 156
+  size: 194, 160
+  orig: 194, 160
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: false
+  xy: 753, 425
+  size: 155, 143
+  orig: 155, 143
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 466, 569
+  size: 452, 71
+  orig: 452, 71
+  offset: 0, 0
+  index: -1

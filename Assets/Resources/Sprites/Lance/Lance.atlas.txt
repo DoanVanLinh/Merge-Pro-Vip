@@ -1,0 +1,76 @@
+
+Lance.png
+size: 632,272
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: true
+  xy: 228, 78
+  size: 117, 207
+  orig: 117, 210
+  offset: 0, 3
+  index: -1
+Head
+  rotate: false
+  xy: 2, 21
+  size: 224, 174
+  orig: 224, 176
+  offset: 0, 1
+  index: -1
+L foot
+  rotate: true
+  xy: 447, 195
+  size: 74, 130
+  orig: 74, 131
+  offset: 0, 1
+  index: -1
+L hand a
+  rotate: false
+  xy: 437, 87
+  size: 115, 48
+  orig: 115, 48
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: false
+  xy: 571, 104
+  size: 59, 89
+  orig: 59, 93
+  offset: 0, 4
+  index: -1
+Lance copy
+  rotate: true
+  xy: 2, 197
+  size: 72, 443
+  orig: 99, 444
+  offset: 19, 0
+  index: -1
+R foot
+  rotate: true
+  xy: 437, 137
+  size: 56, 132
+  orig: 56, 132
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: false
+  xy: 455, 3
+  size: 97, 82
+  orig: 97, 82
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: true
+  xy: 554, 24
+  size: 78, 70
+  orig: 78, 70
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 228, 2
+  size: 225, 74
+  orig: 225, 74
+  offset: 0, 0
+  index: -1

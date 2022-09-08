@@ -1,0 +1,76 @@
+
+Bomb.png
+size: 596,1096
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 2, 2
+  size: 205, 315
+  orig: 205, 315
+  offset: 0, 0
+  index: -1
+Grenade
+  rotate: true
+  xy: 2, 326
+  size: 251, 442
+  orig: 251, 442
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 2, 729
+  size: 468, 364
+  orig: 468, 364
+  offset: 0, 0
+  index: -1
+L foot
+  rotate: false
+  xy: 446, 319
+  size: 148, 251
+  orig: 148, 251
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: false
+  xy: 209, 173
+  size: 218, 151
+  orig: 218, 151
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: true
+  xy: 209, 44
+  size: 127, 177
+  orig: 127, 177
+  offset: 0, 0
+  index: -1
+R foot
+  rotate: false
+  xy: 472, 836
+  size: 112, 257
+  orig: 112, 257
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: true
+  xy: 429, 123
+  size: 194, 163
+  orig: 194, 163
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: true
+  xy: 454, 572
+  size: 155, 138
+  orig: 155, 138
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 579
+  size: 450, 148
+  orig: 450, 148
+  offset: 0, 0
+  index: -1

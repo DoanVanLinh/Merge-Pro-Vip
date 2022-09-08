@@ -1,0 +1,83 @@
+
+Scarletwitch.png
+size: 624,1044
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 2, 270
+  size: 259, 382
+  orig: 259, 382
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 2, 654
+  size: 447, 386
+  orig: 447, 386
+  offset: 0, 0
+  index: -1
+L foot
+  rotate: false
+  xy: 173, 12
+  size: 148, 256
+  orig: 148, 256
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: false
+  xy: 434, 399
+  size: 188, 189
+  orig: 188, 189
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: true
+  xy: 323, 2
+  size: 87, 199
+  orig: 87, 199
+  offset: 0, 0
+  index: -1
+Magic ball
+  rotate: false
+  xy: 2, 12
+  size: 169, 256
+  orig: 169, 256
+  offset: 0, 0
+  index: -1
+Magic ball copy
+  rotate: false
+  xy: 263, 396
+  size: 169, 256
+  orig: 169, 256
+  offset: 0, 0
+  index: -1
+R foot
+  rotate: true
+  xy: 263, 282
+  size: 112, 264
+  orig: 112, 264
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: false
+  xy: 323, 91
+  size: 188, 189
+  orig: 188, 189
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: false
+  xy: 529, 198
+  size: 87, 199
+  orig: 87, 199
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: true
+  xy: 451, 590
+  size: 450, 148
+  orig: 450, 148
+  offset: 0, 0
+  index: -1

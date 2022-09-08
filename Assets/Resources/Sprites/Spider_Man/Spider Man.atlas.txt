@@ -1,0 +1,69 @@
+
+Spider Man.png
+size: 1184,252
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: true
+  xy: 714, 113
+  size: 137, 267
+  orig: 137, 267
+  offset: 0, 0
+  index: -1
+Face
+  rotate: false
+  xy: 454, 16
+  size: 258, 234
+  orig: 260, 236
+  offset: 1, 1
+  index: -1
+L Foot
+  rotate: true
+  xy: 983, 139
+  size: 111, 196
+  orig: 111, 196
+  offset: 0, 0
+  index: -1
+L Hand b
+  rotate: true
+  xy: 852, 26
+  size: 85, 133
+  orig: 85, 133
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: true
+  xy: 2, 2
+  size: 98, 182
+  orig: 98, 182
+  offset: 0, 0
+  index: -1
+R Foot
+  rotate: true
+  xy: 186, 20
+  size: 80, 196
+  orig: 80, 197
+  offset: 0, 1
+  index: -1
+R Hand b
+  rotate: true
+  xy: 714, 25
+  size: 86, 136
+  orig: 86, 136
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: false
+  xy: 987, 7
+  size: 149, 130
+  orig: 149, 130
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 102
+  size: 450, 148
+  orig: 450, 148
+  offset: 0, 0
+  index: -1

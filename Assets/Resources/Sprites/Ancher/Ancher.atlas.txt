@@ -1,0 +1,97 @@
+
+Ancher.png
+size: 976,1052
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: true
+  xy: 337, 371
+  size: 173, 323
+  orig: 173, 323
+  offset: 0, 0
+  index: -1
+Bow copy
+  rotate: false
+  xy: 2, 306
+  size: 333, 744
+  orig: 333, 744
+  offset: 0, 0
+  index: -1
+L foot
+  rotate: true
+  xy: 338, 71
+  size: 148, 250
+  orig: 148, 250
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: true
+  xy: 813, 64
+  size: 211, 110
+  orig: 211, 110
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: true
+  xy: 790, 277
+  size: 139, 129
+  orig: 139, 129
+  offset: 0, 0
+  index: -1
+R foot
+  rotate: false
+  xy: 662, 382
+  size: 112, 253
+  orig: 112, 253
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: true
+  xy: 776, 418
+  size: 217, 111
+  orig: 217, 111
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: false
+  xy: 889, 450
+  size: 84, 185
+  orig: 84, 185
+  offset: 0, 0
+  index: -1
+arrow
+  rotate: false
+  xy: 337, 546
+  size: 315, 504
+  orig: 315, 504
+  offset: 0, 0
+  index: -1
+face
+  rotate: false
+  xy: 590, 64
+  size: 221, 155
+  orig: 221, 155
+  offset: 0, 0
+  index: -1
+hair
+  rotate: true
+  xy: 654, 637
+  size: 413, 309
+  orig: 413, 309
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 2
+  size: 334, 302
+  orig: 334, 302
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 338, 221
+  size: 450, 148
+  orig: 450, 148
+  offset: 0, 0
+  index: -1

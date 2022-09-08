@@ -1,0 +1,76 @@
+
+Cyclops.png
+size: 1120,480
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 557, 162
+  size: 173, 315
+  orig: 173, 315
+  offset: 0, 0
+  index: -1
+Glasses
+  rotate: true
+  xy: 732, 175
+  size: 302, 121
+  orig: 302, 121
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 2, 17
+  size: 460, 403
+  orig: 460, 403
+  offset: 0, 0
+  index: -1
+L foot
+  rotate: false
+  xy: 969, 228
+  size: 148, 249
+  orig: 148, 249
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: false
+  xy: 863, 5
+  size: 116, 220
+  orig: 116, 220
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: false
+  xy: 752, 2
+  size: 109, 171
+  orig: 109, 171
+  offset: 0, 0
+  index: -1
+R foot
+  rotate: false
+  xy: 855, 227
+  size: 112, 250
+  orig: 112, 250
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: false
+  xy: 557, 7
+  size: 193, 153
+  orig: 193, 153
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: true
+  xy: 981, 80
+  size: 146, 136
+  orig: 146, 136
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: true
+  xy: 407, 27
+  size: 450, 148
+  orig: 450, 148
+  offset: 0, 0
+  index: -1

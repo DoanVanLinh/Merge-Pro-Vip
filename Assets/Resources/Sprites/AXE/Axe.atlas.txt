@@ -1,0 +1,76 @@
+
+Axe.png
+size: 652,1052
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Axe
+  rotate: true
+  xy: 2, 743
+  size: 307, 498
+  orig: 307, 498
+  offset: 0, 0
+  index: -1
+Body
+  rotate: true
+  xy: 262, 61
+  size: 176, 317
+  orig: 176, 317
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 2, 369
+  size: 490, 372
+  orig: 490, 372
+  offset: 0, 0
+  index: -1
+L foot
+  rotate: false
+  xy: 114, 6
+  size: 146, 253
+  orig: 146, 253
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: false
+  xy: 262, 239
+  size: 225, 128
+  orig: 225, 128
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: true
+  xy: 2, 263
+  size: 104, 190
+  orig: 104, 190
+  offset: 0, 0
+  index: -1
+R foot
+  rotate: false
+  xy: 2, 2
+  size: 110, 257
+  orig: 110, 257
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: false
+  xy: 494, 261
+  size: 147, 198
+  orig: 147, 198
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: false
+  xy: 494, 461
+  size: 153, 137
+  orig: 153, 137
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: true
+  xy: 502, 600
+  size: 450, 148
+  orig: 450, 148
+  offset: 0, 0
+  index: -1

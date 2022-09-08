@@ -1,0 +1,76 @@
+
+Mance.png
+size: 1280,620
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: true
+  xy: 378, 18
+  size: 173, 317
+  orig: 173, 317
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 936, 313
+  size: 334, 302
+  orig: 334, 302
+  offset: 0, 0
+  index: -1
+L foot
+  rotate: true
+  xy: 840, 43
+  size: 148, 249
+  orig: 148, 249
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: false
+  xy: 198, 2
+  size: 178, 189
+  orig: 178, 189
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: false
+  xy: 1188, 112
+  size: 88, 199
+  orig: 88, 199
+  offset: 0, 0
+  index: -1
+Mace copy
+  rotate: false
+  xy: 152, 193
+  size: 782, 422
+  orig: 782, 422
+  offset: 0, 0
+  index: -1
+R foot
+  rotate: true
+  xy: 936, 199
+  size: 112, 250
+  orig: 112, 250
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: false
+  xy: 2, 5
+  size: 194, 158
+  orig: 194, 158
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: true
+  xy: 697, 36
+  size: 155, 141
+  orig: 155, 141
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: true
+  xy: 2, 165
+  size: 450, 148
+  orig: 450, 148
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,83 @@
+
+BlackWindow.png
+size: 668,1092
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 317, 130
+  size: 173, 325
+  orig: 173, 325
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 2, 166
+  size: 313, 289
+  orig: 313, 289
+  offset: 0, 0
+  index: -1
+L foot
+  rotate: false
+  xy: 492, 206
+  size: 148, 249
+  orig: 148, 249
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: true
+  xy: 514, 895
+  size: 195, 150
+  orig: 195, 150
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: false
+  xy: 194, 6
+  size: 121, 158
+  orig: 121, 158
+  offset: 0, 0
+  index: -1
+R foot
+  rotate: false
+  xy: 514, 634
+  size: 112, 259
+  orig: 112, 259
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: false
+  xy: 2, 2
+  size: 190, 162
+  orig: 190, 162
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: true
+  xy: 492, 46
+  size: 158, 130
+  orig: 158, 130
+  offset: 0, 0
+  index: -1
+Sword
+  rotate: true
+  xy: 2, 457
+  size: 169, 605
+  orig: 169, 605
+  offset: 0, 0
+  index: -1
+back hair
+  rotate: true
+  xy: 2, 628
+  size: 462, 360
+  orig: 462, 360
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: true
+  xy: 364, 640
+  size: 450, 148
+  orig: 450, 148
+  offset: 0, 0
+  index: -1

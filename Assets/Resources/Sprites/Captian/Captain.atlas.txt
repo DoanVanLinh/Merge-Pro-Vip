@@ -1,0 +1,76 @@
+
+Captain.png
+size: 1368,476
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 935, 153
+  size: 173, 320
+  orig: 173, 320
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 604, 128
+  size: 345, 329
+  orig: 345, 329
+  offset: 0, 0
+  index: -1
+L foot
+  rotate: true
+  xy: 1049, 3
+  size: 148, 249
+  orig: 148, 249
+  offset: 0, 0
+  index: -1
+L hand a
+  rotate: true
+  xy: 604, 2
+  size: 124, 220
+  orig: 124, 220
+  offset: 0, 0
+  index: -1
+L hand b
+  rotate: false
+  xy: 1224, 169
+  size: 108, 171
+  orig: 108, 171
+  offset: 0, 0
+  index: -1
+R foot
+  rotate: false
+  xy: 1110, 209
+  size: 112, 264
+  orig: 112, 264
+  offset: 0, 0
+  index: -1
+R hand a
+  rotate: false
+  xy: 826, 11
+  size: 221, 115
+  orig: 221, 115
+  offset: 0, 0
+  index: -1
+R hand b
+  rotate: true
+  xy: 1224, 342
+  size: 131, 140
+  orig: 131, 140
+  offset: 0, 0
+  index: -1
+Shield
+  rotate: false
+  xy: 2, 17
+  size: 450, 456
+  orig: 450, 456
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: true
+  xy: 454, 23
+  size: 450, 148
+  orig: 450, 148
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,194 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1726182683, guid: a4865f1ab4504ed8a368670db22f409c, type: 3}
+  m_Name: AOTGenerationConfig
+  m_EditorClassIdentifier: 
+  automateBeforeBuilds: 0
+  deleteDllAfterBuilds: 1
+  AutomateForAllAOTPlatforms: 1
+  automateForPlatforms: 0900000014000000
+  lastScan: 637904245912180413
+  supportSerializedTypes:
+  - TypeName: WE.Data.BasePackage, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: BasePackageDetail, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Boolean, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.CoinBonusCampaignPackage, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.CommonPackage, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.CurrencyPackage, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: DataElementRewardOptionalPack, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[WE.Data.EScroll, Assembly-CSharp],[System.Int32,
+      mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[ElementExchangeCurentcy,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[WE.Data.RewardIAP,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.EEquipment, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.EItem, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.EKey, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: ElementExchangeCurentcy, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.EMoney, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.EnegyPackage, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.EquipmentPacakge, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.ERarity, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.EScroll, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.EVehicleId, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.ExpPackage, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Single, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[System.String, mscorlib]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Int32, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.ItemPackage, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.KeyPackage, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[WE.Data.BasePackage, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[BasePackageDetail, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[WE.Data.CoinBonusCampaignPackage,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[WE.Data.CommonPackage, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[WE.Data.CurrencyPackage, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[WE.Data.EnegyPackage, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[WE.Data.EquipmentPacakge, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[WE.Data.ExpPackage, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[WE.Data.ItemPackage, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[WE.Data.KeyPackage, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[WE.Data.Package, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[WE.Data.PointPackage, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[WE.Data.ScrollPackage, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[WE.Data.TankPackage, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[WE.Data.TitaniumPackage, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[WE.Data.VehicleFragmentPackage,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.Package, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.PointPackage, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.RewardIAP, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.ScrollPackage, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.String, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.TankPackage, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.TitaniumPackage, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: WE.Data.VehicleFragmentPackage, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
