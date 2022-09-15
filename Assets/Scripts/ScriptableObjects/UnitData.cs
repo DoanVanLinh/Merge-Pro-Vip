@@ -14,6 +14,10 @@ public class UnitData : ScriptableObject
     public float attackRange;
     public float attackRate;
     public float delayDame;
+    public int tier;
+    public string colorTier;
+    public int id;
+    public int level;
     public SkeletonDataAsset skeletonData;
     public List<UnitData> childs = new List<UnitData>();
 }

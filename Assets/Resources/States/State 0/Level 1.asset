@@ -16,10 +16,10 @@ MonoBehaviour:
   id: 1
   listEnemy:
   - data: {fileID: 11400000, guid: 5c92077ea98c07c438b29163ab246e59, type: 2}
-    px: 1
+    px: 0
     py: 7
     unitTag: Enemy Unit
   - data: {fileID: 11400000, guid: 5c92077ea98c07c438b29163ab246e59, type: 2}
-    px: 3
+    px: 4
     py: 7
     unitTag: Enemy Unit

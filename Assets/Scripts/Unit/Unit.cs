@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
+using System.Linq;
 using System.Collections;
+using Pathfinding;
 
 public class Unit : MonoBehaviour
 {
@@ -24,13 +26,18 @@ public class Unit : MonoBehaviour
     private Vector2 defaultLoc;
     private float safeArea;
     private SkeletonAnimation skeletonAni;
-    private UnitStateManager unitState;
+    private UnitStateManager unitStateManager;
     private HealthBar healthBar;
+    public Dictionary<Vector2, Unit> standPoints;
+
     private void Start()
     {
+        standPoints = new Dictionary<Vector2, Unit>() { {  new Vector2(0.75f,-0.45f), null }, { Vector2.right, null }, { new Vector2(0.75f,0.45f), null },
+                                                        {  new Vector2(-0.75f,0.45f), null }, {  Vector2.left, null }, {  new Vector2(-0.75f,-0.45f), null }};
         healthBar = GetComponentsInChildren<HealthBar>()[0];
+        healthBar.gameObject.SetActive(false);
         skeletonAni = GetComponent<SkeletonAnimation>();
-        safeArea = 0.5f;
+        safeArea = 0.8f;
         defaultLoc = transform.position;
         LoadData();
         timerAttack = 0f;
@@ -51,14 +58,15 @@ public class Unit : MonoBehaviour
         skeletonAni.skeletonDataAsset = Data.skeletonData;
         skeletonAni.Initialize(true);
 
-        unitState = gameObject.AddComponent<UnitStateManager>();
-        unitState.unitController = this;
+        unitStateManager = gameObject.AddComponent<UnitStateManager>();
+        unitStateManager.unitController = this;
 
         healthBar.healthBarImage.color = healthColor;
         pointShot = transform;
     }
     public void TakeDame(int dame)
     {
+        healthBar.gameObject.SetActive(true);
         CurrentHp -= dame;
         CurrentHp = CurrentHp < 0 ? 0 : CurrentHp;
         healthBar.UpdateHealthBar((float)CurrentHp / Hp);
@@ -70,36 +78,68 @@ public class Unit : MonoBehaviour
     public void Die()
     {
         Destroy(this);
-        unitState.SwitchState(unitState.unitDieState);
+        unitStateManager.SwitchState(unitStateManager.unitDieState);
     }
+    private Vector2 slotMove;
     public bool MoveToTarget(Unit target)
     {
         if (target == null)
             return false;
 
-        float distance = Vector2.Distance(transform.position, target.transform.position);
-
-        transform.localScale = new Vector2((target.transform.position - transform.position).normalized.x > 0 ? -1 : 1, 1);
-
-        if (distance > AttackRange)
+       
+        if (!target.standPoints.ContainsValue(this))
         {
-
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime * 2f);
-
-            Collider2D[] otherUnits = Physics2D.OverlapCircleAll(transform.position, safeArea);
-            foreach (var unit in otherUnits)
+            if (!target.standPoints.Any(s=>s.Value == null))
             {
-                if (unit.CompareTag(Helper.UNIT_BULLET_TAG))
-                    continue;
-
-                float offset = Vector2.Distance(transform.position, unit.transform.position);
-                if (offset < safeArea)
-                    transform.position += (safeArea - offset) * (transform.position - unit.transform.position).normalized;
+                return false;
             }
+            slotMove = target.standPoints.Where(s => s.Value == null).FirstOrDefault().Key;
+            target.standPoints[slotMove] = this;
+        }
+        //float distance = Vector2.Distance(transform.position, (Vector2)target.transform.position + Vector2.up * 0.5f);        
+        float distance = Vector2.Distance(transform.position, (Vector2)target.transform.position + slotMove);
 
-            return false;
+        //transform.localScale = new Vector2((target.transform.position - transform.position).normalized.x > 0 ? -1 : 1, 1);
+        Vector2 direction = new Vector2();
+        if ((target.transform.position - transform.position).normalized.x > 0)
+        {
+            transform.localScale = new Vector2(-1, 1);
+            direction = new Vector2(1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector2(1, 1);
+            direction = new Vector2(-1, 1);
         }
 
+        if (this.AttackRange == 1)
+        {
+            if (distance > 0)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, (Vector2)target.transform.position + slotMove, Time.deltaTime * 2f);
+                return false;
+            }
+        }
+        else
+        {
+            if (distance > AttackRange)
+            {
+                //transform.position = Vector3.MoveTowards(transform.position, target.transform.position + new Vector3(0.5f, 0.5f, 0), Time.deltaTime * 2f);
+                transform.position = Vector3.MoveTowards(transform.position, (Vector2)target.transform.position + slotMove, Time.deltaTime * 2f);
+                //Collider2D[] otherUnits = Physics2D.OverlapCircleAll(transform.position, safeArea);
+
+                //foreach (var otherUnit in otherUnits)
+                //{
+                //    if (otherUnit.CompareTag(Helper.UNIT_BULLET_TAG) || otherUnit.gameObject == this.gameObject)
+                //        continue;
+
+                //    float offset = Vector2.Distance(transform.position, otherUnit.transform.position);
+                //    if (offset < safeArea)
+                //        transform.position += (safeArea - offset) * ((transform.position - otherUnit.transform.position).normalized);
+                //}
+                return false;
+            }
+        }
         return true;
     }
 
@@ -107,6 +147,20 @@ public class Unit : MonoBehaviour
     private float timerDelayDame;
     public void Attack(Unit target, float timerAni)
     {
+        if (target == null)
+            return;
+
+        float distance = Vector2.Distance(transform.position, (Vector2)target.transform.position + slotMove);
+
+        if (this.AttackRange == 1)
+        {
+            if (distance > 0)
+            {
+                //if (unitStateManager.unitController.MoveToTarget(target))
+                    unitStateManager.SwitchState(unitStateManager.unitFindEnemyState);
+            }
+        }
+
         timerDelayDame += Time.deltaTime;
 
         if (timerDelayDame >= DelayDame && timerAttack < DelayDame)
@@ -124,7 +178,7 @@ public class Unit : MonoBehaviour
             }
             Instantiate(Data.bullet, spawnPoint, Quaternion.identity).GetComponent<UnitBullet>().SetDataBullet(target, CurrentAttackDame, speedBullet);
 
-            Debug.Log(timerDelayDame + "//" + timerAttack);
+            //Debug.Log(timerDelayDame + "//" + timerAttack);
         }
 
         timerAttack += Time.deltaTime;
@@ -151,7 +205,8 @@ public class Unit : MonoBehaviour
         }
     }
 #if UNITY_EDITOR
-    private void OnDrawGizmos()
+
+    private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, AttackRange);
 
@@ -160,6 +215,12 @@ public class Unit : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(pointShot.position, 0.1f);
+
+        Gizmos.color = Color.black;
+        foreach (var stand in standPoints)
+        {
+            Gizmos.DrawSphere(stand.Key, 0.1f);
+        }
     }
 #endif
 }

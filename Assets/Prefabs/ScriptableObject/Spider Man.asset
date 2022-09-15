@@ -20,5 +20,9 @@ MonoBehaviour:
   attackRange: 1
   attackRate: 1
   delayDame: 0.5
+  tier: 7
+  colorTier: 00FFFF
+  id: 1
+  level: 0
   skeletonData: {fileID: 11400000, guid: 63c40efb65b30d94e9729b316daf962e, type: 2}
   childs: []

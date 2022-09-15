@@ -14,6 +14,7 @@ public class UnitAttackState : UnitBaseState
 
     public override void UpdateState(UnitStateManager unitStateManager)
     {
+       
         Attack(unitStateManager);
         if (Input.GetKeyDown(KeyCode.Alpha4))
             unitStateManager.SwitchState(unitStateManager.unitDieState);

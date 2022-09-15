@@ -34,6 +34,9 @@ public class ListUnitData : ScriptableObject
                 unit.hp = int.Parse(_data[2]);
                 unit.attackRange = Helper.ParseFloat(_data[3]);
                 unit.attackRate = Helper.ParseFloat(_data[4]);
+                unit.tier = int.Parse(_data[5]);
+                unit.id = int.Parse(_data[6]);
+                unit.colorTier = _data[7];
                 unit.unitPrefab = unitPrefab;
                 unit.bullet = bulletPrefab;
                 unit.skeletonData = UnitSkeletonDataManager.Instance.GetSkeletonData(unit.nameUnit);
@@ -48,7 +51,25 @@ public class ListUnitData : ScriptableObject
 
                 listUnits.Add(unit);
 
+                dataMerges.Add(new DataMerge(_data[0], int.Parse(_data[5]), int.Parse(_data[6])));
             }
+
+            //Merge Data
+            foreach (DataMerge dataMerge in dataMerges)
+            {
+                UnitData unitData = listUnits.Where(u => u.nameUnit == dataMerge.unitName).FirstOrDefault();
+
+                unitData.childs = new List<UnitData>();
+
+                string[] childNames = dataMerges.Where(d => d.tier == dataMerge.tier + 1).Where(d => d.id == dataMerge.id || d.id == (dataMerge.id - 1 == 0 ? dataMerges.Where(d => d.tier == dataMerge.tier + 1).LastOrDefault().id : dataMerge.id - 1)).Select(d => d.unitName).ToArray();
+
+                UnitData[] childs = listUnits.Where(u => childNames.Contains(u.nameUnit)).ToArray();
+
+                unitData.childs.AddRange(childs);
+
+                //UnityEditor.EditorUtility.SetDirty(unitData);
+            }
+
             UnityEditor.EditorUtility.SetDirty(this);
         });
         EditorCoroutine.start(Helper.IELoadData(url, actionComplete));
@@ -79,7 +100,7 @@ public class ListUnitData : ScriptableObject
 
                 unitData.childs = new List<UnitData>();
 
-                string[] childNames = dataMerges.Where(d => d.tier == dataMerge.tier + 1).Where(d => d.id == dataMerge.id || d.id == (dataMerge.id - 1 == 0 ? dataMerges.Where(d => d.tier == dataMerge.tier + 1).LastOrDefault().id : dataMerge.id-1)).Select(d => d.unitName).ToArray();
+                string[] childNames = dataMerges.Where(d => d.tier == dataMerge.tier + 1).Where(d => d.id == dataMerge.id || d.id == (dataMerge.id - 1 == 0 ? dataMerges.Where(d => d.tier == dataMerge.tier + 1).LastOrDefault().id : dataMerge.id - 1)).Select(d => d.unitName).ToArray();
 
                 UnitData[] childs = listUnits.Where(u => childNames.Contains(u.nameUnit)).ToArray();
 

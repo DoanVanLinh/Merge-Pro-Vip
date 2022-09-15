@@ -19,6 +19,8 @@ public static class Helper
     public const string ATTACK_STATE_ANI = "Attack";
     public const string DEAD_STATE_ANI = "Dead";
 
+    public static Camera mainCam = Camera.main;
+
     public static float ParseFloat(string data)
     {
 #if UNITY_ANDROID

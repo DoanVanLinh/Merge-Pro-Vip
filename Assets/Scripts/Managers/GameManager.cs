@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
         UnityEditor.EditorUtility.SetDirty(state);
     }
     [Button("Load Level")]
-    private void LoadCurrentLevel(int state, int level, string path)
+    private void LoadCurrentLevel(int state, int level, string path = "States/")
     {
         List<Vector2> enemyLoc = fields.Where(f => f.Value != null && f.Value.CompareTag(Helper.ENEMY_UNIT_TAG)).Select(f => f.Key).ToList();
 
@@ -155,7 +155,6 @@ public class GameManager : MonoBehaviour
         if (status == FightStatus.Null)
         {
             this.fightStatus = status;
-            Debug.Log(this.fightStatus);
         }
         else
         {

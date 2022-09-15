@@ -3638,6 +3638,8 @@ MonoBehaviour:
   gameData:
     sound: 1
     vibrate: 1
+    currentState: 0
+    currentLevel: 0
     listUnits: []
 --- !u!4 &1421226924
 Transform:
