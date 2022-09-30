@@ -1,0 +1,41 @@
+
+Stabbycarrot.png
+size: 528,244
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 0, 0
+  size: 307, 244
+  orig: 307, 244
+  offset: 0, 0
+  index: -1
+Hand_L
+  rotate: false
+  xy: 467, 162
+  size: 61, 82
+  orig: 61, 82
+  offset: 0, 0
+  index: -1
+Hand_R
+  rotate: false
+  xy: 405, 47
+  size: 102, 69
+  orig: 102, 69
+  offset: 0, 0
+  index: -1
+Leg_L
+  rotate: false
+  xy: 405, 117
+  size: 61, 127
+  orig: 61, 127
+  offset: 0, 0
+  index: -1
+worm
+  rotate: false
+  xy: 308, 46
+  size: 96, 198
+  orig: 96, 198
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f175abcf7ce674d98e9e634dfe82f4, type: 3}
+  m_Name: BlazingTurtle
+  m_EditorClassIdentifier: 
+  unitName: BlazingTurtle
+  unitType: 0
+  unitPrefab: {fileID: 3287371381198539277, guid: b3d4f13cd0a6f904aa4b48bb51aee256, type: 3}
+  bullet: {fileID: 3287371381198539277, guid: f0647208d567f2340875bdffd1c0381d, type: 3}
+  dame: 1
+  hp: 50
+  attackRange: 1
+  attackRate: 1
+  delayDame: 0
+  tier: 1
+  colorTier: FFFF00
+  id: 1
+  level: 0
+  shotLoc: {x: 0, y: 0}
+  skeletonData: {fileID: 11400000, guid: 4f1d4d8b7d3d47b4099ac5dcbcc05fe2, type: 2}
+  childs:
+  - {fileID: 11400000, guid: 7588a7a6b7bd9344881579fec2c692fa, type: 2}
+  - {fileID: 11400000, guid: 949b2e46b9d83ee4893549260c02fd90, type: 2}

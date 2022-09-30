@@ -34,4 +34,25 @@ public class MergeController : MonoBehaviour
         return true;
     }
 
+    public bool Split()
+    {
+        if (!GameManager.fields.Any(u => u.Value == null))
+            return false;
+
+        UnitData[] parentUnit = GameManager.Instance.GetDataMerge().listUnits.Where(u => u.childs.Contains(unitInfo.Data)).ToArray();
+        if (parentUnit.Length == 0)
+            return false;
+
+        GameManager.Instance.DeleteUnitInField(unitInfo.GetDefaulLoc());
+        Destroy(gameObject);
+
+        Vector2 loc = GameManager.fields.Where(u => u.Value == null).First().Key;
+
+        Unit newPlayerUnit = new PlayerUnit(parentUnit[0], loc);
+        loc = GameManager.fields.Where(u => u.Value == null).First().Key;
+        Unit newPlayerUnit2 = new PlayerUnit(parentUnit[1], loc);
+
+        return true;
+    }
+
 }

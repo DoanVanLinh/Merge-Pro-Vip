@@ -1,0 +1,55 @@
+
+Grog.png
+size: 1488,500
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L_foot
+  rotate: false
+  xy: 570, 1
+  size: 178, 213
+  orig: 178, 213
+  offset: 0, 0
+  index: -1
+L_hand
+  rotate: false
+  xy: 894, 237
+  size: 508, 263
+  orig: 508, 263
+  offset: 0, 0
+  index: -1
+R_foot
+  rotate: false
+  xy: 749, 1
+  size: 178, 213
+  orig: 178, 213
+  offset: 0, 0
+  index: -1
+R_hand
+  rotate: false
+  xy: 1341, 11
+  size: 144, 225
+  orig: 144, 225
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 0, 0
+  size: 569, 500
+  orig: 569, 500
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: false
+  xy: 928, 1
+  size: 412, 235
+  orig: 412, 235
+  offset: 0, 0
+  index: -1
+tongue
+  rotate: false
+  xy: 570, 215
+  size: 323, 285
+  orig: 323, 285
+  offset: 0, 0
+  index: -1

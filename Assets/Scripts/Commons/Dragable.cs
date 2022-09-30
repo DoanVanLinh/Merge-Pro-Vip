@@ -8,18 +8,21 @@ public class Dragable : MonoBehaviour
 
     private Camera mainCam;
     private bool isSelecting;
-    private MergeController unitController;
+    private MergeController unitMergeController;
     private Unit unitInfo;
     private void Start()
     {
         mainCam = Camera.main;
         defaultLoc = transform.position;
         isSelecting = false;
-        unitController = GetComponent<MergeController>();
+        unitMergeController = GetComponent<MergeController>();
         unitInfo = GetComponent<Unit>();
     }
     private void OnMouseDown()
     {
+        if (GameManager.Instance.isStart)
+            return;
+
         isSelecting = true;
     }
     private void OnMouseDrag()
@@ -31,6 +34,16 @@ public class Dragable : MonoBehaviour
     }
     private void OnMouseUp()
     {
+        if (!isSelecting)
+            return;
+
+        if (GameManager.Instance.isOnDeleteField)
+            Destroy(gameObject);
+
+        if (GameManager.Instance.isOnUndoField)
+            if (unitMergeController.Split())
+                return;
+
         isSelecting = false;
         Snap();
     }
@@ -42,7 +55,7 @@ public class Dragable : MonoBehaviour
 
 
 
-        if ((x >= 0 && x < GameManager.Instance.col) && (y >= 0 && y < GameManager.Instance.row * 2 + 1))
+        if ((x >= 0 && x < GameManager.Instance.col) && (y >= 0 && y < GameManager.Instance.row))
         {
             transform.position = newLoc;
 
@@ -58,7 +71,7 @@ public class Dragable : MonoBehaviour
 
             if (gameObject.CompareTag(Helper.PLAYER_UNIT_TAG))
             {
-                if (!unitController.Merge(otherUnit))//merge
+                if (!unitMergeController.Merge(otherUnit))//merge
                     SwapUnit(ref otherUnit);//Swap
             }
             else

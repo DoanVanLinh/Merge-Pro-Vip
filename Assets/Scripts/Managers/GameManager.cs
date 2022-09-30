@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         fields = new Dictionary<Vector2, Unit>();
-        for (int i = 0; i < row * 2 + 1; i++)
+        for (int i = 0; i < row /** 2 + 1*/; i++)
         {
             for (int j = 0; j < col; j++)
             {
@@ -33,14 +33,18 @@ public class GameManager : MonoBehaviour
     public int col;
     [Range(1f, 100f)]
     public float gridScale;
-    public ListUnitData dataMerge;
+    public ListTypes dataType;
     public GameObject playerZone;
-
     public bool isStart;
-    private FightStatus fightStatus = FightStatus.Null;
 
+    public bool isOnDeleteField;
+    public bool isOnUndoField;
+
+    private FightStatus fightStatus = FightStatus.Null;
+    private Sprite[] iconType;
     private void Start()
     {
+        iconType = Resources.LoadAll<Sprite>("IconType");
         LoadCurrentTeam();
     }
     [Button("Spawn Player Unit")]
@@ -55,7 +59,7 @@ public class GameManager : MonoBehaviour
 
         float random = Random.Range(-1f, 1f);
 
-        UnitData unitData = dataMerge.listUnits[indexUnit[Random.Range(0, indexUnit.Length)]];
+        UnitData unitData = GetDataMerge().listUnits[indexUnit[Random.Range(0, indexUnit.Length)]];
         Vector2 loc = fields.Where(f => f.Value == null).Select(f => f.Key).OrderBy(o => random).FirstOrDefault();
 
         new PlayerUnit(unitData, loc);
@@ -65,7 +69,7 @@ public class GameManager : MonoBehaviour
     {
         float random = Random.Range(-1f, 1f);
 
-        UnitData unitData = dataMerge.listUnits[index];
+        UnitData unitData = GetDataMerge().listUnits[index];
         Vector2 loc = fields.Where(f => f.Value == null).Select(f => f.Key).OrderBy(o => random).FirstOrDefault();
 
         new EnemyUnit(unitData, loc + Vector2.up * 4f);
@@ -85,7 +89,7 @@ public class GameManager : MonoBehaviour
         level.listEnemy = new List<UnitDataJson>();
         foreach (var item in unitDatas)
         {
-            level.listEnemy.Add(new UnitDataJson(item.Data, item.GetDefaulLoc().x, item.GetDefaulLoc().y, item.tag));
+            level.listEnemy.Add(new UnitDataJson(item.Data.unitName, item.GetDefaulLoc().x, item.GetDefaulLoc().y, item.tag));
         }
         state.listLevel.Add(level);
 
@@ -100,6 +104,7 @@ public class GameManager : MonoBehaviour
         UnityEditor.EditorUtility.SetDirty(level);
         UnityEditor.EditorUtility.SetDirty(state);
     }
+#endif  
     [Button("Load Level")]
     private void LoadCurrentLevel(int state, int level, string path = "States/")
     {
@@ -118,17 +123,20 @@ public class GameManager : MonoBehaviour
         foreach (var item in currentLevel.listEnemy)
         {
             if (item.unitTag.Equals(Helper.ENEMY_UNIT_TAG))
-                new EnemyUnit(item.data, new Vector2(item.px, item.py));
+                new EnemyUnit(GetDataMerge().listUnits.Where(u => u.unitName == item.nameUnit).FirstOrDefault(), new Vector2(item.px, item.py));
         }
     }
-#endif
+
     public void LoadCurrentTeam()
     {
         InitalFields();
-        foreach (var item in DataManager.Instance.GetDataGame().listUnits)
+        List<UnitDataJson> data = DataManager.Instance.GetDataGame().listUnits;
+        data.Reverse();
+
+        foreach (var item in data)
         {
             if (item.unitTag.Equals(Helper.PLAYER_UNIT_TAG))
-                new PlayerUnit(item.data, new Vector2(item.px, item.py));
+                new PlayerUnit(GetDataMerge().listUnits.Where(u => u.unitName == item.nameUnit).FirstOrDefault(), new Vector2(item.px, item.py));
         }
 
         LoadCurrentLevel(DataManager.Instance.GetDataGame().GetCurrentState(), DataManager.Instance.GetDataGame().GetCurrentLevel(), "States/");
@@ -171,12 +179,32 @@ public class GameManager : MonoBehaviour
                 UIManager.Instance.youLosePanel.gameObject.SetActive(true);
         }
     }
+    public ListUnitData GetDataMerge()
+    {
+        return Resources.Load<ListUnitData>("Data Merge/List Unit Data");
+    }
     public FightStatus GetFightStatus()
     {
         return this.fightStatus;
     }
-}
+    public float MultipleDame(NameTypeUnit firstType, NameTypeUnit secondType)
+    {
+        return dataType.listTypes[firstType][secondType];
+    }
+    public Sprite GetIconTypeByname(string name)
+    {
+        return iconType.Where(i => i.name == name).First();
+    }
 
+    public void DeleteUnitInField(Vector2 loc)
+    {
+        fields[loc] = null;
+    }
+    public void AddUnitToField(Vector2 loc, Unit unit)
+    {
+        fields[loc] = unit;
+    }
+}
 public enum FightStatus
 {
     Null,

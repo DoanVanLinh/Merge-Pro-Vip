@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f175abcf7ce674d98e9e634dfe82f4, type: 3}
   m_Name: Spider Man
   m_EditorClassIdentifier: 
-  nameUnit: Spider Man
+  unitName: Spider Man
+  unitType: 0
   unitPrefab: {fileID: 3287371381198539277, guid: b3d4f13cd0a6f904aa4b48bb51aee256, type: 3}
   bullet: {fileID: 3287371381198539277, guid: f0647208d567f2340875bdffd1c0381d, type: 3}
-  dame: 3
-  hp: 20
+  dame: 1
+  hp: 3200
   attackRange: 1
   attackRate: 1
-  delayDame: 0.5
+  delayDame: 0
   tier: 7
   colorTier: 00FFFF
   id: 1
   level: 0
+  shotLoc: {x: 0, y: 0}
   skeletonData: {fileID: 11400000, guid: 63c40efb65b30d94e9729b316daf962e, type: 2}
   childs: []

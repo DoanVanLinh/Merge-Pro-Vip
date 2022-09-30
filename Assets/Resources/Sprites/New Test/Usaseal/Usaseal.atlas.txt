@@ -1,0 +1,174 @@
+
+Usaseal.png
+size: 2032,768
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Ellipse 1
+  rotate: false
+  xy: 456, 184
+  size: 48, 285
+  orig: 48, 285
+  offset: 0, 0
+  index: -1
+FX_Laser01
+  rotate: false
+  xy: 1489, 42
+  size: 135, 142
+  orig: 135, 142
+  offset: 0, 0
+  index: -1
+FX_Laser02
+  rotate: false
+  xy: 907, 17
+  size: 153, 204
+  orig: 153, 204
+  offset: 0, 0
+  index: -1
+FX_Laser03
+  rotate: false
+  xy: 1006, 262
+  size: 167, 246
+  orig: 167, 246
+  offset: 0, 0
+  index: -1
+FX_Laser04
+  rotate: false
+  xy: 752, 0
+  size: 154, 221
+  orig: 154, 221
+  offset: 0, 0
+  index: -1
+FX_Laser05
+  rotate: false
+  xy: 1174, 317
+  size: 135, 191
+  orig: 135, 191
+  offset: 0, 0
+  index: -1
+FX_Laser06
+  rotate: false
+  xy: 1310, 335
+  size: 234, 173
+  orig: 234, 173
+  offset: 0, 0
+  index: -1
+FX_Laser07
+  rotate: false
+  xy: 1545, 185
+  size: 408, 163
+  orig: 408, 163
+  offset: 0, 0
+  index: -1
+FX_Laser08
+  rotate: false
+  xy: 1061, 17
+  size: 427, 244
+  orig: 427, 244
+  offset: 0, 0
+  index: -1
+FX_Laser09
+  rotate: false
+  xy: 0, 173
+  size: 455, 296
+  orig: 455, 296
+  offset: 0, 0
+  index: -1
+FX_Laser10
+  rotate: false
+  xy: 505, 222
+  size: 500, 271
+  orig: 500, 271
+  offset: 0, 0
+  index: -1
+FX_Laser11
+  rotate: false
+  xy: 1002, 509
+  size: 493, 259
+  orig: 493, 259
+  offset: 0, 0
+  index: -1
+FX_Laser12
+  rotate: false
+  xy: 501, 494
+  size: 500, 274
+  orig: 500, 274
+  offset: 0, 0
+  index: -1
+FX_Laser13
+  rotate: false
+  xy: 0, 470
+  size: 500, 298
+  orig: 500, 298
+  offset: 0, 0
+  index: -1
+FX_Laser14
+  rotate: false
+  xy: 0, 2
+  size: 498, 170
+  orig: 498, 170
+  offset: 0, 0
+  index: -1
+FX_Laser15
+  rotate: false
+  xy: 1545, 629
+  size: 467, 139
+  orig: 467, 139
+  offset: 0, 0
+  index: -1
+FX_Laser16
+  rotate: false
+  xy: 1545, 349
+  size: 435, 133
+  orig: 435, 133
+  offset: 0, 0
+  index: -1
+FX_Laser17
+  rotate: false
+  xy: 1625, 53
+  size: 380, 131
+  orig: 380, 131
+  offset: 0, 0
+  index: -1
+FX_Laser18
+  rotate: false
+  xy: 1496, 517
+  size: 342, 111
+  orig: 342, 111
+  offset: 0, 0
+  index: -1
+L_foot
+  rotate: false
+  xy: 1174, 268
+  size: 39, 48
+  orig: 39, 48
+  offset: 0, 0
+  index: -1
+R_foot
+  rotate: false
+  xy: 1310, 263
+  size: 63, 71
+  orig: 63, 71
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 1839, 483
+  size: 191, 145
+  orig: 191, 145
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 499, 9
+  size: 252, 174
+  orig: 252, 174
+  offset: 0, 0
+  index: -1
+wing
+  rotate: false
+  xy: 1374, 273
+  size: 92, 61
+  orig: 92, 61
+  offset: 0, 0
+  index: -1

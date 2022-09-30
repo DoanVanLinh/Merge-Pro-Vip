@@ -12,19 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f175abcf7ce674d98e9e634dfe82f4, type: 3}
   m_Name: Ninja
   m_EditorClassIdentifier: 
-  nameUnit: Ninja
+  unitName: Ninja
+  unitType: 0
   unitPrefab: {fileID: 3287371381198539277, guid: b3d4f13cd0a6f904aa4b48bb51aee256, type: 3}
   bullet: {fileID: 3287371381198539277, guid: f0647208d567f2340875bdffd1c0381d, type: 3}
   dame: 1
-  hp: 16
-  attackRange: 4
+  hp: 1280
+  attackRange: 1
   attackRate: 0.8
-  delayDame: 0.5
+  delayDame: 0
   tier: 6
   colorTier: 00FFFF
   id: 1
   level: 0
+  shotLoc: {x: 0, y: 0}
   skeletonData: {fileID: 11400000, guid: 206e127eb1ac6c54b92c610895eabb5e, type: 2}
   childs:
-  - {fileID: 11400000, guid: fb719e9dfdba794499c7d76015a94ca3, type: 2}
   - {fileID: 11400000, guid: 0ec1a7a78df12354687b14102c575c3b, type: 2}
+  - {fileID: 11400000, guid: fb719e9dfdba794499c7d76015a94ca3, type: 2}

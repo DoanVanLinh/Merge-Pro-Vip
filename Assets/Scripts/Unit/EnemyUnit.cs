@@ -12,6 +12,7 @@ public class EnemyUnit : Unit
         Unit enemyUnit = clone.AddComponent<EnemyUnit>();
         enemyUnit.Data = data;
         enemyUnit.healthColor = Color.red;
+        GameManager.Instance.AddUnitToField(loc, enemyUnit);
 
         clone.tag = Helper.ENEMY_UNIT_TAG;
         clone.layer = Helper.ENEMY_TEAM_LAYER;

@@ -61,7 +61,7 @@ public class GameData
 [Serializable]
 public class UnitDataJson
 {
-    public UnitData data;
+    public string nameUnit;
     public float px, py;
     public string unitTag;
 
@@ -69,9 +69,9 @@ public class UnitDataJson
     {
     }
 
-    public UnitDataJson(UnitData data, float px, float py, string unitTag)
+    public UnitDataJson(string nameUnit, float px, float py, string unitTag)
     {
-        this.data = data;
+        this.nameUnit = nameUnit;
         this.px = px;
         this.py = py;
         this.unitTag = unitTag;

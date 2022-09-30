@@ -15,7 +15,7 @@ MonoBehaviour:
   nameLevel: 
   id: 0
   listEnemy:
-  - data: {fileID: 11400000, guid: 5c92077ea98c07c438b29163ab246e59, type: 2}
+  - nameUnit: BlazingTurtle
     px: 2
     py: 7
     unitTag: Enemy Unit

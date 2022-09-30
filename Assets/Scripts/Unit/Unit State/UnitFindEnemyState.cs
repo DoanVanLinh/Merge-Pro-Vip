@@ -14,9 +14,6 @@ public class UnitFindEnemyState : UnitBaseState
 
     public override void UpdateState(UnitStateManager unitStateManager)
     {
-        if (unitStateManager.transform.position == new Vector3(3, 3, 0))
-            Debug.Log("test");
-
         if (!Target.standPoints.ContainsValue(unitStateManager.unitController) && Target.standPoints.Where(s => s.Value == null).Count() == 0)
             FindEnemyNearly(unitStateManager);
 

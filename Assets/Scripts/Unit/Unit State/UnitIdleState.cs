@@ -7,8 +7,6 @@ public class UnitIdleState : UnitBaseState
     public override void StartState(UnitStateManager unitStateManager)
     {
         unitStateManager.SetUnitAni(Helper.IDLE_STATE_ANI, true);
-        Debug.Log("Idle", unitStateManager.gameObject);
-
     }
 
     public override void UpdateState(UnitStateManager unitStateManager)

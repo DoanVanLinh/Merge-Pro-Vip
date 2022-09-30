@@ -12,19 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f175abcf7ce674d98e9e634dfe82f4, type: 3}
   m_Name: Lance
   m_EditorClassIdentifier: 
-  nameUnit: Lance
+  unitName: Lance
+  unitType: 2
   unitPrefab: {fileID: 3287371381198539277, guid: b3d4f13cd0a6f904aa4b48bb51aee256, type: 3}
   bullet: {fileID: 3287371381198539277, guid: f0647208d567f2340875bdffd1c0381d, type: 3}
-  dame: 3
-  hp: 20
+  dame: 1
+  hp: 400
   attackRange: 1
   attackRate: 1
-  delayDame: 0.5
+  delayDame: 0
   tier: 4
   colorTier: FFFF00
   id: 3
   level: 0
+  shotLoc: {x: 0, y: 0}
   skeletonData: {fileID: 11400000, guid: c346b88d4d90bc245ac02d3ac90488e9, type: 2}
   childs:
-  - {fileID: 11400000, guid: ace41b36cc7483e459a4cd85e2ff008a, type: 2}
   - {fileID: 11400000, guid: 505937f6af318374492d25263d83d355, type: 2}
+  - {fileID: 11400000, guid: ace41b36cc7483e459a4cd85e2ff008a, type: 2}

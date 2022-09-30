@@ -1,0 +1,55 @@
+
+Sucker.png
+size: 912,852
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 0, 0
+  size: 463, 385
+  orig: 463, 385
+  offset: 0, 0
+  index: -1
+Hand_R
+  rotate: false
+  xy: 464, 343
+  size: 71, 42
+  orig: 71, 42
+  offset: 0, 0
+  index: -1
+Head0
+  rotate: false
+  xy: 745, 507
+  size: 167, 344
+  orig: 167, 344
+  offset: 0, 0
+  index: -1
+Leg_L
+  rotate: false
+  xy: 745, 342
+  size: 115, 164
+  orig: 115, 164
+  offset: 0, 0
+  index: -1
+Mouth
+  rotate: false
+  xy: 464, 87
+  size: 318, 254
+  orig: 318, 254
+  offset: 0, 0
+  index: -1
+Umbrella
+  rotate: false
+  xy: 0, 386
+  size: 545, 465
+  orig: 545, 465
+  offset: 0, 0
+  index: -1
+Umbrella close
+  rotate: false
+  xy: 546, 364
+  size: 198, 487
+  orig: 198, 487
+  offset: 0, 0
+  index: -1

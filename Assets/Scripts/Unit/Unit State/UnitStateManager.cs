@@ -35,19 +35,10 @@ public class UnitStateManager : MonoBehaviour
     public void SetUnitAni(string name, bool loop, float timeScale = 1f)
     {
         unitAni.state.SetAnimation(0, name, loop).TimeScale = timeScale;
-        unitAni.state.Complete += State_Complete;
+
     }
-    private void State_Complete(Spine.TrackEntry trackEntry)
-    {
-        unitAni.state.Complete -= State_Complete;
-        if (unitAni.state.ToString().Equals("Dead"))
-        {
-            Destroy(gameObject);
-        }
-    }
-    private void OnDestroy()
-    {
-        unitAni.state.Complete -= State_Complete;
-    }
+
+    public void DestroyUnit(float afterTime = 0f)
+    { Destroy(gameObject, afterTime); }
 }
 

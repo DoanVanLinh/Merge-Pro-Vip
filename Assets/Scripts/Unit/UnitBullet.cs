@@ -7,8 +7,11 @@ public class UnitBullet : MonoBehaviour
     public Unit target;
     public float speed;
     public int dame;
-    // Update is called once per frame
-    void Update()
+    public SpriteRenderer spriteBullet;
+
+    public BoxCollider2D bulletCollider;
+
+    void FixedUpdate()
     {
         if (target == null)
         {
@@ -17,6 +20,9 @@ public class UnitBullet : MonoBehaviour
         }
 
         transform.position = Vector2.MoveTowards(transform.position, (Vector2)target.transform.position + Vector2.up, Time.deltaTime * speed);
+
+        if (Vector2.Distance(transform.position, (Vector2)target.transform.position + Vector2.up) <= 0.15f)
+            bulletCollider.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,10 +40,13 @@ public class UnitBullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void SetDataBullet(Unit target, int dame, float speed = -1)
+    public void SetDataBullet(Unit target, int dame, float speed = -1,Sprite bullet = null)
     {
         this.target = target;
         this.speed = speed == -1 ? this.speed : speed;
         this.dame = dame;
+
+        if (bullet != null)
+            spriteBullet.sprite = bullet;
     }
 }

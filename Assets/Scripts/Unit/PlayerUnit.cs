@@ -6,13 +6,14 @@ using UnityEngine;
 [RequireComponent(typeof(Dragable))]
 public class PlayerUnit : Unit
 {
-    public PlayerUnit(UnitData data,Vector2 loc)
+    public PlayerUnit(UnitData data, Vector2 loc)
     {
         GameObject clone = Instantiate(data.unitPrefab, loc, Quaternion.identity);
 
         Unit playerUnit = clone.AddComponent<PlayerUnit>();
         playerUnit.Data = data;
         playerUnit.healthColor = Color.green;
+        GameManager.Instance.AddUnitToField(loc, playerUnit);
 
         clone.AddComponent<MergeController>();
         clone.tag = Helper.PLAYER_UNIT_TAG;

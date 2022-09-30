@@ -4,7 +4,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using UnityEditor;
 using System.Linq;
-
+using System;
 
 [CreateAssetMenu(fileName = "List Unit Data", menuName = "ScriptableObjects/List Unit Data", order = 1)]
 public class ListUnitData : ScriptableObject
@@ -12,6 +12,7 @@ public class ListUnitData : ScriptableObject
     public GameObject unitPrefab;
     public GameObject bulletPrefab;
     public List<UnitData> listUnits = new List<UnitData>();
+    List<DataMerge> dataMerges = new List<DataMerge>();
 
 #if UNITY_EDITOR
     [Button("Get Data Unit")]
@@ -23,13 +24,14 @@ public class ListUnitData : ScriptableObject
         System.Action<string> actionComplete = new System.Action<string>((string str) =>
         {
             var data = CSVReader.ReadCSV(str);
-            for (int i = 1; i < data.Count; i++)
+            for (int i = data.Count - 1; i > 0; i--)
             {
                 var _data = data[i];
 
                 UnitData unit = ScriptableObject.CreateInstance<UnitData>();
 
-                unit.nameUnit = _data[0];
+                unit.unitName = _data[0];
+                unit.unitType = Helper.StringToEnum<NameTypeUnit>(_data[8]);
                 unit.dame = int.Parse(_data[1]);
                 unit.hp = int.Parse(_data[2]);
                 unit.attackRange = Helper.ParseFloat(_data[3]);
@@ -39,7 +41,23 @@ public class ListUnitData : ScriptableObject
                 unit.colorTier = _data[7];
                 unit.unitPrefab = unitPrefab;
                 unit.bullet = bulletPrefab;
-                unit.skeletonData = UnitSkeletonDataManager.Instance.GetSkeletonData(unit.nameUnit);
+                unit.skeletonData = UnitSkeletonDataManager.Instance.GetSkeletonData(unit.unitName);
+
+                if (unit.attackRange != 1)
+                {
+                    string shotLoc = _data[9];
+                    unit.shotLoc = new Vector2(Helper.ParseFloat(shotLoc.Split(' ')[0]), Helper.ParseFloat(shotLoc.Split(' ')[1]));
+                }
+                else
+                {
+                    unit.shotLoc = Vector2.zero;
+                }
+
+
+                unit.childs = new List<UnitData>();
+                string[] childNames = dataMerges.Where(d => d.tier == unit.tier + 1).Where(d => d.id == unit.id || d.id == (unit.id - 1 == 0 ? dataMerges.Where(d => d.tier == unit.tier + 1).FirstOrDefault().id : unit.id - 1)).Select(d => d.unitName).ToArray();
+                UnitData[] childs = listUnits.Where(u => childNames.Contains(u.unitName)).ToArray();
+                unit.childs.AddRange(childs);
 
                 AssetDatabase.CreateAsset(unit, "Assets/Prefabs/ScriptableObject/" + _data[0] + ".asset");
 
@@ -55,29 +73,29 @@ public class ListUnitData : ScriptableObject
             }
 
             //Merge Data
-            foreach (DataMerge dataMerge in dataMerges)
-            {
-                UnitData unitData = listUnits.Where(u => u.nameUnit == dataMerge.unitName).FirstOrDefault();
+            //foreach (DataMerge dataMerge in dataMerges)
+            //{
+            //    UnitData unitData = listUnits.Where(u => u.unitName == dataMerge.unitName).FirstOrDefault();
 
-                unitData.childs = new List<UnitData>();
+            //    unitData.childs = new List<UnitData>();
 
-                string[] childNames = dataMerges.Where(d => d.tier == dataMerge.tier + 1).Where(d => d.id == dataMerge.id || d.id == (dataMerge.id - 1 == 0 ? dataMerges.Where(d => d.tier == dataMerge.tier + 1).LastOrDefault().id : dataMerge.id - 1)).Select(d => d.unitName).ToArray();
+            //    string[] childNames = dataMerges.Where(d => d.tier == dataMerge.tier + 1).Where(d => d.id == dataMerge.id || d.id == (dataMerge.id - 1 == 0 ? dataMerges.Where(d => d.tier == dataMerge.tier + 1).LastOrDefault().id : dataMerge.id - 1)).Select(d => d.unitName).ToArray();
 
-                UnitData[] childs = listUnits.Where(u => childNames.Contains(u.nameUnit)).ToArray();
+            //    UnitData[] childs = listUnits.Where(u => childNames.Contains(u.unitName)).ToArray();
 
-                unitData.childs.AddRange(childs);
+            //    unitData.childs.AddRange(childs);
 
-                //UnityEditor.EditorUtility.SetDirty(unitData);
-            }
+            //    AssetDatabase.SaveAssets();
+
+            //    //UnityEditor.EditorUtility.SetDirty(unitData);
+            //}
 
             UnityEditor.EditorUtility.SetDirty(this);
         });
         EditorCoroutine.start(Helper.IELoadData(url, actionComplete));
     }
-#endif
 
-#if UNITY_EDITOR
-    List<DataMerge> dataMerges = new List<DataMerge>();
+
     [Button("Get Data Merge")]
     public void GetDataMerge()
     {
@@ -96,13 +114,13 @@ public class ListUnitData : ScriptableObject
 
             foreach (DataMerge dataMerge in dataMerges)
             {
-                UnitData unitData = listUnits.Where(u => u.nameUnit == dataMerge.unitName).FirstOrDefault();
+                UnitData unitData = listUnits.Where(u => u.unitName == dataMerge.unitName).FirstOrDefault();
 
                 unitData.childs = new List<UnitData>();
 
                 string[] childNames = dataMerges.Where(d => d.tier == dataMerge.tier + 1).Where(d => d.id == dataMerge.id || d.id == (dataMerge.id - 1 == 0 ? dataMerges.Where(d => d.tier == dataMerge.tier + 1).LastOrDefault().id : dataMerge.id - 1)).Select(d => d.unitName).ToArray();
 
-                UnitData[] childs = listUnits.Where(u => childNames.Contains(u.nameUnit)).ToArray();
+                UnitData[] childs = listUnits.Where(u => childNames.Contains(u.unitName)).ToArray();
 
                 unitData.childs.AddRange(childs);
 
@@ -112,10 +130,7 @@ public class ListUnitData : ScriptableObject
 
         });
         EditorCoroutine.start(Helper.IELoadData(url, actionComplete));
-
-
     }
-
 #endif
 }
 public class DataMerge

@@ -1,0 +1,48 @@
+
+Pouteel.png
+size: 592,284
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L_eye
+  rotate: false
+  xy: 339, 54
+  size: 94, 82
+  orig: 94, 82
+  offset: 0, 0
+  index: -1
+L_foot
+  rotate: false
+  xy: 529, 0
+  size: 53, 67
+  orig: 53, 67
+  offset: 0, 0
+  index: -1
+R_eye
+  rotate: false
+  xy: 434, 54
+  size: 94, 82
+  orig: 94, 82
+  offset: 0, 0
+  index: -1
+R_foot
+  rotate: false
+  xy: 529, 68
+  size: 63, 68
+  orig: 63, 68
+  offset: 0, 0
+  index: -1
+head1
+  rotate: false
+  xy: 339, 137
+  size: 244, 144
+  orig: 244, 144
+  offset: 0, 0
+  index: -1
+head2
+  rotate: false
+  xy: 0, 1
+  size: 338, 280
+  orig: 338, 280
+  offset: 0, 0
+  index: -1

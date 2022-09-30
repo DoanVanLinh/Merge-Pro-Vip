@@ -1,0 +1,41 @@
+
+Crawlson.png
+size: 992,500
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Hand_L
+  rotate: false
+  xy: 619, 30
+  size: 203, 216
+  orig: 203, 216
+  offset: 0, 0
+  index: -1
+Hand_R
+  rotate: false
+  xy: 619, 247
+  size: 174, 252
+  orig: 174, 252
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 0, 43
+  size: 618, 456
+  orig: 618, 456
+  offset: 0, 0
+  index: -1
+Leg_L
+  rotate: false
+  xy: 794, 250
+  size: 166, 249
+  orig: 166, 249
+  offset: 0, 0
+  index: -1
+Leg_R
+  rotate: false
+  xy: 823, 0
+  size: 166, 249
+  orig: 166, 249
+  offset: 0, 0
+  index: -1

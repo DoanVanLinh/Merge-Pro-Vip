@@ -1,0 +1,55 @@
+
+Shelly.png
+size: 348,964
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+R_foot
+  rotate: false
+  xy: 0, 705
+  size: 111, 187
+  orig: 111, 187
+  offset: 0, 0
+  index: -1
+R_hand
+  rotate: false
+  xy: 0, 346
+  size: 94, 358
+  orig: 94, 358
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 95, 310
+  size: 250, 261
+  orig: 250, 261
+  offset: 0, 0
+  index: -1
+head1
+  rotate: false
+  xy: 112, 572
+  size: 213, 208
+  orig: 213, 208
+  offset: 0, 0
+  index: -1
+head2
+  rotate: false
+  xy: 125, 781
+  size: 187, 182
+  orig: 187, 182
+  offset: 0, 0
+  index: -1
+mushroom
+  rotate: false
+  xy: 0, 0
+  size: 337, 309
+  orig: 337, 309
+  offset: 0, 0
+  index: -1
+no
+  rotate: false
+  xy: 0, 893
+  size: 124, 70
+  orig: 124, 70
+  offset: 0, 0
+  index: -1

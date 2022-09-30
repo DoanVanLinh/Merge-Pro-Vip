@@ -12,19 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f175abcf7ce674d98e9e634dfe82f4, type: 3}
   m_Name: MachineGun
   m_EditorClassIdentifier: 
-  nameUnit: MachineGun
+  unitName: MachineGun
+  unitType: 0
   unitPrefab: {fileID: 3287371381198539277, guid: b3d4f13cd0a6f904aa4b48bb51aee256, type: 3}
   bullet: {fileID: 3287371381198539277, guid: f0647208d567f2340875bdffd1c0381d, type: 3}
   dame: 1
-  hp: 16
-  attackRange: 4
+  hp: 640
+  attackRange: 1
   attackRate: 0.8
-  delayDame: 0.5
+  delayDame: 0
   tier: 5
   colorTier: FFFF00
   id: 1
   level: 0
+  shotLoc: {x: 0, y: 0}
   skeletonData: {fileID: 11400000, guid: c1428ebc80a56344292b6daf66fc144c, type: 2}
   childs:
-  - {fileID: 11400000, guid: b99d0007b5a43d54fafcdc50aa67c9c3, type: 2}
   - {fileID: 11400000, guid: b2fc5a4717417ea42bdb0a81789ce3d7, type: 2}
+  - {fileID: 11400000, guid: b99d0007b5a43d54fafcdc50aa67c9c3, type: 2}

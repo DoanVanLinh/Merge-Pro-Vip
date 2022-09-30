@@ -21,10 +21,19 @@ public static class Helper
 
     public static Camera mainCam = Camera.main;
 
+    public static string EnumToString<T>(T enumT)
+    {
+        return enumT.ToString();
+    }
+    public static T StringToEnum<T>(string value)
+    {
+        return (T)Enum.Parse(typeof(T), value);
+    }
+
     public static float ParseFloat(string data)
     {
 #if UNITY_ANDROID
-            return float.Parse(data);
+        return float.Parse(data);
 #else
         float f = float.Parse(data, CultureInfo.InvariantCulture);
         return f;

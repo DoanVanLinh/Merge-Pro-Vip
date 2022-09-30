@@ -17,18 +17,18 @@ public class UnitSkeletonDataManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        LoadSkeletonData();
+        //LoadSkeletonData();
     }
     #endregion
     [SerializeField] public string path;
-    [SerializeField] private SkeletonDataAsset[] listDatas;
-    [Button("Get Skeleton Data")]
-    void LoadSkeletonData()
-    {
-        listDatas = Resources.LoadAll<SkeletonDataAsset>(path);
-    }
+    //[SerializeField] private SkeletonDataAsset[] listDatas;
+    //[Button("Get Skeleton Data")]
+    //void LoadSkeletonData()
+    //{
+    //    listDatas = Resources.LoadAll<SkeletonDataAsset>(path);
+    //}
     public SkeletonDataAsset GetSkeletonData(string name)
     {
-        return listDatas.Where(d => d.name.ToLower().Contains(name.ToLower())).FirstOrDefault();
+        return Resources.LoadAll<SkeletonDataAsset>(path).Where(d => d.name.ToLower().Contains(name.ToLower())).FirstOrDefault();
     }
 }

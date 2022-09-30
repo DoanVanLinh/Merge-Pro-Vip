@@ -1,0 +1,41 @@
+
+Layer 48 copy 2.png
+size: 844,332
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 521, 56
+  size: 161, 273
+  orig: 161, 273
+  offset: 0, 0
+  index: -1
+Hand_L_up
+  rotate: false
+  xy: 683, 86
+  size: 140, 105
+  orig: 140, 105
+  offset: 0, 0
+  index: -1
+Hand_R_down
+  rotate: false
+  xy: 683, 192
+  size: 160, 137
+  orig: 160, 137
+  offset: 0, 0
+  index: -1
+Hand_R_up
+  rotate: false
+  xy: 276, 60
+  size: 244, 269
+  orig: 244, 269
+  offset: 0, 0
+  index: -1
+Stop
+  rotate: false
+  xy: 0, 0
+  size: 275, 329
+  orig: 275, 329
+  offset: 0, 0
+  index: -1

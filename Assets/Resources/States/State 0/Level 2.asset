@@ -15,15 +15,15 @@ MonoBehaviour:
   nameLevel: 
   id: 2
   listEnemy:
-  - data: {fileID: 11400000, guid: ae5d61c7322eb1d4d97380f1e5cd607b, type: 2}
+  - nameUnit: Crawlson
     px: 2
     py: 5
     unitTag: Enemy Unit
-  - data: {fileID: 11400000, guid: 5c92077ea98c07c438b29163ab246e59, type: 2}
+  - nameUnit: BlazingTurtle
     px: 1
     py: 7
     unitTag: Enemy Unit
-  - data: {fileID: 11400000, guid: 5c92077ea98c07c438b29163ab246e59, type: 2}
+  - nameUnit: BlazingTurtle
     px: 3
     py: 7
     unitTag: Enemy Unit
