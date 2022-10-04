@@ -4,7 +4,6 @@ using UnityEngine;
 using Spine.Unity;
 using System.Linq;
 using System.Collections;
-using Pathfinding;
 
 public class Unit : MonoBehaviour
 {
@@ -34,8 +33,8 @@ public class Unit : MonoBehaviour
     private Sprite spriteBullet;
     private void Start()
     {
-        standPoints = new Dictionary<Vector2, Unit>() { {  new Vector2(0.75f,-0.45f), null }, { Vector2.right, null }, { new Vector2(0.75f,0.45f), null },
-                                                        {  new Vector2(-0.75f,0.45f), null }, {  Vector2.left, null }, {  new Vector2(-0.75f,-0.45f), null }};
+        standPoints = new Dictionary<Vector2, Unit>() { {  new Vector2(0.55f,-0.45f), null }, { new Vector2(0.75f,0f), null }, { new Vector2(0.55f,0.45f), null },
+                                                        {  new Vector2(-0.55f,0.45f), null }, {  new Vector2(-0.75f,0f), null }, {  new Vector2(-0.55f,-0.45f), null }};
 
         healthBar = GetComponentsInChildren<HealthBar>()[0];
         unitTypeImg = GetComponentsInChildren<UnitTypeImg>()[0];
@@ -94,27 +93,35 @@ public class Unit : MonoBehaviour
         Destroy(this);
         unitStateManager.SwitchState(unitStateManager.unitDieState);
     }
-    private Vector2 slotMove;
+    private Vector2 slotMove = Vector2.zero;
     public bool MoveToTarget(Unit target)
     {
         if (target == null)
+        {
             return false;
-
-        if (this.AttackRange == 1)
-        {
-            if (!target.standPoints.ContainsValue(this))
-            {
-                if (!target.standPoints.Any(s => s.Value == null))
-                {
-                    return false;
-                }
-                slotMove = target.standPoints.Where(s => s.Value == null).OrderBy(o => Vector2.Distance(transform.position, (Vector2)target.transform.position + o.Key)).FirstOrDefault().Key;
-                target.standPoints[slotMove] = this;
-            }
         }
-        else
+
+        float distanceToTaret = Vector2.Distance(transform.position,target.transform.position );
+        if (!target.standPoints.ContainsValue(this))
         {
-            slotMove = Vector2.zero;
+            if (distanceToTaret < AttackRange)
+            {
+                if (this.AttackRange == 1)
+                {
+
+                    if (!target.standPoints.Any(s => s.Value == null))
+                    {
+                        return false;
+                    }
+                    slotMove = target.standPoints.Where(s => s.Value == null).OrderBy(o => Vector2.Distance(transform.position, (Vector2)target.transform.position + o.Key)).FirstOrDefault().Key;
+                    target.standPoints[slotMove] = this;
+
+                }
+                else
+                {
+                    slotMove = Vector2.zero;
+                }
+            }
         }
         //float distance = Vector2.Distance(transform.position, (Vector2)target.transform.position + Vector2.up * 0.5f);        
         float distance = Vector2.Distance(transform.position, (Vector2)target.transform.position + slotMove);

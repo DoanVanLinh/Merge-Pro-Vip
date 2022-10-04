@@ -36,7 +36,7 @@ public class MergeController : MonoBehaviour
 
     public bool Split()
     {
-        if (!GameManager.fields.Any(u => u.Value == null))
+        if (GameManager.fields.Where(u => u.Value == null).Count()<1)
             return false;
 
         UnitData[] parentUnit = GameManager.Instance.GetDataMerge().listUnits.Where(u => u.childs.Contains(unitInfo.Data)).ToArray();
