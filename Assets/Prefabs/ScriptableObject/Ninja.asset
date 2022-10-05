@@ -16,16 +16,16 @@ MonoBehaviour:
   unitType: 0
   unitPrefab: {fileID: 3287371381198539277, guid: b3d4f13cd0a6f904aa4b48bb51aee256, type: 3}
   bullet: {fileID: 3287371381198539277, guid: f0647208d567f2340875bdffd1c0381d, type: 3}
-  dame: 1
+  dame: 0
   hp: 1280
-  attackRange: 1
+  attackRange: 4
   attackRate: 0.8
   delayDame: 0
   tier: 6
   colorTier: 00FFFF
   id: 1
   level: 0
-  shotLoc: {x: 0, y: 0}
+  shotLoc: {x: -0.5, y: 1}
   skeletonData: {fileID: 11400000, guid: 206e127eb1ac6c54b92c610895eabb5e, type: 2}
   childs:
   - {fileID: 11400000, guid: 0ec1a7a78df12354687b14102c575c3b, type: 2}

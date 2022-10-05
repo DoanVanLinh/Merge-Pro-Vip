@@ -16,6 +16,6 @@ MonoBehaviour:
   id: 0
   listEnemy:
   - nameUnit: BlazingTurtle
-    px: 2
+    px: 1
     py: 7
     unitTag: Enemy Unit

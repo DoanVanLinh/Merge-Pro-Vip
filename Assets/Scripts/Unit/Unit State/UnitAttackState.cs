@@ -9,6 +9,12 @@ public class UnitAttackState : UnitBaseState
     UnitStateManager unitStateManager;
     public override void StartState(UnitStateManager unitStateManager)
     {
+        //if (!unitStateManager.unitController.movement.IsNeighborOfTarget())
+        //{
+        //    unitStateManager.SwitchState(unitStateManager.unitFindEnemyState);
+        //    return;
+        //}
+
         target = unitStateManager.unitFindEnemyState.Target;
         unitStateManager.SetUnitAni(Helper.ATTACK_STATE_ANI, true, unitStateManager.unitController.CurrentAttackRate);
         unitStateManager.unitAni.state.Event += State_Event;
@@ -20,20 +26,27 @@ public class UnitAttackState : UnitBaseState
         if (e.Data.Name.ToLower() == "attack")
         {
             Attack(this.unitStateManager);
-            if (unitStateManager.unitController.CurrentAttackDame == 4)
-                Debug.LogError("Attack");
         }
     }
-
+    public void UnSubcribeEvent()
+    {
+        unitStateManager.unitAni.state.Event -= State_Event;
+    }
     public override void UpdateState(UnitStateManager unitStateManager)
     {
         if (target == null)
         {
             unitStateManager.unitAni.state.Event -= State_Event;
             unitStateManager.SwitchState(unitStateManager.unitFindEnemyState);
+            return;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-            unitStateManager.SwitchState(unitStateManager.unitDieState);
+
+        if (!unitStateManager.unitController.movement.IsNeighborOfTarget())
+        {
+            unitStateManager.unitAni.state.Event -= State_Event;
+            unitStateManager.SwitchState(unitStateManager.unitIdleState);
+            return;
+        }
     }
 
     void Attack(UnitStateManager unitStateManager)
@@ -42,6 +55,7 @@ public class UnitAttackState : UnitBaseState
         {
             unitStateManager.unitAni.state.Event -= State_Event;
             unitStateManager.SwitchState(unitStateManager.unitFindEnemyState);
+            return;
         }
         unitStateManager.unitController.Attack(target, unitStateManager.unitAni.Skeleton.Data.FindAnimation("Attack").Duration);
     }

@@ -9,54 +9,154 @@ public class AIMove : MonoBehaviour
     public float speed;
 
     public NodeBase target;
+    public NodeBase targetNeighbor;
+    public NodeBase cacheTarget;
+    public NodeBase unitNode;
 
-    private Vector2 nextStep;
+    private Vector2 nextStep = new Vector2(-20, -20);
+
+    public bool isWait;
 
     private void OnEnable()
     {
+        isWait = false;
+        nextStep = new Vector2(-20, -20);
+        unitNode = GridManager.Instance.Tiles.Where(t => t.Key == (Vector2)transform.position).First().Value;
         GridManager.Instance.UpdateGridNode(transform.position, false);
-        SetNextStep(NextLoc());
+        //SetNextStep(NextLoc());
     }
     private void Start()
     {
         GridManager.Instance.UpdateGridNode(transform.position, false);
-        SetNextStep(NextLoc());
+        //SetNextStep(NextLoc());
     }
     private void Update()
     {
-        if (!canMove)
-            return;
+        if (!canMove || isWait)
+        {
+            GridManager.Instance.UpdateGridNode(transform.position, false);
+            if (nextStep != (Vector2)transform.position)
+                GridManager.Instance.UpdateGridNode(nextStep, true);
 
-        Move();
+            nextStep = transform.position;
+        }
     }
-    void Move()
+    public bool Moving()
     {
-        if (Vector2.Distance(transform.position, nextStep) != 0)
-            transform.position = Vector3.MoveTowards(transform.position, nextStep, Time.deltaTime * speed);
-        else
+        if (!canMove)
+            return false;
+
+
+        if (nextStep.x == -20)
             SetNextStep(NextLoc());
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(transform.position, nextStep);
+
+        if (Vector2.Distance(transform.position, nextStep) != 0)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, nextStep, Time.deltaTime * speed);
+            return true;
+        }
+        else
+        {
+            SetNextStep(NextLoc());
+            return false;
+        }
     }
     public Vector2 NextLoc()
     {
-        NodeBase unitNode = GridManager.Instance.Tiles.Where(t => t.Key == (Vector2)transform.position).First().Value;
-        
-        var path = Pathfinding.FindPath(unitNode, target);
-        if (path == null||path.Count==0)
+        if (!canMove)
             return transform.position;
+
+        if (target == null)
+            return transform.position;
+
+        if (target != cacheTarget)
+            if (target.Neighbors.Any(n => n.Walkable))
+            {
+                targetNeighbor = target.Neighbors.Where(n => n.Walkable).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
+                cacheTarget = target;
+            }
+
+        if (targetNeighbor == null)
+            if (target.Neighbors.Any(n => n.Walkable))
+                targetNeighbor = target.Neighbors.Where(n => n.Walkable).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
+
+        if (!targetNeighbor.Walkable)
+        {
+            if (targetNeighbor.transform.position != transform.position)
+            {
+
+                if (target.Neighbors.Any(n => n.Walkable))
+                    targetNeighbor = target.Neighbors.Where(n => n.Walkable).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
+                else
+                {
+                    canMove = false;
+                    isWait = true;
+                    return transform.position;
+                }
+            }
+            else
+            {
+                if (target.Neighbors.Contains(targetNeighbor))
+                    return transform.position;
+                else
+                {
+                    if (target.Neighbors.Any(n => n.Walkable))
+                        targetNeighbor = target.Neighbors.Where(n => n.Walkable).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
+                }
+            }
+        }
+
+        //if (target.Neighbors.Any(n => n.Walkable))
+        //    targetNeighbor = target.Neighbors.Where(n => n.Walkable).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
+
+
+        unitNode = GridManager.Instance.Tiles.Where(t => t.Key == (Vector2)transform.position).First().Value;
+
+        var path = Pathfinding.FindPath(unitNode, targetNeighbor);
+        if (path == null || path.Count == 0)
+        {
+            canMove = false;
+            isWait = true;
+            targetNeighbor = target.Neighbors.Where(n => n.Walkable && n != targetNeighbor).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
+            return transform.position;
+        }
         else
+        {
+            canMove = true;
+            isWait = false;
             return path.Last().transform.position;
+        }
+    }
+
+    public bool IsNeighborOfTarget()
+    {
+        if (target != cacheTarget)
+            if (target.Neighbors.Any(n => n.Walkable))
+            {
+                targetNeighbor = target.Neighbors.Where(n => n.Walkable).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
+                cacheTarget = target;
+            }
+
+        return target.Neighbors.Contains(targetNeighbor);
     }
     void SetNextStep(Vector2 nextStep)
     {
-        if (!canMove)
+        if (nextStep == (Vector2)target.transform.position)
             return;
 
-        GridManager.Instance.UpdateGridNode(transform.position, true);
-        GridManager.Instance.UpdateGridNode(nextStep, false);
+        if (nextStep != (Vector2)transform.position)
+        {
+            GridManager.Instance.UpdateGridNode(transform.position, true);
+            GridManager.Instance.UpdateGridNode(nextStep, false);
+        }
+
         this.nextStep = nextStep;
+    }
+    private void OnDestroy()
+    {
+        GridManager.Instance.UpdateGridNode(transform.position, true);
+
+        if (nextStep.x != -20)
+            GridManager.Instance.UpdateGridNode(nextStep, true);
     }
 }

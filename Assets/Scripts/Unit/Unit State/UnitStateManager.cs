@@ -5,7 +5,7 @@ using Spine.Unity;
 
 public class UnitStateManager : MonoBehaviour
 {
-    [SerializeField] private UnitBaseState currentState;
+    public UnitBaseState currentState;
 
     public UnitIdleState unitIdleState = new UnitIdleState();
     public UnitFindEnemyState unitFindEnemyState = new UnitFindEnemyState();
@@ -29,11 +29,17 @@ public class UnitStateManager : MonoBehaviour
 
     public void SwitchState(UnitBaseState newState)
     {
+        if (currentState == newState)
+            return;
+
         currentState = newState;
         currentState.StartState(this);
     }
     public void SetUnitAni(string name, bool loop, float timeScale = 1f)
     {
+        if (unitAni.AnimationName == name)
+            return;
+
         unitAni.state.SetAnimation(0, name, loop).TimeScale = timeScale;
 
     }

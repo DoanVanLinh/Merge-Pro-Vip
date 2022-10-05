@@ -43,7 +43,7 @@ public class ListUnitData : ScriptableObject
                 unit.bullet = bulletPrefab;
                 unit.skeletonData = UnitSkeletonDataManager.Instance.GetSkeletonData(unit.unitName);
 
-                if (unit.attackRange != 1)
+                if (unit.attackRange != 0.8f)
                 {
                     string shotLoc = _data[9];
                     unit.shotLoc = new Vector2(Helper.ParseFloat(shotLoc.Split(' ')[0]), Helper.ParseFloat(shotLoc.Split(' ')[1]));

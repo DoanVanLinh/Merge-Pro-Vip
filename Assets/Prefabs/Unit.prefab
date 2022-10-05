@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 2541223151683515329}
   - component: {fileID: 4317851762677683500}
   - component: {fileID: -2040311138886293924}
+  - component: {fileID: 2482149254474793644}
   m_Layer: 8
   m_Name: Unit
   m_TagString: Untagged
@@ -387,6 +388,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRender: {fileID: 2541223151683515329}
+--- !u!114 &2482149254474793644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3287371381198539277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3e9971409b50e42bd15d63b73c3865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canMove: 1
+  speed: 1
+  target: {fileID: 0}
+  targetNeighbor: {fileID: 0}
 --- !u!1 &3974471591134445565
 GameObject:
   m_ObjectHideFlags: 0

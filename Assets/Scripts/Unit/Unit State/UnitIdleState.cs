@@ -11,19 +11,24 @@ public class UnitIdleState : UnitBaseState
 
     public override void UpdateState(UnitStateManager unitStateManager)
     {
-        if (GameManager.Instance.isStart)//start Fight
+        if (GameManager.Instance.isStart && GameManager.Instance.GetFightStatus() == FightStatus.Null)//start Fight
         {
             Unit anyOtherUnit = GameManager.fields.Where(u => u.Value != null && !u.Value.gameObject.CompareTag(unitStateManager.tag)).Select(u => u.Value).FirstOrDefault();
 
-            Unit anyOtherTarget = GameManager.fields.Where(u => u.Value != null && !u.Value.gameObject.CompareTag(unitStateManager.tag) && u.Value.standPoints.Where(s => s.Value == null).Count() != 0).Select(u => u.Value).FirstOrDefault();
+            Unit anyOtherTarget = GameManager.fields.Where(u => u.Value != null && !u.Value.gameObject.CompareTag(unitStateManager.tag) && u.Value.movement.unitNode.Neighbors.Any(n => n.Walkable)).Select(u => u.Value).FirstOrDefault();
 
-            if (anyOtherUnit == null)
-                GameManager.Instance.SetFightStatus(unitStateManager.CompareTag(Helper.ENEMY_UNIT_TAG) ? FightStatus.Lose : FightStatus.Win);
-
-            if (anyOtherTarget != null)
+            if (anyOtherUnit == null)//No enemy 
             {
-                unitStateManager.unitController.SetDefaulLoc();
-                unitStateManager.SwitchState(unitStateManager.unitFindEnemyState);
+                GameManager.Instance.SetFightStatus(unitStateManager.CompareTag(Helper.ENEMY_UNIT_TAG) ? FightStatus.Lose : FightStatus.Win);
+            }
+            else
+            {
+
+                if (anyOtherTarget != null)//Start
+                {
+                    unitStateManager.unitController.SetDefaulLoc();
+                    unitStateManager.SwitchState(unitStateManager.unitFindEnemyState);
+                }
             }
         }
     }

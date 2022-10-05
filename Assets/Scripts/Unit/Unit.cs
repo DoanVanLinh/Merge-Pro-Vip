@@ -7,7 +7,8 @@ using System.Collections;
 
 public class Unit : MonoBehaviour
 {
-    public string test;
+    public AIMove movement;
+
     public string NameUnit { get; set; }
     public int AttackDame { get; set; }
     public int CurrentAttackDame { get; set; }
@@ -40,6 +41,7 @@ public class Unit : MonoBehaviour
         unitTypeImg = GetComponentsInChildren<UnitTypeImg>()[0];
         sortingLayerUnit = GetComponent<SortingLayer>();
         skeletonAni = GetComponent<SkeletonAnimation>();
+        movement = GetComponent<AIMove>();
         safeArea = 0.8f;
         defaultLoc = transform.position;
         sortingLayerUnit.Sorting();
@@ -56,7 +58,7 @@ public class Unit : MonoBehaviour
         this.Childs = new List<UnitData>();
         this.Childs = Data.childs;
         this.DelayDame = Data.delayDame;
-        if (AttackRange != 1)
+        if (AttackRange != 0.8f)
         {
             spriteBullet = Resources.LoadAll<Sprite>("Sprites/").Where(s => s.name == Data.unitName + " Bullet").FirstOrDefault();
         }
@@ -98,61 +100,69 @@ public class Unit : MonoBehaviour
     {
         if (target == null)
         {
+            movement.target = null;
+            movement.canMove = false;
             return false;
         }
 
-        float distanceToTaret = Vector2.Distance(transform.position,target.transform.position );
-        if (!target.standPoints.ContainsValue(this))
-        {
-            if (distanceToTaret < AttackRange)
+        UpdateTarget(target);
+
+        float distanceToTaret = Vector2.Distance(transform.position, target.transform.position);
+        //if (!target.standPoints.ContainsValue(this))
+        //{
+        //    if (distanceToTaret < AttackRange)
+        //    {
+        //        if (this.AttackRange == 1)
+        //        {
+
+        //            if (!target.standPoints.Any(s => s.Value == null))
+        //            {
+        //                return false;
+        //            }
+        //            slotMove = target.standPoints.Where(s => s.Value == null).OrderBy(o => Vector2.Distance(transform.position, (Vector2)target.transform.position + o.Key)).FirstOrDefault().Key;
+        //            target.standPoints[slotMove] = this;
+
+        //        }
+        //        else
+        //        {
+        //            slotMove = Vector2.zero;
+        //        }
+        //    }
+        //}
+        ////float distance = Vector2.Distance(transform.position, (Vector2)target.transform.position + Vector2.up * 0.5f);        
+        //float distance = Vector2.Distance(transform.position, (Vector2)target.transform.position + slotMove);
+
+        ////transform.localScale = new Vector2((target.transform.position - transform.position).normalized.x > 0 ? -1 : 1, 1);
+        //if ((target.transform.position - transform.position).normalized.x > 0)
+        //    transform.localScale = transform.GetChild(0).transform.localScale = new Vector2(-1, 1);
+        //else
+        //    transform.localScale = transform.GetChild(0).transform.localScale = new Vector2(1, 1);
+
+
+        if (!movement.Moving())
+            if (distanceToTaret <= AttackRange)
             {
-                if (this.AttackRange == 1)
-                {
-
-                    if (!target.standPoints.Any(s => s.Value == null))
-                    {
-                        return false;
-                    }
-                    slotMove = target.standPoints.Where(s => s.Value == null).OrderBy(o => Vector2.Distance(transform.position, (Vector2)target.transform.position + o.Key)).FirstOrDefault().Key;
-                    target.standPoints[slotMove] = this;
-
-                }
-                else
-                {
-                    slotMove = Vector2.zero;
-                }
+                movement.canMove = false;
+                movement.isWait = false;
+                return true;
             }
-        }
-        //float distance = Vector2.Distance(transform.position, (Vector2)target.transform.position + Vector2.up * 0.5f);        
-        float distance = Vector2.Distance(transform.position, (Vector2)target.transform.position + slotMove);
-
-        //transform.localScale = new Vector2((target.transform.position - transform.position).normalized.x > 0 ? -1 : 1, 1);
-        if ((target.transform.position - transform.position).normalized.x > 0)
-            transform.localScale = transform.GetChild(0).transform.localScale = new Vector2(-1, 1);
-        else
-            transform.localScale = transform.GetChild(0).transform.localScale = new Vector2(1, 1);
-
-        if (this.AttackRange == 1)
-        {
-            if (distance > 0)
+            else
             {
-                transform.position = Vector3.MoveTowards(transform.position, (Vector2)target.transform.position + slotMove, Time.deltaTime * 2f);
+                movement.canMove = true;
                 sortingLayerUnit.Sorting();
                 return false;
             }
-        }
         else
         {
-            if (distance > AttackRange)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, (Vector2)target.transform.position + slotMove, Time.deltaTime * 2f);
-                sortingLayerUnit.Sorting();
-                return false;
-            }
+            movement.canMove = true;
+            return false;
         }
-        return true;
     }
 
+    public void UpdateTarget(Unit target)
+    {
+        movement.target = GridManager.Instance.Tiles[new Vector2((float)Math.Round(target.transform.position.x * 2, MidpointRounding.AwayFromZero) / 2, (float)Math.Round(target.transform.position.y * 2, MidpointRounding.AwayFromZero) / 2)];
+    }
     //private float timerAttack;
     //private float timerDelayDame;
     public void Attack(Unit target, float timerAni)
@@ -162,18 +172,21 @@ public class Unit : MonoBehaviour
 
         float distance = Vector2.Distance(transform.position, (Vector2)target.transform.position + slotMove);
 
-        if (this.AttackRange == 1)
+        if (this.AttackRange == 0.8f)
         {
-            if (distance > 0)
+            if (distance > AttackRange)
             {
                 //if (unitStateManager.unitController.MoveToTarget(target))
+                UpdateTarget(target);
+                unitStateManager.unitAttackState.UnSubcribeEvent();
                 unitStateManager.SwitchState(unitStateManager.unitFindEnemyState);
+                return;
             }
         }
 
         Vector2 spawnPoint = new Vector2();
         int speedBullet = -1;
-        if (AttackRange == 1)
+        if (AttackRange == 0.8f)
         {
             spawnPoint = (Vector2)target.transform.position;
             speedBullet = 0;
@@ -183,8 +196,6 @@ public class Unit : MonoBehaviour
             spawnPoint = (Vector2)transform.position + new Vector2(pointShot.x * transform.localScale.x, pointShot.y);
         }
 
-        if (CurrentAttackDame == 4)
-            Debug.Log("zsf");
         float dame = CurrentAttackDame * GameManager.Instance.MultipleDame(Data.unitType, target.Data.unitType);
         Instantiate(Data.bullet, spawnPoint, Quaternion.identity, transform).GetComponent<UnitBullet>().SetDataBullet(target, (int)dame, speedBullet, spriteBullet);
 
@@ -247,11 +258,11 @@ public class Unit : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(pointShot, 0.1f);
 
-        Gizmos.color = Color.black;
-        foreach (var stand in standPoints)
-        {
-            Gizmos.DrawSphere((Vector2)transform.position + stand.Key, 0.1f);
-        }
+        //Gizmos.color = Color.black;
+        //foreach (var stand in standPoints)
+        //{
+        //    Gizmos.DrawSphere((Vector2)transform.position + stand.Key, 0.1f);
+        //}
     }
 #endif
 }
