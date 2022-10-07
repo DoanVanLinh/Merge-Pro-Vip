@@ -8,10 +8,6 @@ public class TestScript : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-            CPlayerPrefs.SetBool("Ancher", true);
-        if (Input.GetKeyDown(KeyCode.S))
-            CPlayerPrefs.SetBool("Aquaman", true);
     }
 }
 #endif

@@ -23,6 +23,9 @@ public class Dragable : MonoBehaviour
         if (GameManager.Instance.isStart)
             return;
 
+        if (Helper.IsOverUI())
+            return;
+
         isSelecting = true;
     }
     private void OnMouseDrag()

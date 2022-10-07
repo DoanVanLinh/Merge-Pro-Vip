@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using System.Linq;
 
 [Serializable]
 public class GameData
@@ -40,7 +41,15 @@ public class GameData
     public void NextLevel()
     {
         this.currentLevel += 1;
-        DataManager.Instance.CreateData();
+        State currentState = Resources.LoadAll<State>("States/").Where(s => s.id == this.currentState.ToString()).FirstOrDefault();
+        Level currentLevel = currentState.listLevel.Where(l => l.id == this.currentLevel.ToString()).FirstOrDefault();
+
+        if (currentLevel == null)
+            NextState();
+        else
+        {
+            DataManager.Instance.CreateData();
+        }
     }
     public void NextState()
     {

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a17851124ad794896d2266a16b93f1, type: 3}
+  m_Name: State 2
+  m_EditorClassIdentifier: 
+  nameState: State 2
+  id: 2
+  environmentSprite: {fileID: 21300000, guid: bda5f062957755246b2281d9c7929c05, type: 3}
+  environmentBackground: {fileID: 21300000, guid: 00b8dc7e8498117409295d7d897a7ec6, type: 3}
+  environmentColor: {r: 0.6784314, g: 0.36078432, b: 0.2627451, a: 1}
+  listLevel:
+  - {fileID: 11400000, guid: 9060ad727cd3d114c87416ec0612ff80, type: 2}
+  - {fileID: 11400000, guid: c1cdc32f72d67ab48826e40047e9acae, type: 2}
+  - {fileID: 11400000, guid: 4b739dff11df1a14593b4df5aeb6ccab, type: 2}
+  - {fileID: 11400000, guid: d35506933c240a84a92fcd0b41a6f908, type: 2}

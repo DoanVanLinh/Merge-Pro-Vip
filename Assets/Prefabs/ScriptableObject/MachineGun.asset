@@ -16,7 +16,7 @@ MonoBehaviour:
   unitType: 0
   unitPrefab: {fileID: 3287371381198539277, guid: b3d4f13cd0a6f904aa4b48bb51aee256, type: 3}
   bullet: {fileID: 3287371381198539277, guid: f0647208d567f2340875bdffd1c0381d, type: 3}
-  dame: 0
+  dame: 128
   hp: 640
   attackRange: 4
   attackRate: 0.8

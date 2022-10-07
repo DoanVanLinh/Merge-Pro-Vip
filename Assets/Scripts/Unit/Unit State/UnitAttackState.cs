@@ -15,10 +15,17 @@ public class UnitAttackState : UnitBaseState
         //    return;
         //}
 
+        
+
         target = unitStateManager.unitFindEnemyState.Target;
         unitStateManager.SetUnitAni(Helper.ATTACK_STATE_ANI, true, unitStateManager.unitController.CurrentAttackRate);
         unitStateManager.unitAni.state.Event += State_Event;
         this.unitStateManager = unitStateManager;
+
+        if ((unitStateManager.unitController.transform.position - target.transform.position).normalized.x < 0)
+            unitStateManager.unitController.transform.localScale = unitStateManager.unitController.transform.GetChild(0).transform.localScale = new Vector2(-1, 1);
+        else
+            unitStateManager.unitController.transform.localScale = unitStateManager.unitController.transform.GetChild(0).transform.localScale = new Vector2(1, 1);
     }
 
     private void State_Event(Spine.TrackEntry trackEntry, Spine.Event e)

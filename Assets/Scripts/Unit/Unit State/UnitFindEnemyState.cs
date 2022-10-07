@@ -30,6 +30,8 @@ public class UnitFindEnemyState : UnitBaseState
 
     public override void UpdateState(UnitStateManager unitStateManager)
     {
+        unitStateManager.unitController.sortingLayerUnit.Sorting();
+
         if (unitStateManager.unitController.movement.isWait)
         {
             unitStateManager.SwitchState(unitStateManager.unitIdleState);

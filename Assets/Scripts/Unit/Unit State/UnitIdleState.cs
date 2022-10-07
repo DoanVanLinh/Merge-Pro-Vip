@@ -7,6 +7,7 @@ public class UnitIdleState : UnitBaseState
     public override void StartState(UnitStateManager unitStateManager)
     {
         unitStateManager.SetUnitAni(Helper.IDLE_STATE_ANI, true);
+        unitStateManager.unitController.sortingLayerUnit.Sorting();
     }
 
     public override void UpdateState(UnitStateManager unitStateManager)
@@ -27,6 +28,7 @@ public class UnitIdleState : UnitBaseState
                 if (anyOtherTarget != null)//Start
                 {
                     unitStateManager.unitController.SetDefaulLoc();
+                    GridManager.Instance.UpdateGridNode(unitStateManager.unitController.transform.position, false);
                     unitStateManager.SwitchState(unitStateManager.unitFindEnemyState);
                 }
             }

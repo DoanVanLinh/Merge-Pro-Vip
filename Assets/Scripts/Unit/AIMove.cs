@@ -13,7 +13,7 @@ public class AIMove : MonoBehaviour
     public NodeBase cacheTarget;
     public NodeBase unitNode;
 
-    private Vector2 nextStep = new Vector2(-20, -20);
+    public Vector2 nextStep = new Vector2(-20, -20);
 
     public bool isWait;
 
@@ -22,13 +22,6 @@ public class AIMove : MonoBehaviour
         isWait = false;
         nextStep = new Vector2(-20, -20);
         unitNode = GridManager.Instance.Tiles.Where(t => t.Key == (Vector2)transform.position).First().Value;
-        GridManager.Instance.UpdateGridNode(transform.position, false);
-        //SetNextStep(NextLoc());
-    }
-    private void Start()
-    {
-        GridManager.Instance.UpdateGridNode(transform.position, false);
-        //SetNextStep(NextLoc());
     }
     private void Update()
     {
@@ -79,6 +72,10 @@ public class AIMove : MonoBehaviour
         if (targetNeighbor == null)
             if (target.Neighbors.Any(n => n.Walkable))
                 targetNeighbor = target.Neighbors.Where(n => n.Walkable).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
+            else
+            {
+                return transform.position;
+            }
 
         if (!targetNeighbor.Walkable)
         {
@@ -110,7 +107,7 @@ public class AIMove : MonoBehaviour
         //    targetNeighbor = target.Neighbors.Where(n => n.Walkable).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
 
 
-        unitNode = GridManager.Instance.Tiles.Where(t => t.Key == (Vector2)transform.position).First().Value;
+        unitNode = GridManager.Instance.Tiles.Where(t => t.Key == new Vector2((int)transform.position.x, (int)transform.position.y)).First().Value;
 
         var path = Pathfinding.FindPath(unitNode, targetNeighbor);
         if (path == null || path.Count == 0)
@@ -146,15 +143,17 @@ public class AIMove : MonoBehaviour
 
         if (nextStep != (Vector2)transform.position)
         {
-            GridManager.Instance.UpdateGridNode(transform.position, true);
+            GridManager.Instance.UpdateGridNode(new Vector2((int)transform.position.x, (int)transform.position.y), true);
             GridManager.Instance.UpdateGridNode(nextStep, false);
         }
 
         this.nextStep = nextStep;
     }
+
+
     private void OnDestroy()
     {
-        GridManager.Instance.UpdateGridNode(transform.position, true);
+
 
         if (nextStep.x != -20)
             GridManager.Instance.UpdateGridNode(nextStep, true);

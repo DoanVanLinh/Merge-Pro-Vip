@@ -12,6 +12,8 @@ public class UnitLibaryManager : MonoBehaviour
     public GameObject libaryElement;
     private List<LibaryElement> listElements = new List<LibaryElement>();
     public Button btnClose;
+    public Animator panelAni;
+
     private void OnEnable()
     {
         btnClose.onClick.AddListener(ClosePanel);
@@ -22,8 +24,7 @@ public class UnitLibaryManager : MonoBehaviour
     {
         if (content.childCount == 0)
         {
-            List<UnitData> listUnitdata = GameManager.Instance.GetDataMerge().listUnits;
-            listUnitdata.Reverse();
+            List<UnitData> listUnitdata = new List<UnitData>(GameManager.Instance.GetDataMerge().listUnits);
             foreach (UnitData unitData in listUnitdata)
             {
                 LibaryElement element = Instantiate(libaryElement, Vector2.zero, Quaternion.identity, content).GetComponent<LibaryElement>();
@@ -39,10 +40,15 @@ public class UnitLibaryManager : MonoBehaviour
             }
         }
     }
+    public void SetActivePanelOff()
+    {
+        gameObject.SetActive(false);
+        UIManager.Instance.mainMenuPanel.gameObject.SetActive(true);
+    }
     public void ClosePanel()
     {
         SoundManager.Instance.PlaySoundButtonClick();
-        gameObject.SetActive(false);
+        panelAni.Play("Off");
     }
     private void OnDisable()
     {

@@ -28,6 +28,13 @@ public class MergeController : MonoBehaviour
         //unitClone.GetComponent<UnitInfo>().data = child;
         Unit newPlayerUnit = new PlayerUnit(child, otherUnit.transform.position);
 
+        if (!CPlayerPrefs.HasKey(child.unitName))
+        {
+            UIManager.Instance.newUnitPanel.LoadData(child);
+            UIManager.Instance.newUnitPanel.gameObject.SetActive(true);
+            CPlayerPrefs.SetBool(child.unitName, true);
+        }
+
         Destroy(gameObject);
         Destroy(otherUnit.gameObject);
 
@@ -36,15 +43,15 @@ public class MergeController : MonoBehaviour
 
     public bool Split()
     {
-        if (GameManager.fields.Where(u => u.Value == null).Count()<1)
+        if (GameManager.fields.Where(u => u.Value == null).Count() < 1)
             return false;
 
         UnitData[] parentUnit = GameManager.Instance.GetDataMerge().listUnits.Where(u => u.childs.Contains(unitInfo.Data)).ToArray();
         if (parentUnit.Length == 0)
             return false;
 
-        GameManager.Instance.DeleteUnitInField(unitInfo.GetDefaulLoc());
         Destroy(gameObject);
+        GameManager.Instance.DeleteUnitInField(unitInfo.GetDefaulLoc());
 
         Vector2 loc = GameManager.fields.Where(u => u.Value == null).First().Key;
 

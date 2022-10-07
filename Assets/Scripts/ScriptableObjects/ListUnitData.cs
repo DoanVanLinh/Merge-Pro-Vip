@@ -43,7 +43,7 @@ public class ListUnitData : ScriptableObject
                 unit.bullet = bulletPrefab;
                 unit.skeletonData = UnitSkeletonDataManager.Instance.GetSkeletonData(unit.unitName);
 
-                if (unit.attackRange != 0.8f)
+                if (unit.attackRange != 1.5f)
                 {
                     string shotLoc = _data[9];
                     unit.shotLoc = new Vector2(Helper.ParseFloat(shotLoc.Split(' ')[0]), Helper.ParseFloat(shotLoc.Split(' ')[1]));
@@ -72,6 +72,7 @@ public class ListUnitData : ScriptableObject
                 dataMerges.Add(new DataMerge(_data[0], int.Parse(_data[5]), int.Parse(_data[6])));
             }
 
+            listUnits.Reverse();
             //Merge Data
             //foreach (DataMerge dataMerge in dataMerges)
             //{

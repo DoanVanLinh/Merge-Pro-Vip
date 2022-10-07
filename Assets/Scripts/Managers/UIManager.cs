@@ -27,4 +27,9 @@ public class UIManager : MonoBehaviour
     public MainMenuPanel mainMenuPanel;
     public YouWinPanel youWinPanel;
     public YouLosePanel youLosePanel;
+    public UnitLibaryManager libaryPanel;
+    public NewUnitPanel newUnitPanel;
+    public SettingPanel settingPanel;
+    public RatePanel ratePanel;
+    public StatePanel satePanel;
 }

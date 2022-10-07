@@ -7,5 +7,8 @@ public class State : ScriptableObject
 {
     public string nameState;
     public string id;
+    public Sprite environmentSprite;
+    public Sprite environmentBackground;
+    public Color environmentColor;
     public List<Level> listLevel;
 }

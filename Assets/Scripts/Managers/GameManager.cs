@@ -36,16 +36,21 @@ public class GameManager : MonoBehaviour
     public ListTypes dataType;
     public GameObject playerZone;
     public bool isStart;
+    public int coinsEachLevel;
 
     public bool isOnDeleteField;
     public bool isOnUndoField;
 
     private FightStatus fightStatus = FightStatus.Null;
+
     private Sprite[] iconType;
+
+    public bool IsPause { get; set; }
     private void Start()
     {
         iconType = Resources.LoadAll<Sprite>("IconType");
         LoadCurrentTeam();
+        UIManager.Instance.satePanel.UpdateStatePanel();
     }
     [Button("Spawn Player Unit")]
     public void SpawnPlayerUnit(string index)
@@ -60,6 +65,8 @@ public class GameManager : MonoBehaviour
         float random = Random.Range(-1f, 1f);
 
         UnitData unitData = GetDataMerge().listUnits[indexUnit[Random.Range(0, indexUnit.Length)]];
+
+        CPlayerPrefs.SetBool(unitData.unitName, true);
         Vector2 loc = fields.Where(f => f.Value == null).Select(f => f.Key).OrderBy(o => random).FirstOrDefault();
 
         new PlayerUnit(unitData, loc);
@@ -176,7 +183,7 @@ public class GameManager : MonoBehaviour
                 DataManager.Instance.GetDataGame().NextLevel();
             }
             else
-                UIManager.Instance.youLosePanel.gameObject.SetActive(true);
+                UIManager.Instance.youWinPanel.gameObject.SetActive(true);
         }
     }
     public ListUnitData GetDataMerge()

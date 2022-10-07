@@ -30,7 +30,7 @@ public class Unit : MonoBehaviour
     private HealthBar healthBar;
     private UnitTypeImg unitTypeImg;
     public Dictionary<Vector2, Unit> standPoints;
-    private SortingLayer sortingLayerUnit;
+    public SortingLayer sortingLayerUnit;
     private Sprite spriteBullet;
     private void Start()
     {
@@ -58,7 +58,7 @@ public class Unit : MonoBehaviour
         this.Childs = new List<UnitData>();
         this.Childs = Data.childs;
         this.DelayDame = Data.delayDame;
-        if (AttackRange != 0.8f)
+        if (AttackRange != 1.5f)
         {
             spriteBullet = Resources.LoadAll<Sprite>("Sprites/").Where(s => s.name == Data.unitName + " Bullet").FirstOrDefault();
         }
@@ -132,11 +132,11 @@ public class Unit : MonoBehaviour
         ////float distance = Vector2.Distance(transform.position, (Vector2)target.transform.position + Vector2.up * 0.5f);        
         //float distance = Vector2.Distance(transform.position, (Vector2)target.transform.position + slotMove);
 
-        ////transform.localScale = new Vector2((target.transform.position - transform.position).normalized.x > 0 ? -1 : 1, 1);
-        //if ((target.transform.position - transform.position).normalized.x > 0)
-        //    transform.localScale = transform.GetChild(0).transform.localScale = new Vector2(-1, 1);
-        //else
-        //    transform.localScale = transform.GetChild(0).transform.localScale = new Vector2(1, 1);
+        //transform.localScale = new Vector2((target.transform.position - transform.position).normalized.x > 0 ? -1 : 1, 1);
+        if (((Vector2)movement.unitNode.transform.position - movement.nextStep).normalized.x < 0)
+            transform.localScale = transform.GetChild(0).transform.localScale = new Vector2(-1, 1);
+        else
+            transform.localScale = transform.GetChild(0).transform.localScale = new Vector2(1, 1);
 
 
         if (!movement.Moving())
@@ -161,7 +161,10 @@ public class Unit : MonoBehaviour
 
     public void UpdateTarget(Unit target)
     {
-        movement.target = GridManager.Instance.Tiles[new Vector2((float)Math.Round(target.transform.position.x * 2, MidpointRounding.AwayFromZero) / 2, (float)Math.Round(target.transform.position.y * 2, MidpointRounding.AwayFromZero) / 2)];
+        if (GridManager.Instance.size < 1)
+            movement.target = GridManager.Instance.Tiles[new Vector2((float)Math.Round(target.transform.position.x * 2, MidpointRounding.AwayFromZero) / 2, (float)Math.Round(target.transform.position.y * 2, MidpointRounding.AwayFromZero) / 2)];
+        else
+            movement.target = GridManager.Instance.Tiles[new Vector2Int((int)target.transform.position.x, (int)target.transform.position.y)];
     }
     //private float timerAttack;
     //private float timerDelayDame;
@@ -172,7 +175,7 @@ public class Unit : MonoBehaviour
 
         float distance = Vector2.Distance(transform.position, (Vector2)target.transform.position + slotMove);
 
-        if (this.AttackRange == 0.8f)
+        if (this.AttackRange == 1.5f)
         {
             if (distance > AttackRange)
             {
@@ -186,7 +189,7 @@ public class Unit : MonoBehaviour
 
         Vector2 spawnPoint = new Vector2();
         int speedBullet = -1;
-        if (AttackRange == 0.8f)
+        if (AttackRange == 1.5f)
         {
             spawnPoint = (Vector2)target.transform.position;
             speedBullet = 0;
@@ -244,6 +247,7 @@ public class Unit : MonoBehaviour
         if (unitInField == this)
         {
             GameManager.fields[defaultLoc] = null;
+            GridManager.Instance.UpdateGridNode(defaultLoc, true);
         }
     }
 #if UNITY_EDITOR

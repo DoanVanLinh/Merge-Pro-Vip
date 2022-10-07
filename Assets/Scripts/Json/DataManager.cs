@@ -60,6 +60,8 @@ public class DataManager : MonoBehaviour
     [Button("Delete Data")]
     void DeleteFileDataJson()
     {
+        CPlayerPrefs.DeleteAll();
+
         string _path = Application.persistentDataPath + "/" + fileName;
         if (File.Exists(_path))
             File.Delete(_path);
