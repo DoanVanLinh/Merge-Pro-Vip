@@ -7,7 +7,9 @@ public class AIMove : MonoBehaviour
 {
     public bool canMove;
     public float speed;
+    public bool isJump;
 
+    public AnimationCurve moveCurve;
     public NodeBase target;
     public NodeBase targetNeighbor;
     public NodeBase cacheTarget;
@@ -17,6 +19,7 @@ public class AIMove : MonoBehaviour
 
     public bool isWait;
 
+    private Vector2 jumpLoc;
     private void OnEnable()
     {
         isWait = false;
@@ -39,13 +42,25 @@ public class AIMove : MonoBehaviour
         if (!canMove)
             return false;
 
-
         if (nextStep.x == -20)
+        {
+            jumpLoc = transform.position;
             SetNextStep(NextLoc());
+        }
 
         if (Vector2.Distance(transform.position, nextStep) != 0)
         {
-            transform.position = Vector3.MoveTowards(transform.position, nextStep, Time.deltaTime * speed);
+            //transform.position = Vector3.MoveTowards(transform.position, nextStep, Time.deltaTime * speed);
+            if (!isJump)
+                transform.position = Vector3.MoveTowards(transform.position, nextStep, Time.deltaTime * speed);
+            else
+            {
+                jumpLoc = Vector2.MoveTowards(jumpLoc, nextStep, Time.deltaTime * speed);
+                if (nextStep.x != jumpLoc.x)
+                    transform.position = new Vector2(jumpLoc.x, moveCurve.Evaluate(jumpLoc.x) + jumpLoc.y);
+                else
+                    transform.position = new Vector2(jumpLoc.x, moveCurve.Evaluate(jumpLoc.y) + jumpLoc.y);
+            }
             return true;
         }
         else
@@ -124,7 +139,6 @@ public class AIMove : MonoBehaviour
             return path.Last().transform.position;
         }
     }
-
     public bool IsNeighborOfTarget()
     {
         if (target != cacheTarget)
@@ -150,11 +164,8 @@ public class AIMove : MonoBehaviour
         this.nextStep = nextStep;
     }
 
-
     private void OnDestroy()
     {
-
-
         if (nextStep.x != -20)
             GridManager.Instance.UpdateGridNode(nextStep, true);
     }

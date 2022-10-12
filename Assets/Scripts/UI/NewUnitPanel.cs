@@ -37,6 +37,6 @@ public class NewUnitPanel : MonoBehaviour
         this.unitData = unitData;
         txtName.text = unitData.unitName;
         txtHP.text = unitData.hp.ToString();
-        txtATK.text = unitData.dame.ToString();
+        txtATK.text = unitData.damage.ToString();
     }
 }

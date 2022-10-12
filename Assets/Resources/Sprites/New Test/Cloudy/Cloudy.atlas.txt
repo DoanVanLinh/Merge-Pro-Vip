@@ -1,0 +1,62 @@
+
+Cloudy.png
+size: 1448,320
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 672, 107
+  size: 312, 211
+  orig: 312, 211
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 0, 0
+  size: 336, 318
+  orig: 336, 318
+  offset: 0, 0
+  index: -1
+Head1
+  rotate: false
+  xy: 337, 2
+  size: 334, 316
+  orig: 334, 316
+  offset: 0, 0
+  index: -1
+Leg_L_A
+  rotate: false
+  xy: 1192, 139
+  size: 127, 179
+  orig: 127, 179
+  offset: 0, 0
+  index: -1
+Leg_L_B
+  rotate: false
+  xy: 1320, 39
+  size: 70, 100
+  orig: 70, 100
+  offset: 0, 0
+  index: -1
+Leg_R_A
+  rotate: false
+  xy: 1320, 140
+  size: 128, 178
+  orig: 128, 178
+  offset: 0, 0
+  index: -1
+Tail
+  rotate: false
+  xy: 985, 113
+  size: 206, 205
+  orig: 206, 205
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: false
+  xy: 985, 4
+  size: 288, 108
+  orig: 288, 108
+  offset: 0, 0
+  index: -1

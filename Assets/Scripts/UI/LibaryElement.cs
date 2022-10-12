@@ -29,7 +29,7 @@ public class LibaryElement : MonoBehaviour
             skeletonGraphic.color = Color.white;
             txtName.text = unitData.unitName;
             txtHP.text = unitData.hp.ToString();
-            txtATK.text = unitData.dame.ToString();
+            txtATK.text = unitData.damage.ToString();
         }
     }
 }

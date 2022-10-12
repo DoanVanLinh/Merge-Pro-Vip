@@ -51,13 +51,12 @@ public class Unit : MonoBehaviour
     public void LoadData()
     {
         this.NameUnit = gameObject.name = Data.unitName;
-        this.AttackDame = this.CurrentAttackDame = Data.dame;
+        this.AttackDame = this.CurrentAttackDame = Data.damage;
         this.Hp = this.CurrentHp = Data.hp;
         this.AttackRange = Data.attackRange;
-        this.AttackRate = CurrentAttackRate = Data.attackRate;
+        this.AttackRate = CurrentAttackRate = Data.attackSpeed;
         this.Childs = new List<UnitData>();
         this.Childs = Data.childs;
-        this.DelayDame = Data.delayDame;
         if (AttackRange != 1.5f)
         {
             spriteBullet = Resources.LoadAll<Sprite>("Sprites/").Where(s => s.name == Data.unitName + " Bullet").FirstOrDefault();
@@ -68,6 +67,8 @@ public class Unit : MonoBehaviour
         skeletonAni.Initialize(true);
         gameObject.AddComponent<BoxCollider2D>();
         GetComponentInChildren<UnitTier>().SetHealthBarLoc();
+        movement.isJump = Data.isJump;
+        movement.speed = Data.moveSpeed;
 
         unitStateManager = gameObject.AddComponent<UnitStateManager>();
         unitStateManager.unitController = this;

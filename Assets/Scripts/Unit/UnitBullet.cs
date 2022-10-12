@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using WE.Unit;
 
 public class UnitBullet : MonoBehaviour
 {
@@ -48,5 +49,15 @@ public class UnitBullet : MonoBehaviour
 
         if (bullet != null)
             spriteBullet.sprite = bullet;
+    }
+    public void SetDataBullet(BaseUnit target,BaseUnit source, float dame, float speed = -1, Sprite bullet = null)
+    {
+        //this.baseTarget = target;
+        //this.speed = speed == -1 ? this.speed : speed;
+        //this.dame = dame;
+        //this.source = source;
+
+        //if (bullet != null)
+        //    spriteBullet.sprite = bullet;
     }
 }

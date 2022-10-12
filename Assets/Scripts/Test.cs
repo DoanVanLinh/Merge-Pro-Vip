@@ -6,11 +6,26 @@ using Spine.Unity;
 
 public class Test : MonoBehaviour
 {
-    public int coins;
+    public AnimationCurve moveCurve;
 
-    void Update()
+    public GameObject unit;
+    public GameObject unitTarget;
+    public GameObject unit2;
+    public float speed;
+
+    Vector2 jumpLoc;
+
+    private void Start()
     {
-        Debug.Log(Helper.ConvertCoins(coins));
+        jumpLoc = unit2.transform.position;
+    }
+    private void Update()
+    {
+        //jumpLoc = Vector2.MoveTowards(jumpLoc, unitTarget.transform.position, Time.deltaTime * speed);
+        //if(unitTarget.transform.position.x !=jumpLoc.x)
+        //    unit2.transform.position = new Vector2(jumpLoc.x, moveCurve.Evaluate(jumpLoc.x)+ jumpLoc.y);
+        //else
+        //    unit2.transform.position = new Vector2(jumpLoc.x, moveCurve.Evaluate(jumpLoc.y) + jumpLoc.y);
     }
 }
 #endif

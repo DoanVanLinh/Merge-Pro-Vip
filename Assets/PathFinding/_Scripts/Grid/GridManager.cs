@@ -21,11 +21,9 @@ public class GridManager : MonoBehaviour
     private NodeBase _playerNodeBase;
     private Unit2 _spawnedPlayer, _spawnedGoal;
 
-    void Awake() => Instance = this;
-
-
-    private void Start()
+    private void Awake()
     {
+        Instance = this;
         Tiles = _scriptableGrid.GenerateGrid();
 
         foreach (var tile in Tiles.Values) tile.CacheNeighbors();

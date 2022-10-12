@@ -1,0 +1,76 @@
+
+Layer 1016.png
+size: 1972,832
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 618, 343
+  size: 713, 489
+  orig: 713, 489
+  offset: 0, 0
+  index: -1
+Close mouth
+  rotate: false
+  xy: 1541, 659
+  size: 430, 173
+  orig: 430, 173
+  offset: 0, 0
+  index: -1
+Ear_R
+  rotate: false
+  xy: 1585, 286
+  size: 354, 372
+  orig: 354, 372
+  offset: 0, 0
+  index: -1
+Hand_L
+  rotate: false
+  xy: 580, 64
+  size: 163, 241
+  orig: 163, 241
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 0, 306
+  size: 617, 526
+  orig: 617, 526
+  offset: 0, 0
+  index: -1
+Leg_L
+  rotate: false
+  xy: 1332, 472
+  size: 252, 186
+  orig: 252, 186
+  offset: 0, 0
+  index: -1
+Leg_R
+  rotate: false
+  xy: 1541, 99
+  size: 252, 186
+  orig: 252, 186
+  offset: 0, 0
+  index: -1
+Open mouth
+  rotate: false
+  xy: 1092, 4
+  size: 448, 338
+  orig: 448, 338
+  offset: 0, 0
+  index: -1
+Tongle
+  rotate: false
+  xy: 0, 10
+  size: 579, 295
+  orig: 579, 295
+  offset: 0, 0
+  index: -1
+ear_L
+  rotate: false
+  xy: 744, 0
+  size: 347, 342
+  orig: 347, 342
+  offset: 0, 0
+  index: -1

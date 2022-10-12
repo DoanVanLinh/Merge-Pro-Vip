@@ -32,13 +32,15 @@ public class ListUnitData : ScriptableObject
 
                 unit.unitName = _data[0];
                 unit.unitType = Helper.StringToEnum<NameTypeUnit>(_data[8]);
-                unit.dame = int.Parse(_data[1]);
+                unit.damage = int.Parse(_data[1]);
                 unit.hp = int.Parse(_data[2]);
                 unit.attackRange = Helper.ParseFloat(_data[3]);
-                unit.attackRate = Helper.ParseFloat(_data[4]);
+                unit.attackSpeed = Helper.ParseFloat(_data[4]);
                 unit.tier = int.Parse(_data[5]);
                 unit.id = int.Parse(_data[6]);
                 unit.colorTier = _data[7];
+                unit.isJump = int.Parse(_data[10]) == 1;
+                unit.moveSpeed = int.Parse(_data[11]);
                 unit.unitPrefab = unitPrefab;
                 unit.bullet = bulletPrefab;
                 unit.skeletonData = UnitSkeletonDataManager.Instance.GetSkeletonData(unit.unitName);

@@ -26,7 +26,9 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
+    [ShowInInspector]
     public static Dictionary<Vector2, Unit> fields;
+    [ShowInInspector]
     public static Dictionary<Vector2, Unit> fieldEnemy;
 
     public int row;
@@ -51,6 +53,8 @@ public class GameManager : MonoBehaviour
         iconType = Resources.LoadAll<Sprite>("IconType");
         LoadCurrentTeam();
         UIManager.Instance.satePanel.UpdateStatePanel();
+
+        fieldEnemy = new Dictionary<Vector2, Unit>(fields);
     }
     [Button("Spawn Player Unit")]
     public void SpawnPlayerUnit(string index)

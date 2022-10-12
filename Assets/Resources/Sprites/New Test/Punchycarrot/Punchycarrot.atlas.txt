@@ -1,0 +1,90 @@
+
+Punchycarrot.png
+size: 1332,348
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L_ears
+  rotate: false
+  xy: 793, 5
+  size: 197, 137
+  orig: 197, 137
+  offset: 0, 0
+  index: -1
+L_foot
+  rotate: false
+  xy: 1187, 39
+  size: 87, 125
+  orig: 87, 125
+  offset: 0, 0
+  index: -1
+L_hand
+  rotate: false
+  xy: 991, 14
+  size: 97, 128
+  orig: 97, 128
+  offset: 0, 0
+  index: -1
+R_ears
+  rotate: false
+  xy: 659, 115
+  size: 133, 233
+  orig: 133, 233
+  offset: 0, 0
+  index: -1
+R_foot
+  rotate: false
+  xy: 499, 1
+  size: 114, 106
+  orig: 114, 106
+  offset: 0, 0
+  index: -1
+R_hand
+  rotate: false
+  xy: 1089, 14
+  size: 97, 128
+  orig: 97, 128
+  offset: 0, 0
+  index: -1
+R_hand 2
+  rotate: false
+  xy: 614, 5
+  size: 172, 102
+  orig: 172, 102
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 793, 143
+  size: 305, 205
+  orig: 305, 205
+  offset: 0, 0
+  index: -1
+chieng_1
+  rotate: false
+  xy: 327, 90
+  size: 171, 258
+  orig: 171, 258
+  offset: 0, 0
+  index: -1
+chieng_2
+  rotate: false
+  xy: 499, 108
+  size: 159, 240
+  orig: 159, 240
+  offset: 0, 0
+  index: -1
+head1
+  rotate: false
+  xy: 0, 0
+  size: 326, 348
+  orig: 326, 348
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: false
+  xy: 1099, 165
+  size: 233, 183
+  orig: 233, 183
+  offset: 0, 0
+  index: -1

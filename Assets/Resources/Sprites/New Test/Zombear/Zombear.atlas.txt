@@ -1,0 +1,69 @@
+
+Zombear.png
+size: 1532,916
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Back_body
+  rotate: false
+  xy: 0, 0
+  size: 658, 378
+  orig: 658, 378
+  offset: 0, 0
+  index: -1
+Body
+  rotate: false
+  xy: 873, 249
+  size: 659, 667
+  orig: 659, 667
+  offset: 0, 0
+  index: -1
+Dot_eyes
+  rotate: false
+  xy: 659, 76
+  size: 133, 58
+  orig: 133, 58
+  offset: 0, 0
+  index: -1
+Hand_L
+  rotate: false
+  xy: 659, 135
+  size: 136, 243
+  orig: 136, 243
+  offset: 0, 0
+  index: -1
+Hand_R
+  rotate: false
+  xy: 1328, 27
+  size: 108, 221
+  orig: 108, 221
+  offset: 0, 0
+  index: -1
+Leg_R
+  rotate: false
+  xy: 1212, 3
+  size: 115, 245
+  orig: 115, 245
+  offset: 0, 0
+  index: -1
+eye2
+  rotate: false
+  xy: 796, 107
+  size: 220, 141
+  orig: 220, 141
+  offset: 0, 0
+  index: -1
+eyes
+  rotate: false
+  xy: 1017, 128
+  size: 194, 120
+  orig: 194, 120
+  offset: 0, 0
+  index: -1
+worm_boy
+  rotate: false
+  xy: 0, 379
+  size: 872, 537
+  orig: 872, 537
+  offset: 0, 0
+  index: -1

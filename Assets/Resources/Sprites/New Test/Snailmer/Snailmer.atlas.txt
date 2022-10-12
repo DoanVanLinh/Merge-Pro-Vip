@@ -1,0 +1,111 @@
+
+Snailmer.png
+size: 1420,812
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 0, 0
+  size: 360, 809
+  orig: 360, 809
+  offset: 0, 0
+  index: -1
+Energy01
+  rotate: false
+  xy: 1167, 523
+  size: 189, 140
+  orig: 189, 140
+  offset: 0, 0
+  index: -1
+Energy02
+  rotate: false
+  xy: 623, 26
+  size: 301, 155
+  orig: 301, 155
+  offset: 0, 0
+  index: -1
+Energy03
+  rotate: false
+  xy: 1036, 182
+  size: 378, 162
+  orig: 378, 162
+  offset: 0, 0
+  index: -1
+Energy04
+  rotate: false
+  xy: 1028, 345
+  size: 391, 163
+  orig: 391, 163
+  offset: 0, 0
+  index: -1
+Energy05
+  rotate: false
+  xy: 623, 345
+  size: 404, 163
+  orig: 404, 163
+  offset: 0, 0
+  index: -1
+Energy06
+  rotate: false
+  xy: 623, 182
+  size: 412, 162
+  orig: 412, 162
+  offset: 0, 0
+  index: -1
+Energy07
+  rotate: false
+  xy: 749, 655
+  size: 417, 154
+  orig: 417, 154
+  offset: 0, 0
+  index: -1
+Energy08
+  rotate: false
+  xy: 749, 509
+  size: 415, 145
+  orig: 415, 145
+  offset: 0, 0
+  index: -1
+Energy09
+  rotate: false
+  xy: 925, 52
+  size: 398, 129
+  orig: 398, 129
+  offset: 0, 0
+  index: -1
+Eyes
+  rotate: false
+  xy: 1167, 664
+  size: 244, 145
+  orig: 244, 145
+  offset: 0, 0
+  index: -1
+Leg_L
+  rotate: false
+  xy: 361, 263
+  size: 261, 235
+  orig: 261, 235
+  offset: 0, 0
+  index: -1
+Leg_R
+  rotate: false
+  xy: 361, 27
+  size: 261, 235
+  orig: 261, 235
+  offset: 0, 0
+  index: -1
+Mouth
+  rotate: false
+  xy: 543, 580
+  size: 205, 229
+  orig: 205, 229
+  offset: 0, 0
+  index: -1
+Tail
+  rotate: false
+  xy: 361, 499
+  size: 181, 310
+  orig: 181, 310
+  offset: 0, 0
+  index: -1

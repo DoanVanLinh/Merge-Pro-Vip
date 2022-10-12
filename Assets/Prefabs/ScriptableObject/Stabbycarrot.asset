@@ -16,17 +16,20 @@ MonoBehaviour:
   unitType: 0
   unitPrefab: {fileID: 3287371381198539277, guid: b3d4f13cd0a6f904aa4b48bb51aee256, type: 3}
   bullet: {fileID: 3287371381198539277, guid: f0647208d567f2340875bdffd1c0381d, type: 3}
-  dame: 40
   hp: 200
+  mp: 0
+  damage: 1
+  attackSpeed: 1
   attackRange: 1.5
-  attackRate: 1
-  delayDame: 0
-  tier: 3
+  moveSpeed: 1
+  manaRegen: 0
   colorTier: FFFF00
+  tier: 3
   id: 1
   level: 0
+  isJump: 0
   shotLoc: {x: 0, y: 0}
   skeletonData: {fileID: 11400000, guid: 24d394e540bd66d40bf595713bc2eb46, type: 2}
   childs:
-  - {fileID: 11400000, guid: a36a53898bf0ceb489978f324bae17d7, type: 2}
-  - {fileID: 11400000, guid: 1ed181709fdaa524ca359906d4f7f618, type: 2}
+  - {fileID: 11400000, guid: 92c20ebb7f0ef5c418163fc9644f7f4c, type: 2}
+  - {fileID: 11400000, guid: 449177948dc7db842bc3769b43972079, type: 2}
