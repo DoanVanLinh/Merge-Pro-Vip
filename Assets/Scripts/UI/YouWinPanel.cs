@@ -30,13 +30,15 @@ public class YouWinPanel : MonoBehaviour
         //Ads
         SoundManager.Instance.Play(Helper.SOUND_BUTTON_CLICK);
         arrowWheel.isRotate = false;
+        DataManager.Instance.GetDataGame().AddCoins(GameManager.Instance.coinsEachLevel + arrowWheel.extra);
+        UIManager.Instance.coinsPanel.UpdateTextCoins();
         coinsCollectAniClaim.CollectAnimationButton(delegate { panelAni.Play("Off"); UIManager.Instance.satePanel.UpdateStatePanel(); });
-
     }
     void NoThankButton()
     {
         SoundManager.Instance.Play(Helper.SOUND_BUTTON_CLICK);
-        
+        DataManager.Instance.GetDataGame().AddCoins(GameManager.Instance.coinsEachLevel);
+        UIManager.Instance.coinsPanel.UpdateTextCoins();
         coinsCollectAniNoThank.CollectAnimationButton(delegate { panelAni.Play("Off"); UIManager.Instance.satePanel.UpdateStatePanel(); });
     }
 

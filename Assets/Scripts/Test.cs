@@ -3,29 +3,73 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
+using System;
+using Sirenix.OdinInspector;
 
 public class Test : MonoBehaviour
 {
-    public AnimationCurve moveCurve;
+    public Test1 target;
 
-    public GameObject unit;
-    public GameObject unitTarget;
-    public GameObject unit2;
-    public float speed;
-
-    Vector2 jumpLoc;
+    [Button("Excute")]
+    public void Excute()
+    {
+        Test2.Excute();
+    }
 
     private void Start()
     {
-        jumpLoc = unit2.transform.position;
+        //target.OnDie += OnDie;
+        StartCoroutine(IEMove("Moving 1"));
     }
-    private void Update()
+
+    private void OnDie()
     {
-        //jumpLoc = Vector2.MoveTowards(jumpLoc, unitTarget.transform.position, Time.deltaTime * speed);
-        //if(unitTarget.transform.position.x !=jumpLoc.x)
-        //    unit2.transform.position = new Vector2(jumpLoc.x, moveCurve.Evaluate(jumpLoc.x)+ jumpLoc.y);
-        //else
-        //    unit2.transform.position = new Vector2(jumpLoc.x, moveCurve.Evaluate(jumpLoc.y) + jumpLoc.y);
+        //target.OnDie -= OnDie;
+        //StopAllCoroutines();
+        //StartCoroutine(IEMove("Moving 2"));
+    }
+
+    IEnumerator IEMove(string text)
+    {
+        //yield return null;
+        while (true)
+        {
+            yield return null;
+            while (true)
+            {
+                yield return null;
+                if (Input.GetKeyDown(KeyCode.P))
+                    break;
+            }
+            Debug.Log(Time.deltaTime);
+            //if (TestMove(text))
+            //{
+            //    StartCoroutine(IEAttack(text + " Attack 1"));
+            //    yield break;
+            //}
+        }
+    }
+
+    IEnumerator IEAttack(string text)
+    {
+        //yield return null;
+        while (true)
+        {
+            yield return null;
+            if (target != null)
+            {
+                Debug.Log(text);
+            }
+            else
+                yield break;
+        }
+    }
+    bool TestMove(string text)
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+            return true;
+        Debug.Log(text);
+        return false;
     }
 }
 #endif

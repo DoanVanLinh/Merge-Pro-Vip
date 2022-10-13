@@ -10,24 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ac2ced164c91d440b45bac2565a18f3, type: 3}
-  m_Name: Level 3
+  m_Name: Level 2
   m_EditorClassIdentifier: 
   nameLevel: 
-  id: 3
+  id: 2
+  cointReward: 600
   listEnemy:
-  - nameUnit: Grog
-    px: 1
-    py: 5
-    unitTag: Enemy Unit
   - nameUnit: Crawlson
-    px: 3
+    px: 2
     py: 5
     unitTag: Enemy Unit
   - nameUnit: BlazingTurtle
-    px: 0
-    py: 8
+    px: 1
+    py: 7
     unitTag: Enemy Unit
   - nameUnit: BlazingTurtle
-    px: 4
-    py: 8
+    px: 3
+    py: 7
     unitTag: Enemy Unit

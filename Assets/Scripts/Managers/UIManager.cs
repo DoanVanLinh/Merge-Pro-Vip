@@ -32,4 +32,5 @@ public class UIManager : MonoBehaviour
     public SettingPanel settingPanel;
     public RatePanel ratePanel;
     public StatePanel satePanel;
+    public CoinsPanel coinsPanel;
 }

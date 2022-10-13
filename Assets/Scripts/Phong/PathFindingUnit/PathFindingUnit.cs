@@ -18,13 +18,12 @@ namespace WE.Unit
         {
             base.OnDisable();
 
-            if (unitNode != null)
-                FieldManager.RemoveFromField(unitNode.transform.position, this);
+            //if (unitNode != null)
+            //    FieldManager.RemoveFromField(unitNode.transform.position, this);
         }
         protected override void OnDestroy()
         {
             base.OnDestroy();
-
             if (unitNode != null)
                 FieldManager.RemoveFromField(unitNode.transform.position, this);
         }

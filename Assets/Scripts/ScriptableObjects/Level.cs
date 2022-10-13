@@ -7,5 +7,6 @@ public class Level : ScriptableObject
 {
     public string nameLevel;
     public string id;
+    public int cointReward;
     public List<UnitDataJson> listEnemy;
 }

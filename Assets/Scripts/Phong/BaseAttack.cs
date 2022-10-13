@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,19 +28,36 @@ namespace WE.Unit.Attack
         }
         protected virtual IEnumerator IEAttack()
         {
+            Owner.OnUnitDie += OnUnitDie;
             while (Owner.IsAlive && targeter.Target != null)
             {
+                if (!Owner.IsOnAttackRange())
+                {
+                    Owner.targeter.GetTarget();
+                    Stop();
+                    yield break;
+                }
                 CallAttack();
                 yield return new WaitForSeconds(attackSpeed);
-
             }
         }
+
+        private void OnUnitDie(BaseUnit obj)
+        {
+            Owner.OnUnitDie -= OnUnitDie;
+            Stop();
+        }
+
         protected virtual void CallAttack()
         {
             ExcuteAttack();
             OnAttackDone?.Invoke();
         }
         public abstract void ExcuteAttack();
+        public virtual void Stop()
+        {
+            StopAllCoroutines();
+        }
     }
 }
 

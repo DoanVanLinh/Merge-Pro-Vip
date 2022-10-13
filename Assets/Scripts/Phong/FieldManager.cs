@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using WE.Unit;
+using System;
+using System.Linq;
+
+
 public static class FieldManager
 {
+    public static Action OnUnitRemove;
 
     [ShowInInspector]
     public static Dictionary<Vector2, BaseUnit> fieldPlayer = new Dictionary<Vector2, BaseUnit>();
@@ -71,34 +76,34 @@ public static class FieldManager
         switch (unit.tag)
         {
             case Helper.PLAYER_UNIT_TAG:
-                fieldPlayer.Remove(loc);
+                fieldPlayer.Remove(fieldPlayer.Where(u=>u.Value == unit).FirstOrDefault().Key);
                 switch (unit.UnitType)
                 {
                     case NameTypeUnit.Fire:
-                        fieldFirePlayer.Remove(loc);
+                        fieldFirePlayer.Remove(fieldFirePlayer.Where(u => u.Value == unit).FirstOrDefault().Key);
                         break;
                     case NameTypeUnit.Water:
-                        fieldWaterPlayer.Remove(loc);
+                        fieldWaterPlayer.Remove(fieldWaterPlayer.Where(u => u.Value == unit).FirstOrDefault().Key);
                         break;
                     case NameTypeUnit.Grass:
-                        fieldGrassPlayer.Remove(loc);
+                        fieldGrassPlayer.Remove(fieldGrassPlayer.Where(u => u.Value == unit).FirstOrDefault().Key);
                         break;
                     default:
                         break;
                 }
                 break;
             case Helper.ENEMY_UNIT_TAG:
-                fieldEnemy.Remove(loc);
+                fieldEnemy.Remove(fieldEnemy.Where(u => u.Value == unit).FirstOrDefault().Key);
                 switch (unit.UnitType)
                 {
                     case NameTypeUnit.Fire:
-                        fieldFireEnemy.Remove(loc);
+                        fieldFireEnemy.Remove(fieldFireEnemy.Where(u => u.Value == unit).FirstOrDefault().Key);
                         break;
                     case NameTypeUnit.Water:
-                        fieldWaterEnemy.Remove(loc);
+                        fieldWaterEnemy.Remove(fieldWaterEnemy.Where(u => u.Value == unit).FirstOrDefault().Key);
                         break;
                     case NameTypeUnit.Grass:
-                        fieldGrassEnemy.Remove(loc);
+                        fieldGrassEnemy.Remove(fieldGrassEnemy.Where(u => u.Value == unit).FirstOrDefault().Key);
                         break;
                     default:
                         break;
@@ -106,5 +111,6 @@ public static class FieldManager
                 break;
         }
 
+        OnUnitRemove?.Invoke();
     }
 }

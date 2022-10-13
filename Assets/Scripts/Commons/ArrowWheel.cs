@@ -25,7 +25,7 @@ public class ArrowWheel : MonoBehaviour
 
         extra = int.Parse(collision.name);
 
-        textCoinsClaim.text = (GameManager.Instance.coinsEachLevel * extra).ToString();
+        textCoinsClaim.text = Helper.ConvertCoins(GameManager.Instance.coinsEachLevel * extra);
         higlight.GetComponent<RectTransform>().rotation = collision.GetComponent<RectTransform>().rotation;
     }
 }

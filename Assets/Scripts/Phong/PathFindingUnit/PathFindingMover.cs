@@ -19,33 +19,58 @@ public class PathFindingMover : BaseMover
     public bool isJump;
     public AnimationCurve moveCurve;
     Vector2 jumpLoc;
-    Vector2 cacheLoc;
     private void Start()
     {
         jumpLoc = transform.position;
     }
     public override void MoveToAttackPosition()
     {
-        StartCoroutine(IEMoving());
+        if (!isWait)
+        {
+            if (nextStep.x == -20)
+                GridManager.Instance.UpdateGridNode(transform.position, false);
+            Owner.OnUnitDie += OnUnitDie;
+            FieldManager.OnUnitRemove += OnUnitRemove;
+            StartCoroutine(IEMoving());
+        }
     }
+
+    private void OnUnitDie(BaseUnit obj)
+    {
+        Owner.OnUnitDie -= OnUnitDie;
+        FieldManager.OnUnitRemove -= OnUnitRemove;
+
+        StopAllCoroutines();
+    }
+
     private IEnumerator IEMoving()
     {
         while (true)
         {
             yield return null;
-            if (Owner.Target == null || isWait)
+
+
+            if (Owner.Target == null /*|| isWait*/)
             {
-                while (Owner.Target == null || isWait)
+                while (Owner.Target == null)
                 {
-                    if (GameManager.Instance.GetFightStatus() == FightStatus.Null)
+                    yield return null;
+                    if (GameManager.Instance.GetFightStatus() != FightStatus.Null)
+                        yield break;
+
+                    if (!isWait)
                     {
                         Owner.targeter.GetTarget();
                         isWait = Owner.Target == null;
                         canMove = Owner.Target != null;
                     }
-                    else
-                        yield break;
+
                 }
+                //while (isWait)
+                //{
+                //    if (GameManager.Instance.GetFightStatus() != FightStatus.Null)
+                //        yield break;
+                //}
             }
             else
             {
@@ -57,7 +82,6 @@ public class PathFindingMover : BaseMover
             {
                 if (Owner.Target != null)
                 {
-                    cacheLoc = transform.position;
                     float distanceToTaret = Vector2.Distance(transform.position, Owner.Target.transform.position);
 
                     if (distanceToTaret <= Owner.CurrentAttackRange)
@@ -65,44 +89,32 @@ public class PathFindingMover : BaseMover
                 }
                 if (!canMove || isWait)
                 {
-                    GridManager.Instance.UpdateGridNode(cacheLoc, false);
-                    if (nextStep != cacheLoc && nextStep != new Vector2(-20, -20))
+                    GridManager.Instance.UpdateGridNode(transform.position, false);
+                    if (nextStep != (Vector2)transform.position && nextStep != new Vector2(-20, -20))
                         GridManager.Instance.UpdateGridNode(nextStep, true);
 
-                    nextStep = cacheLoc;
+                    nextStep = transform.position;
                 }
                 base.MoveToAttackPosition();
                 yield break;
             }
         }
     }
-    bool LastStep()
-    {
-        if (nextStep != new Vector2(-20, -20) && nextStep != (Vector2)transform.position)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, nextStep, Time.deltaTime * moveSpeed);
-            return false;
-        }
 
-        return true;
-    }
-    public bool Moving()
+    private void OnUnitRemove()
     {
+        //FieldManager.OnUnitRemove -= OnUnitRemove;
+
         if (isWait)
         {
-            while ( isWait)
-            {
-                if (GameManager.Instance.GetFightStatus() == FightStatus.Null)
-                {
-                    Owner.targeter.GetTarget();
-                    isWait = Owner.Target == null;
-                    canMove = Owner.Target != null;
-                }
-                else
-                    break;
-            }
+            Owner.targeter.GetTarget();
+            isWait = Owner.Target == null;
+            canMove = Owner.Target != null;
         }
+    }
 
+    public bool Moving()
+    {
         if (GridManager.Instance.size < 1)
             targetNode = GridManager.Instance.Tiles[new Vector2((float)Math.Round(Owner.Target.transform.position.x * 2, MidpointRounding.AwayFromZero) / 2, (float)Math.Round(Owner.Target.transform.position.y * 2, MidpointRounding.AwayFromZero) / 2)];
         else
@@ -131,7 +143,10 @@ public class PathFindingMover : BaseMover
         else
         {
             SetNextStep(NextLoc());
-            return false;
+            if (Owner.IsOnAttackRange())
+                return false;
+            else
+                return true;
         }
     }
     public Vector2 NextLoc()
@@ -166,9 +181,12 @@ public class PathFindingMover : BaseMover
                     targetNeighbor = targetNode.Neighbors.Where(n => n.Walkable).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
                 else
                 {
-                    canMove = false;
-                    isWait = true;
-                    return transform.position;
+                    if (!targetNode.Neighbors.Contains(targetNeighbor))
+                    {
+                        canMove = false;
+                        isWait = true;
+                        return transform.position;
+                    }
                 }
             }
             else
@@ -218,7 +236,10 @@ public class PathFindingMover : BaseMover
     void SetNextStep(Vector2 nextStep)
     {
         if (nextStep == (Vector2)targetNode.transform.position)
+        {
+            this.nextStep = transform.position;
             return;
+        }
 
         if (nextStep != (Vector2)transform.position)
         {

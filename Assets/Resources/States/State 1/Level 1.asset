@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameLevel: 
   id: 1
+  cointReward: 1200
   listEnemy:
   - nameUnit: BlazingTurtle
     px: 0

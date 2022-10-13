@@ -39,9 +39,15 @@ public class GameManager : MonoBehaviour
     public GameObject playerZone;
     public bool isStart;
     public int coinsEachLevel;
+    public int coinBase;
+    public float muiltiCoins;
 
+    [HideInInspector]
     public bool isOnDeleteField;
+    [HideInInspector]
     public bool isOnUndoField;
+
+
 
     private FightStatus fightStatus = FightStatus.Null;
 
@@ -115,6 +121,22 @@ public class GameManager : MonoBehaviour
         UnityEditor.EditorUtility.SetDirty(level);
         UnityEditor.EditorUtility.SetDirty(state);
     }
+
+    [Button("Load coin each Level")]
+    private void LoadCoinLevel()
+    {
+        List<State> listState = Resources.LoadAll<State>("States/").ToList();
+        int counterLevel = 0;
+
+        foreach (State state in listState)
+        {
+            foreach (var level in state.listLevel)
+            {
+                level.cointReward = (int)(coinBase* muiltiCoins) * ++counterLevel ;
+                UnityEditor.EditorUtility.SetDirty(level);
+            }
+        }
+    }
 #endif  
     [Button("Load Level")]
     private void LoadCurrentLevel(int state, int level, string path = "States/")
@@ -181,6 +203,8 @@ public class GameManager : MonoBehaviour
             this.fightStatus = status;
             isStart = false;
 
+            coinsEachLevel = GetCointRewardCurrentLevel(DataManager.Instance.GetDataGame().currentState, DataManager.Instance.GetDataGame().currentLevel);
+
             if (this.fightStatus == FightStatus.Win)
             {
                 UIManager.Instance.youWinPanel.gameObject.SetActive(true);
@@ -206,7 +230,6 @@ public class GameManager : MonoBehaviour
     {
         return iconType.Where(i => i.name == name).First();
     }
-
     public void DeleteUnitInField(Vector2 loc)
     {
         fields[loc] = null;
@@ -214,6 +237,10 @@ public class GameManager : MonoBehaviour
     public void AddUnitToField(Vector2 loc, Unit unit)
     {
         fields[loc] = unit;
+    }
+    public int GetCointRewardCurrentLevel(int state, int level)
+    {
+       return Resources.LoadAll<State>("States/").Where(s=>s.id == state.ToString()).FirstOrDefault().listLevel.Where(l=>l.id == level.ToString()).First().cointReward;
     }
 }
 public enum FightStatus

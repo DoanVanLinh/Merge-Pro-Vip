@@ -2,13 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using System;
+
 public class Test1 : MonoBehaviour
 {
-    public string debug = "call Test 1";
-    public System.Action actionTest1;
-    [Button("Call Action")]
-    public void CallAction()
+    //public System.Action OnDie;
+
+    //private void OnDestroy()
+    //{
+    //    OnDie?.Invoke();
+    //}
+    private void Start()
     {
-        actionTest1?.Invoke();
+        Test2.onDie += Ondie;
+    }
+    [Button("Add Listener")]
+    public void AddListener()
+    {
+        Test2.onDie += Ondie;
+    }
+
+    private void Ondie()
+    {
+        Debug.Log(gameObject.name);
     }
 }

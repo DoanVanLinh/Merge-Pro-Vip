@@ -10,20 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ac2ced164c91d440b45bac2565a18f3, type: 3}
-  m_Name: Level 2
+  m_Name: Level 1
   m_EditorClassIdentifier: 
   nameLevel: 
-  id: 2
+  id: 1
+  cointReward: 400
   listEnemy:
-  - nameUnit: Crawlson
-    px: 2
-    py: 5
-    unitTag: Enemy Unit
   - nameUnit: BlazingTurtle
-    px: 1
+    px: 0
     py: 7
     unitTag: Enemy Unit
   - nameUnit: BlazingTurtle
-    px: 3
+    px: 4
     py: 7
     unitTag: Enemy Unit

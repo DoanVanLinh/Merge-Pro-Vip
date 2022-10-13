@@ -173,17 +173,15 @@ namespace WE.Unit
             if (Target == null)
                 return;
 
-            float distanceToTaret = Vector2.Distance(transform.position, Target.transform.position);
-
-            if (distanceToTaret <= CurrentAttackRange)
-            {
+            //if (IsOnAttackRange())
+            //{
                 skeletonAnimation.SetUnitAni(Helper.ATTACK_STATE_ANI, true, currentAttackSpeed);
                 attacker.StartAttack();
-            }
-            else
-            {
-                targeter.GetTarget();
-            }
+            //}
+            //else
+            //{
+            //    targeter.GetTarget();
+            //}
         }
         public virtual void TakeDamage(float dmg, BaseUnit source)
         {
@@ -204,6 +202,10 @@ namespace WE.Unit
             isAlive = false;
             Destroy(gameObject);
             OnUnitDie?.Invoke(this);
+        }
+        public bool IsOnAttackRange()
+        {
+            return Vector2.Distance(transform.position, Target.transform.position) <= CurrentAttackRange;
         }
         protected virtual void OnDisable()
         {

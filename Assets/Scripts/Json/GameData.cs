@@ -6,6 +6,8 @@ using System.Linq;
 [Serializable]
 public class GameData
 {
+    public int currentCoins;
+    public int currentCostBuyUnit;
     public bool sound;
     public bool vibrate;
     public int currentState;
@@ -15,15 +17,20 @@ public class GameData
     {
         this.sound = this.vibrate = true;
         this.currentState = this.currentLevel = 0;
+        currentCoins = 100;
+        currentCostBuyUnit = 100;
+
         this.listUnits = new List<UnitDataJson>();
     }
 
-    public GameData(bool sound, bool vibrate, int currentState, int currentLevel, List<UnitDataJson> listUnits)
+    public GameData(bool sound, bool vibrate, int currentState, int currentLevel, int currentCoins,int currentCostBuy, List<UnitDataJson> listUnits)
     {
         this.sound = sound;
         this.vibrate = vibrate;
         this.currentState = currentState;
         this.currentLevel = currentLevel;
+        this.currentCostBuyUnit = currentCostBuy;
+        this.currentCoins = currentCoins;
         this.listUnits = listUnits;
     }
 
@@ -64,6 +71,17 @@ public class GameData
     public int GetCurrentState()
     {
         return currentState;
+    }
+
+    public void AddCoins(int coins)
+    {
+        this.currentCoins += coins;
+        DataManager.Instance.CreateData();
+    }
+    public void SetCurrentCostBuyUnit(int coins)
+    {
+        this.currentCostBuyUnit = coins;
+        DataManager.Instance.CreateData();
     }
 }
 

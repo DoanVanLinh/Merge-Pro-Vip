@@ -53,6 +53,8 @@ namespace WE.Unit.Target
             unit.OnUnitDie -= OnUnitDie;
             if (Owner != null)
             {
+                Owner.mover.Stop();
+                Owner.attacker.Stop();
                 Owner.skeletonAnimation.SetUnitAni(Helper.IDLE_STATE_ANI, true);
                 GetTarget();
             }
