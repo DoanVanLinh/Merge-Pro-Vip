@@ -17,10 +17,13 @@ namespace WE.Unit.Move
         }
         public virtual void MoveToAttackPosition()
         {
-            if (GameManager.Instance.GetFightStatus() != FightStatus.Null)
+            if (moveSpeed == 0)
                 return;
 
+            if (GameManager.Instance.GetFightStatus() != FightStatus.Null)
+                return;
             Stop();
+
             OnMoveDone?.Invoke();
         }
         public virtual void MoveToPosition(Vector3 pos)
@@ -32,6 +35,10 @@ namespace WE.Unit.Move
         {
             StopAllCoroutines();
             transform.DOKill();
+        }
+        public virtual void OnTargetDie()
+        {
+            //do somthing
         }
     }
 }

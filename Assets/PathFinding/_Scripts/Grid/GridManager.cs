@@ -21,6 +21,8 @@ public class GridManager : MonoBehaviour
     private NodeBase _playerNodeBase;
     private Unit2 _spawnedPlayer, _spawnedGoal;
 
+    public System.Action OnGridUpdate;
+
     private void Awake()
     {
         Instance = this;
@@ -76,5 +78,6 @@ public class GridManager : MonoBehaviour
     public void UpdateGridNode(Vector2 loc,bool isWalkable)
     {
         Tiles[loc].Walkable = isWalkable;
+        OnGridUpdate?.Invoke();
     }
 }

@@ -15,7 +15,6 @@ public class UIManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
-
     }
     #endregion
 

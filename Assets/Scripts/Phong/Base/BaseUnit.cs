@@ -173,15 +173,8 @@ namespace WE.Unit
             if (Target == null)
                 return;
 
-            //if (IsOnAttackRange())
-            //{
-                skeletonAnimation.SetUnitAni(Helper.ATTACK_STATE_ANI, true, currentAttackSpeed);
-                attacker.StartAttack();
-            //}
-            //else
-            //{
-            //    targeter.GetTarget();
-            //}
+            skeletonAnimation.SetUnitAni(Helper.ATTACK_STATE_ANI, true, currentAttackSpeed);
+            attacker.StartAttack();
         }
         public virtual void TakeDamage(float dmg, BaseUnit source)
         {
@@ -199,8 +192,13 @@ namespace WE.Unit
         }
         public virtual void Die()
         {
+            if (!isAlive)
+                return;
+
             isAlive = false;
             Destroy(gameObject);
+            if (gameObject.name == "GameObject (1)")
+                Debug.Log("Unit Die" + Time.deltaTime);
             OnUnitDie?.Invoke(this);
         }
         public bool IsOnAttackRange()
@@ -213,11 +211,18 @@ namespace WE.Unit
         }
         protected virtual void OnDestroy()
         {
+            Stop();
             targeter.OnNewTarget -= OnNewTarget;
+            GridManager.Instance.UpdateGridNode(transform.position, true);
         }
         public virtual void Stop()
         {
-            this.enabled = false;
+            mover.Stop();
+            attacker.Stop();
+        }
+        public virtual void OnTargetDie()
+        {
+            Stop();
         }
         public virtual void Resume()
         {

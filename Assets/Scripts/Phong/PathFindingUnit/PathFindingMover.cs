@@ -19,28 +19,30 @@ public class PathFindingMover : BaseMover
     public bool isJump;
     public AnimationCurve moveCurve;
     Vector2 jumpLoc;
+
+    public Action OnStepDone;
     private void Start()
     {
         jumpLoc = transform.position;
     }
+
     public override void MoveToAttackPosition()
     {
-        if (!isWait)
-        {
-            if (nextStep.x == -20)
-                GridManager.Instance.UpdateGridNode(transform.position, false);
-            Owner.OnUnitDie += OnUnitDie;
-            FieldManager.OnUnitRemove += OnUnitRemove;
-            StartCoroutine(IEMoving());
-        }
-    }
+        if (nextStep.x == -20)
+            GridManager.Instance.UpdateGridNode(transform.position, false);
 
-    private void OnUnitDie(BaseUnit obj)
-    {
-        Owner.OnUnitDie -= OnUnitDie;
-        FieldManager.OnUnitRemove -= OnUnitRemove;
+        if (moveSpeed == 0)
+            return;
 
-        StopAllCoroutines();
+        canMove = Owner.Target != null;
+
+        
+        Owner.skeletonAnimation.SetUnitAni(Helper.MOVE_STATE_ANI, true);
+
+
+        SetNextStep(NextLoc());
+        StartCoroutine(IEMoving());
+        //}
     }
 
     private IEnumerator IEMoving()
@@ -50,43 +52,8 @@ public class PathFindingMover : BaseMover
             yield return null;
 
 
-            if (Owner.Target == null /*|| isWait*/)
-            {
-                while (Owner.Target == null)
-                {
-                    yield return null;
-                    if (GameManager.Instance.GetFightStatus() != FightStatus.Null)
-                        yield break;
-
-                    if (!isWait)
-                    {
-                        Owner.targeter.GetTarget();
-                        isWait = Owner.Target == null;
-                        canMove = Owner.Target != null;
-                    }
-
-                }
-                //while (isWait)
-                //{
-                //    if (GameManager.Instance.GetFightStatus() != FightStatus.Null)
-                //        yield break;
-                //}
-            }
-            else
-            {
-                canMove = true;
-                isWait = false;
-            }
-
             if (!Moving())
             {
-                if (Owner.Target != null)
-                {
-                    float distanceToTaret = Vector2.Distance(transform.position, Owner.Target.transform.position);
-
-                    if (distanceToTaret <= Owner.CurrentAttackRange)
-                        canMove = false;
-                }
                 if (!canMove || isWait)
                 {
                     GridManager.Instance.UpdateGridNode(transform.position, false);
@@ -95,36 +62,38 @@ public class PathFindingMover : BaseMover
 
                     nextStep = transform.position;
                 }
-                base.MoveToAttackPosition();
+
+                ((PathFindingUnit)Owner).unitNode = GridManager.Instance.Tiles.Where(t => t.Key == (Vector2)transform.position).First().Value;
+
+                if (Owner.Target != null)
+                    if (Owner.IsOnAttackRange())
+                    {
+                        GridManager.Instance.UpdateGridNode(transform.position, false);
+                        if (nextStep != (Vector2)transform.position && nextStep != new Vector2(-20, -20))
+                            GridManager.Instance.UpdateGridNode(nextStep, true);
+
+                        nextStep = transform.position;
+                        if (Owner.Target != null)
+                            OnMoveDone?.Invoke();
+                    }
+                    else
+                        OnStepDone?.Invoke();
                 yield break;
             }
         }
     }
-
-    private void OnUnitRemove()
-    {
-        //FieldManager.OnUnitRemove -= OnUnitRemove;
-
-        if (isWait)
-        {
-            Owner.targeter.GetTarget();
-            isWait = Owner.Target == null;
-            canMove = Owner.Target != null;
-        }
-    }
-
     public bool Moving()
     {
-        if (GridManager.Instance.size < 1)
-            targetNode = GridManager.Instance.Tiles[new Vector2((float)Math.Round(Owner.Target.transform.position.x * 2, MidpointRounding.AwayFromZero) / 2, (float)Math.Round(Owner.Target.transform.position.y * 2, MidpointRounding.AwayFromZero) / 2)];
-        else
-            targetNode = GridManager.Instance.Tiles[new Vector2Int((int)Owner.Target.transform.position.x, (int)Owner.Target.transform.position.y)];
-
         if (!canMove)
             return false;
 
-        if (nextStep.x == -20)
-            SetNextStep(NextLoc());
+        if ((!canMove || isWait) && Owner.IsOnAttackRange())
+        {
+            return false;
+        }
+
+        //if (nextStep.x == -20)
+        //    SetNextStep(NextLoc());
 
         if (Vector2.Distance(transform.position, nextStep) != 0)
         {
@@ -142,20 +111,29 @@ public class PathFindingMover : BaseMover
         }
         else
         {
-            SetNextStep(NextLoc());
-            if (Owner.IsOnAttackRange())
-                return false;
-            else
-                return true;
+
+
+            return false;
         }
     }
     public Vector2 NextLoc()
     {
+        if (GridManager.Instance.size < 1)
+            targetNode = GridManager.Instance.Tiles[new Vector2((float)Math.Round(Owner.Target.transform.position.x * 2, MidpointRounding.AwayFromZero) / 2, (float)Math.Round(Owner.Target.transform.position.y * 2, MidpointRounding.AwayFromZero) / 2)];
+        else
+            targetNode = GridManager.Instance.Tiles[new Vector2Int((int)Owner.Target.transform.position.x, (int)Owner.Target.transform.position.y)];
+
         if (!canMove)
+        {
+            isWait = true;
             return transform.position;
+        }
 
         if (targetNode == null)
+        {
+            isWait = true;
             return transform.position;
+        }
 
         if (targetNode != cacheTarget)
             if (targetNode.Neighbors.Any(n => n.Walkable))
@@ -169,6 +147,7 @@ public class PathFindingMover : BaseMover
                 targetNeighbor = targetNode.Neighbors.Where(n => n.Walkable).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
             else
             {
+                isWait = true;
                 return transform.position;
             }
 
@@ -192,7 +171,10 @@ public class PathFindingMover : BaseMover
             else
             {
                 if (targetNode.Neighbors.Contains(targetNeighbor))
+                {
+                    isWait = true;
                     return transform.position;
+                }
                 else
                 {
                     if (targetNode.Neighbors.Any(n => n.Walkable))
@@ -200,10 +182,6 @@ public class PathFindingMover : BaseMover
                 }
             }
         }
-
-        //if (target.Neighbors.Any(n => n.Walkable))
-        //    targetNeighbor = target.Neighbors.Where(n => n.Walkable).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
-
 
         ((PathFindingUnit)Owner).unitNode = GridManager.Instance.Tiles.Where(t => t.Key == new Vector2((int)transform.position.x, (int)transform.position.y)).First().Value;
 
@@ -235,6 +213,7 @@ public class PathFindingMover : BaseMover
     }
     void SetNextStep(Vector2 nextStep)
     {
+        
         if (nextStep == (Vector2)targetNode.transform.position)
         {
             this.nextStep = transform.position;

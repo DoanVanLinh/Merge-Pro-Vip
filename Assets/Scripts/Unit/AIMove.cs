@@ -26,21 +26,31 @@ public class AIMove : MonoBehaviour
         nextStep = new Vector2(-20, -20);
         unitNode = GridManager.Instance.Tiles.Where(t => t.Key == (Vector2)transform.position).First().Value;
     }
-    private void Update()
-    {
-        if (!canMove || isWait)
-        {
-            GridManager.Instance.UpdateGridNode(transform.position, false);
-            if (nextStep != (Vector2)transform.position)
-                GridManager.Instance.UpdateGridNode(nextStep, true);
+    //private void Update()
+    //{
+    //    if (!canMove || isWait)
+    //    {
+    //        GridManager.Instance.UpdateGridNode(transform.position, false);
+    //        if (nextStep != (Vector2)transform.position)
+    //            GridManager.Instance.UpdateGridNode(nextStep, true);
 
-            nextStep = transform.position;
-        }
-    }
+    //        nextStep = transform.position;
+    //    }
+    //}
     public bool Moving()
     {
         if (!canMove)
+        {
+            if (!canMove || isWait)
+            {
+                GridManager.Instance.UpdateGridNode(transform.position, false);
+                if (nextStep != (Vector2)transform.position && nextStep != new Vector2(-20, -20))
+                    GridManager.Instance.UpdateGridNode(nextStep, true);
+
+                nextStep = transform.position;
+            }
             return false;
+        }
 
         if (nextStep.x == -20)
         {
@@ -66,16 +76,30 @@ public class AIMove : MonoBehaviour
         else
         {
             SetNextStep(NextLoc());
+            if (!canMove || isWait)
+            {
+                GridManager.Instance.UpdateGridNode(transform.position, false);
+                if (nextStep != (Vector2)transform.position && nextStep != new Vector2(-20, -20))
+                    GridManager.Instance.UpdateGridNode(nextStep, true);
+
+                nextStep = transform.position;
+            }
             return false;
         }
     }
     public Vector2 NextLoc()
     {
         if (!canMove)
+        {
+            isWait = true;
             return transform.position;
+        }
 
         if (target == null)
+        {
+            isWait = true;
             return transform.position;
+        }
 
         if (target != cacheTarget)
             if (target.Neighbors.Any(n => n.Walkable))
@@ -89,6 +113,7 @@ public class AIMove : MonoBehaviour
                 targetNeighbor = target.Neighbors.Where(n => n.Walkable).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
             else
             {
+                isWait = true;
                 return transform.position;
             }
 
@@ -109,7 +134,10 @@ public class AIMove : MonoBehaviour
             else
             {
                 if (target.Neighbors.Contains(targetNeighbor))
+                {
+                    isWait = true;
                     return transform.position;
+                }
                 else
                 {
                     if (target.Neighbors.Any(n => n.Walkable))
@@ -153,7 +181,10 @@ public class AIMove : MonoBehaviour
     void SetNextStep(Vector2 nextStep)
     {
         if (nextStep == (Vector2)target.transform.position)
+        {
+            this.nextStep = transform.position;
             return;
+        }
 
         if (nextStep != (Vector2)transform.position)
         {

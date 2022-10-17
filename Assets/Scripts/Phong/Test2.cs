@@ -3,20 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-[System.Serializable]
-public static class Test2
+
+public class Test2 : Test1
 {
-    public static System.Action onDie;
-
-  
-    [Button("Remove Listener")]
-    public static void RemoveListener()
+    private void Start()
     {
+        StartCoroutine(IETest1());
     }
-
-    [Button("Excute")]
-    public static void Excute()
+    public void Stop2()
     {
-        onDie?.Invoke();
+        Debug.Log("Stop1");
+
+        base.Stop();
+        Debug.Log("Stop2");
+    }
+    IEnumerator IETest1()
+    {
+        while (true)
+        {
+            yield return null;
+            Debug.Log("Test 2");
+        }
+
     }
 }

@@ -6,24 +6,20 @@ using System;
 
 public class Test1 : MonoBehaviour
 {
-    //public System.Action OnDie;
-
-    //private void OnDestroy()
-    //{
-    //    OnDie?.Invoke();
-    //}
     private void Start()
     {
-        Test2.onDie += Ondie;
+        StartCoroutine(IETest1());
     }
-    [Button("Add Listener")]
-    public void AddListener()
+    public virtual void Stop()
     {
-        Test2.onDie += Ondie;
+        StopAllCoroutines();
     }
-
-    private void Ondie()
+    IEnumerator IETest1()
     {
-        Debug.Log(gameObject.name);
+        while (true)
+        {
+            yield return null;
+            Debug.Log("Test 1");
+        }
     }
 }

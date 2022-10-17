@@ -14,18 +14,11 @@ namespace WE.Unit
             unitNode = GridManager.Instance.Tiles.Where(t => t.Key == (Vector2)transform.position).First().Value;
             base.Init();
         }
-        protected override void OnDisable()
-        {
-            base.OnDisable();
-
-            //if (unitNode != null)
-            //    FieldManager.RemoveFromField(unitNode.transform.position, this);
-        }
-        protected override void OnDestroy()
-        {
-            base.OnDestroy();
+        public override void Die()
+        { 
             if (unitNode != null)
                 FieldManager.RemoveFromField(unitNode.transform.position, this);
+            base.Die();
         }
     }
 }

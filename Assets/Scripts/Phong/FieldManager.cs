@@ -76,7 +76,7 @@ public static class FieldManager
         switch (unit.tag)
         {
             case Helper.PLAYER_UNIT_TAG:
-                fieldPlayer.Remove(fieldPlayer.Where(u=>u.Value == unit).FirstOrDefault().Key);
+                fieldPlayer.Remove(fieldPlayer.Where(u => u.Value == unit).FirstOrDefault().Key);
                 switch (unit.UnitType)
                 {
                     case NameTypeUnit.Fire:
@@ -112,5 +112,15 @@ public static class FieldManager
         }
 
         OnUnitRemove?.Invoke();
+    }
+
+    public static FightStatus EndFight()
+    {
+        if (fieldPlayer.Where(u => u.Value != null).Count() == 0)
+            return FightStatus.Lose;
+        if (fieldEnemy.Where(u => u.Value != null).Count() == 0)
+            return FightStatus.Win;
+
+        return FightStatus.Null;
     }
 }

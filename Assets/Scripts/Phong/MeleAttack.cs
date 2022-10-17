@@ -12,27 +12,30 @@ namespace WE.Unit.Attack
         public override void ExcuteAttack()
         {
             if (Owner.skeletonAnimation.OnStateEvent == null)
-                Owner.skeletonAnimation.OnStateEvent += OnAttack;
-            Owner.Target.OnUnitDie += OnTargetDie;
+                Owner.skeletonAnimation.OnStateEvent += OnAttackEvent;
+            Owner.attacker.OnAttackDone += CheckUnitAfterAttack;
         }
 
-        private void OnTargetDie(BaseUnit obj)
+        private void CheckUnitAfterAttack()
         {
-            Stop();
+            Owner.attacker.OnAttackDone -= CheckUnitAfterAttack;
+            if (!Owner.IsOnAttackRange())
+            {
+                Owner.targeter.GetTarget();
+                Stop();
+            }
         }
 
-        private void OnAttack()
+        private void OnAttackEvent()
         {
-            Owner.skeletonAnimation.OnStateEvent -= OnAttack;
+            Owner.skeletonAnimation.OnStateEvent -= OnAttackEvent;
             if (Owner.Target != null)
                 Owner.Target.TakeDamage(Owner.CurrentDamage, Owner);
-            else
-                Stop();
         }
         public override void Stop()
         {
-            Owner.Target.OnUnitDie -= OnTargetDie;
-            Owner.skeletonAnimation.OnStateEvent -= OnAttack;
+            Owner.skeletonAnimation.OnStateEvent -= OnAttackEvent;
+            Owner.attacker.OnAttackDone -= CheckUnitAfterAttack;
             base.Stop();
         }
     }

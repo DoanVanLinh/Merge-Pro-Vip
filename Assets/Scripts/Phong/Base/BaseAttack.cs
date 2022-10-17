@@ -24,30 +24,19 @@ namespace WE.Unit.Attack
         }
         public virtual void StartAttack()
         {
+            if (gameObject.name == "GameObject (17)")
+                Debug.Log("Start Attack");
             StartCoroutine(IEAttack());
         }
         protected virtual IEnumerator IEAttack()
         {
-            Owner.OnUnitDie += OnUnitDie;
-            while (Owner.IsAlive && targeter.Target != null)
+            while (Owner.IsAlive)
             {
-                if (!Owner.IsOnAttackRange())
-                {
-                    Owner.targeter.GetTarget();
-                    Stop();
-                    yield break;
-                }
+
                 CallAttack();
                 yield return new WaitForSeconds(attackSpeed);
             }
         }
-
-        private void OnUnitDie(BaseUnit obj)
-        {
-            Owner.OnUnitDie -= OnUnitDie;
-            Stop();
-        }
-
         protected virtual void CallAttack()
         {
             ExcuteAttack();

@@ -21,7 +21,7 @@ MonoBehaviour:
   damage: 0
   attackSpeed: 1
   attackRange: 1.5
-  moveSpeed: 1
+  moveSpeed: 0
   manaRegen: 0
   colorTier: FFFF00
   tier: 1
