@@ -75,7 +75,7 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    public void UpdateGridNode(Vector2 loc,bool isWalkable)
+    public void UpdateGridNode(Vector2 loc, bool isWalkable)
     {
         Tiles[loc].Walkable = isWalkable;
         OnGridUpdate?.Invoke();

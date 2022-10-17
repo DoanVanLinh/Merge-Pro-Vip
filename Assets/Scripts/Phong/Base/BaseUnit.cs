@@ -197,8 +197,6 @@ namespace WE.Unit
 
             isAlive = false;
             Destroy(gameObject);
-            if (gameObject.name == "GameObject (1)")
-                Debug.Log("Unit Die" + Time.deltaTime);
             OnUnitDie?.Invoke(this);
         }
         public bool IsOnAttackRange()
@@ -213,7 +211,6 @@ namespace WE.Unit
         {
             Stop();
             targeter.OnNewTarget -= OnNewTarget;
-            GridManager.Instance.UpdateGridNode(transform.position, true);
         }
         public virtual void Stop()
         {

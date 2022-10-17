@@ -40,20 +40,13 @@ namespace WE.Unit.Target
                 Target.OnUnitDie += OnTargetUnitDie;
                 OnNewTarget?.Invoke();
             }
-            else
-                GridManager.Instance.OnGridUpdate += FindNewTarget;
-        }
-
-        private void FindNewTarget()
-        {
-            GridManager.Instance.OnGridUpdate -= FindNewTarget;
-            GetTarget();
         }
 
         public virtual void OnOwnerDie(BaseUnit o)
         {
             o.OnUnitDie -= OnOwnerDie;
-            Target.OnUnitDie -= OnTargetUnitDie;
+            if (Target != null)
+                Target.OnUnitDie -= OnTargetUnitDie;
         }
         public virtual void OnTargetUnitDie(BaseUnit unit)
         {
@@ -61,8 +54,6 @@ namespace WE.Unit.Target
 
             GameManager.Instance.SetFightStatus(FieldManager.EndFight());
             Owner.OnTargetDie();
-            if (gameObject.name == "GameObject (1)")
-                Debug.Log("Unit Die" + Time.deltaTime);
             GetTarget();
         }
     }

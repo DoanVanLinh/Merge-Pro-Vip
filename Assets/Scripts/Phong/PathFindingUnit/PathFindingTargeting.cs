@@ -9,8 +9,6 @@ public class PathFindingTargeting : BaseTargeting
     private BaseUnit cacheTarget;
     public override void GetTarget()
     {
-        if (gameObject.name == "GameObject (1)")
-            Debug.Log("Find" + Time.deltaTime);
         ((PathFindingMover)Owner.mover).OnStepDone -= OnStepDone;
 
         Owner.skeletonAnimation.SetUnitAni(Helper.IDLE_STATE_ANI, true);
@@ -39,25 +37,35 @@ public class PathFindingTargeting : BaseTargeting
             OnNewTarget?.Invoke();
         }
         else
+        {
             GridManager.Instance.OnGridUpdate += OnGridUpdate;
+        }
     }
 
     private void OnStepDone()
     {
         ((PathFindingMover)Owner.mover).OnStepDone -= OnStepDone;
-        if (gameObject.name == "GameObject (1)")
-            Debug.Log("Step Done" + Time.deltaTime);
         GetTarget();
     }
     private void OnGridUpdate()
     {
         GridManager.Instance.OnGridUpdate -= OnGridUpdate;
-        if (gameObject.name == "GameObject (1)")
-            Debug.Log("After Wait" + Time.deltaTime);
-        if (Owner.Target != null)
+        if (Owner.Target == null)
+        {
+            Debug.Log("Grid Update" + Time.deltaTime, gameObject);
+            GetTarget();
+        }
+
+    }
+    public override void OnTargetUnitDie(BaseUnit unit)
+    {
+        unit.OnUnitDie -= OnTargetUnitDie;
+
+        GameManager.Instance.SetFightStatus(FieldManager.EndFight());
+        Owner.OnTargetDie();
+        if (((PathFindingMover)Owner.mover).IsStepDone())
             GetTarget();
     }
-
     private bool HasPath(NodeBase targetNeighbor)
     {
         var path = Pathfinding.FindPath(((PathFindingUnit)Owner).unitNode, targetNeighbor);

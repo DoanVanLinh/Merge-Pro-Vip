@@ -36,10 +36,6 @@ namespace WE.Unit.Move
             StopAllCoroutines();
             transform.DOKill();
         }
-        public virtual void OnTargetDie()
-        {
-            //do somthing
-        }
     }
 }
 

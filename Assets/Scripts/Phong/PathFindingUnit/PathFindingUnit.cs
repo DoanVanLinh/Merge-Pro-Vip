@@ -15,9 +15,12 @@ namespace WE.Unit
             base.Init();
         }
         public override void Die()
-        { 
+        {
             if (unitNode != null)
+            {
                 FieldManager.RemoveFromField(unitNode.transform.position, this);
+                GridManager.Instance.UpdateGridNode(transform.position, true);
+            }
             base.Die();
         }
     }

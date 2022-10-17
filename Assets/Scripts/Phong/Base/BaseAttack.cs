@@ -24,8 +24,6 @@ namespace WE.Unit.Attack
         }
         public virtual void StartAttack()
         {
-            if (gameObject.name == "GameObject (17)")
-                Debug.Log("Start Attack");
             StartCoroutine(IEAttack());
         }
         protected virtual IEnumerator IEAttack()
