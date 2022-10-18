@@ -68,7 +68,10 @@ public class PathFindingMover : BaseMover
                     {
                         nextStep = transform.position;
                         if (Owner.Target != null)
+                        {
                             OnMoveDone?.Invoke();
+                            Owner.transform.localScale = new Vector3((transform.position - Owner.Target.transform.position).x > 0 ? 1 : -1, 1, 1);
+                        }
                     }
                     else
                         OnStepDone?.Invoke();
@@ -150,6 +153,8 @@ public class PathFindingMover : BaseMover
         }
 
         this.nextStep = nextStep;
+
+        Owner.transform.localScale = new Vector3(((Vector2)transform.position - nextStep).x > 0 ? 1 : -1, 1, 1);
 
         GridManager.Instance.UpdateGridNode(transform.position, true);
         GridManager.Instance.UpdateGridNode(nextStep, false);

@@ -333,7 +333,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 17696646}
   skeletonAnimation: {fileID: 17696644}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &40731684
 GameObject:
@@ -572,7 +576,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 40731691}
   skeletonAnimation: {fileID: 40731690}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &42841962
 GameObject:
@@ -811,7 +819,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 42841969}
   skeletonAnimation: {fileID: 42841968}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &49913792
 GameObject:
@@ -1023,7 +1035,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 49913799}
   skeletonAnimation: {fileID: 49913797}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &66853457
 GameObject:
@@ -1344,7 +1360,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 69109314}
   skeletonAnimation: {fileID: 69109312}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &71775695
 GameObject:
@@ -1910,7 +1930,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 86947691}
   skeletonAnimation: {fileID: 86947689}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &120023823
 GameObject:
@@ -2122,7 +2146,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 120023830}
   skeletonAnimation: {fileID: 120023828}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &123766220
 GameObject:
@@ -2726,7 +2754,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1634455717}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: SpawnPlayerUnit
+        m_MethodName: SpawnPlayerBaseUnit
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2882,7 +2910,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1634455717}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: SpawnPlayerUnit
+        m_MethodName: SpawnPlayerBaseUnit
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3160,7 +3188,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 228491941}
   skeletonAnimation: {fileID: 228491939}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &233879139
 GameObject:
@@ -3527,7 +3559,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 253670146}
   skeletonAnimation: {fileID: 253670145}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &255120825
 GameObject:
@@ -4001,7 +4037,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 295543745}
   skeletonAnimation: {fileID: 295543744}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &304577310
 GameObject:
@@ -4015,6 +4055,7 @@ GameObject:
   - component: {fileID: 304577313}
   - component: {fileID: 304577312}
   - component: {fileID: 304577314}
+  - component: {fileID: 304577315}
   m_Layer: 5
   m_Name: Delete field
   m_TagString: Untagged
@@ -4092,6 +4133,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c83777fe6d8bfe42bd1b20f27860a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &304577315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304577310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 0, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &306203455
 GameObject:
   m_ObjectHideFlags: 0
@@ -4302,7 +4358,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 306203462}
   skeletonAnimation: {fileID: 306203460}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &327037218
 GameObject:
@@ -4653,7 +4713,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 382253006}
   skeletonAnimation: {fileID: 382253005}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &387977976
 GameObject:
@@ -4892,7 +4956,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 387977983}
   skeletonAnimation: {fileID: 387977982}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &411348689
 GameObject:
@@ -5193,7 +5261,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 416069038}
   skeletonAnimation: {fileID: 416069036}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &420329052
 GameObject:
@@ -5834,7 +5906,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 463850836}
   skeletonAnimation: {fileID: 463850834}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &489654044
 GameObject:
@@ -6073,7 +6149,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 489654051}
   skeletonAnimation: {fileID: 489654050}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &513791388
 GameObject:
@@ -6546,6 +6626,7 @@ GameObject:
   - component: {fileID: 589220941}
   - component: {fileID: 589220940}
   - component: {fileID: 589220942}
+  - component: {fileID: 589220943}
   m_Layer: 5
   m_Name: Undo field
   m_TagString: Untagged
@@ -6623,6 +6704,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74ce399c4fc824e40991a9628cc87b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &589220943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589220938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 0, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &598673916
 GameObject:
   m_ObjectHideFlags: 0
@@ -6896,7 +6992,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 660922914}
   skeletonAnimation: {fileID: 660922912}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &662618898
 GameObject:
@@ -7296,7 +7396,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 696768513}
   skeletonAnimation: {fileID: 696768511}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &734189394
 GameObject:
@@ -7685,7 +7789,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 744389250}
   skeletonAnimation: {fileID: 744389249}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &752063682
 GameObject:
@@ -7883,218 +7991,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770352253}
   m_CullTransparentMesh: 1
---- !u!1 &772166684
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 772166689}
-  - component: {fileID: 772166687}
-  - component: {fileID: 772166686}
-  - component: {fileID: 772166685}
-  - component: {fileID: 772166690}
-  - component: {fileID: 772166694}
-  - component: {fileID: 772166693}
-  - component: {fileID: 772166692}
-  - component: {fileID: 772166691}
-  m_Layer: 0
-  m_Name: GameObject (1)
-  m_TagString: Enemy Unit
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &772166685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772166684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88d9618737a2e134a90b310f5ebfc47c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Owner: {fileID: 0}
-  Target: {fileID: 0}
---- !u!114 &772166686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772166684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4df0e5fcc39d7134fa9927a638f27534, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Owner: {fileID: 0}
-  nextStep: {x: -20, y: -20}
-  cacheTarget: {fileID: 0}
-  targetNode: {fileID: 0}
-  targetNeighbor: {fileID: 0}
-  isJump: 0
-  isStepDone: 0
-  moveCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &772166687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772166684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1200e77caec6644ebb55a0696cea987, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mover: {fileID: 772166686}
-  attacker: {fileID: 772166690}
-  skill: {fileID: 0}
-  targeter: {fileID: 772166685}
-  skeletonAnimation: {fileID: 772166694}
-  unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
-  unitNode: {fileID: 0}
---- !u!4 &772166689
+--- !u!4 &772166689 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
+  m_PrefabInstance: {fileID: 8631547725715498653}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772166684}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1315790693}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &772166690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772166684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cce2802362623ce41b057b09913a80ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targeter: {fileID: 0}
-  Owner: {fileID: 0}
---- !u!114 &772166691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772166684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 4f1d4d8b7d3d47b4099ac5dcbcc05fe2, type: 2}
-  initialSkinName: 
-  initialFlipX: 0
-  initialFlipY: 0
-  separatorSlotNames: []
-  zSpacing: 0
-  useClipping: 1
-  immutableTriangles: 0
-  pmaVertexColors: 1
-  clearStateOnDisable: 0
-  tintBlack: 0
-  singleSubmesh: 0
-  fixDrawOrder: 0
-  addNormals: 0
-  calculateTangents: 0
-  maskInteraction: 0
-  maskMaterials:
-    materialsMaskDisabled: []
-    materialsInsideMask: []
-    materialsOutsideMask: []
-  disableRenderingOnOverride: 1
-  _animationName: Move
-  loop: 1
-  timeScale: 1
-  unscaledTime: 0
---- !u!23 &772166692
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772166684}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: b9c024c81867f09449af030497e8a4f3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &772166693
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772166684}
-  m_Mesh: {fileID: 0}
---- !u!114 &772166694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772166684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 150b5d38fb9e21c40924e8b94236cebb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitSkeletonAnimation: {fileID: 772166691}
-  Owner: {fileID: 0}
 --- !u!1 &799234404
 GameObject:
   m_ObjectHideFlags: 0
@@ -8483,7 +8384,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 802882477}
   skeletonAnimation: {fileID: 802882475}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &825183968
 GameObject:
@@ -8695,7 +8600,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 825183975}
   skeletonAnimation: {fileID: 825183973}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &828049130
 GameObject:
@@ -8907,7 +8816,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 828049137}
   skeletonAnimation: {fileID: 828049135}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &839033908
 GameObject:
@@ -9146,7 +9059,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 839033915}
   skeletonAnimation: {fileID: 839033914}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &859193578
 GameObject:
@@ -9358,7 +9275,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 859193585}
   skeletonAnimation: {fileID: 859193583}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &880309311
 GameObject:
@@ -10036,7 +9957,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 936958896}
   skeletonAnimation: {fileID: 936958894}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &964828650
 GameObject:
@@ -10672,7 +10597,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1033230012}
   skeletonAnimation: {fileID: 1033230011}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1040438094
 GameObject:
@@ -11094,7 +11023,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1059001237}
   skeletonAnimation: {fileID: 1059001236}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1087196589
 GameObject:
@@ -11306,7 +11239,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1087196596}
   skeletonAnimation: {fileID: 1087196594}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1123891708
 GameObject:
@@ -13103,7 +13040,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1236501660}
   skeletonAnimation: {fileID: 1236501659}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1240396724
 GameObject:
@@ -13315,7 +13256,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1240396731}
   skeletonAnimation: {fileID: 1240396729}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1243415024
 GameObject:
@@ -13554,7 +13499,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1243415031}
   skeletonAnimation: {fileID: 1243415030}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1246308090
 GameObject:
@@ -14024,7 +13973,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1277180267}
   skeletonAnimation: {fileID: 1277180266}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1279779656
 GameObject:
@@ -14236,7 +14189,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1279779663}
   skeletonAnimation: {fileID: 1279779661}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1315790692
 GameObject:
@@ -14253,7 +14210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1315790693
 Transform:
   m_ObjectHideFlags: 0
@@ -14703,7 +14660,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1323024604}
   skeletonAnimation: {fileID: 1323024603}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1332672663
 GameObject:
@@ -15170,7 +15131,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1341437004}
   skeletonAnimation: {fileID: 1341437003}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1342687649
 GameObject:
@@ -15843,7 +15808,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1394094254}
   skeletonAnimation: {fileID: 1394094253}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1405778056
 GameObject:
@@ -16896,7 +16865,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1503550287}
   skeletonAnimation: {fileID: 1503550286}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1506869369
 GameObject:
@@ -17220,7 +17193,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1507369910}
   skeletonAnimation: {fileID: 1507369908}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1508036149
 GameObject:
@@ -17432,7 +17409,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1508036156}
   skeletonAnimation: {fileID: 1508036154}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1509477021
 GameObject:
@@ -18084,7 +18065,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1555778135}
   skeletonAnimation: {fileID: 1555778134}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1555806067
 GameObject:
@@ -18323,7 +18308,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1555806074}
   skeletonAnimation: {fileID: 1555806073}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1603711941
 GameObject:
@@ -18442,6 +18431,7 @@ MonoBehaviour:
   coinsEachLevel: 100
   coinBase: 100
   muiltiCoins: 2
+  unitBasePrefab: {fileID: 8631547725279408769, guid: d184ede4334bcd644911769126ae9490, type: 3}
   isOnDeleteField: 0
   isOnUndoField: 0
 --- !u!4 &1634455718
@@ -19150,7 +19140,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1669512947}
   skeletonAnimation: {fileID: 1669512945}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1672339234
 GameObject:
@@ -19362,7 +19356,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1672339241}
   skeletonAnimation: {fileID: 1672339239}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1676820593
 GameObject:
@@ -20015,7 +20013,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1734674419}
   skeletonAnimation: {fileID: 1734674418}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1749595439
 GameObject:
@@ -20227,7 +20229,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1749595446}
   skeletonAnimation: {fileID: 1749595444}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1753952466
 GameObject:
@@ -20439,7 +20445,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1753952473}
   skeletonAnimation: {fileID: 1753952471}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1774639587
 GameObject:
@@ -21100,7 +21110,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1814748694}
   skeletonAnimation: {fileID: 1814748692}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1823394528
 GameObject:
@@ -21465,7 +21479,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1832146411}
   skeletonAnimation: {fileID: 1832146410}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1838460274
 GameObject:
@@ -21704,7 +21722,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1838460281}
   skeletonAnimation: {fileID: 1838460280}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1840881049
 GameObject:
@@ -22122,7 +22144,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1860336947}
   skeletonAnimation: {fileID: 1860336946}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1869731195
 GameObject:
@@ -22361,7 +22387,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1869731202}
   skeletonAnimation: {fileID: 1869731201}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1874785180
 GameObject:
@@ -23451,7 +23481,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1982637565}
   skeletonAnimation: {fileID: 1982637564}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1985213439
 GameObject:
@@ -23663,7 +23697,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 1985213446}
   skeletonAnimation: {fileID: 1985213444}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &1991952158
 GameObject:
@@ -24082,7 +24120,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 2029933745}
   skeletonAnimation: {fileID: 2029933744}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &2034675096
 GameObject:
@@ -24571,7 +24613,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 2053313146}
   skeletonAnimation: {fileID: 2053313145}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &2064279411
 GameObject:
@@ -24783,7 +24829,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 2064279418}
   skeletonAnimation: {fileID: 2064279416}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &2078175970
 GameObject:
@@ -25112,7 +25162,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 2082695950}
   skeletonAnimation: {fileID: 2082695948}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &2086838775
 GameObject:
@@ -25324,7 +25378,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 2086838782}
   skeletonAnimation: {fileID: 2086838780}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &2087573693
 GameObject:
@@ -25705,7 +25763,11 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 2115070006}
   skeletonAnimation: {fileID: 2115070005}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
 --- !u!1 &2144509707
 GameObject:
@@ -26086,8 +26148,113 @@ MonoBehaviour:
   skill: {fileID: 0}
   targeter: {fileID: 2145874530}
   skeletonAnimation: {fileID: 2145874529}
+  unitTier: {fileID: 0}
+  unitTypeImg: {fileID: 0}
+  healthBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
+  defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
+--- !u!1001 &8631547725715498653
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1315790693}
+    m_Modifications:
+    - target: {fileID: 756829361076312501, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1.0224
+      objectReference: {fileID: 0}
+    - target: {fileID: 756829361076312501, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.2154
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292685128196796206, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292685128196796206, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292685128196796206, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.6189
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292685128196796206, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.1077
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462565842289494640, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462565842289494640, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462565842289494640, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.1077
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462565842289494640, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.1077
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631547725279408769, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_Name
+      value: Unit Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631547725279408824, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d184ede4334bcd644911769126ae9490, type: 3}
 --- !u!114 &8911698146587640836
 MonoBehaviour:
   m_ObjectHideFlags: 0

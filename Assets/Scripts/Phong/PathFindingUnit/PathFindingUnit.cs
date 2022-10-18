@@ -12,7 +12,7 @@ namespace WE.Unit
         {
             FieldManager.AddToField(transform.position, this);
             unitNode = GridManager.Instance.Tiles.Where(t => t.Key == (Vector2)transform.position).First().Value;
-            GridManager.Instance.UpdateGridNode(transform.position, false);
+            //GridManager.Instance.UpdateGridNode(transform.position, false);
 
             base.Init();
         }
@@ -24,6 +24,12 @@ namespace WE.Unit
                 GridManager.Instance.UpdateGridNode(unitNode.transform.position, true);
             }
             base.Die();
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            GridManager.Instance.UpdateGridNode(unitNode.transform.position, true);
         }
     }
 }

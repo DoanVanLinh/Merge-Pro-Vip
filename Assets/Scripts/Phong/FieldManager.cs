@@ -5,7 +5,7 @@ using WE.Unit;
 using System;
 using System.Linq;
 
-
+[System.Serializable]
 public static class FieldManager
 {
     public static Action OnUnitRemove;
@@ -27,40 +27,45 @@ public static class FieldManager
     public static Dictionary<Vector2, BaseUnit> fieldGrassEnemy = new Dictionary<Vector2, BaseUnit>();
     [ShowInInspector]
     public static Dictionary<Vector2, BaseUnit> fieldWaterEnemy = new Dictionary<Vector2, BaseUnit>();
-
     public static void AddToField(Vector2 loc, BaseUnit unit)
     {
+        if (unit == null)
+        {
+            fieldPlayer[loc] = unit;
+            return;
+        }
+
         switch (unit.tag)
         {
             case Helper.PLAYER_UNIT_TAG:
-                fieldPlayer.Add(loc, unit);
+                fieldPlayer[loc] = unit;
                 switch (unit.UnitType)
                 {
                     case NameTypeUnit.Fire:
-                        fieldFirePlayer.Add(loc, unit);
+                        fieldFirePlayer[loc] = unit;
                         break;
                     case NameTypeUnit.Water:
-                        fieldWaterPlayer.Add(loc, unit);
+                        fieldWaterPlayer[loc] = unit;
                         break;
                     case NameTypeUnit.Grass:
-                        fieldGrassPlayer.Add(loc, unit);
+                        fieldGrassPlayer[loc] = unit;
                         break;
                     default:
                         break;
                 }
                 break;
             case Helper.ENEMY_UNIT_TAG:
-                fieldEnemy.Add(loc, unit);
+                fieldEnemy[loc] = unit;
                 switch (unit.UnitType)
                 {
                     case NameTypeUnit.Fire:
-                        fieldFireEnemy.Add(loc, unit);
+                        fieldFireEnemy[loc] = unit;
                         break;
                     case NameTypeUnit.Water:
-                        fieldWaterEnemy.Add(loc, unit);
+                        fieldWaterEnemy[loc] = unit;
                         break;
                     case NameTypeUnit.Grass:
-                        fieldGrassEnemy.Add(loc, unit);
+                        fieldGrassEnemy[loc] = unit;
                         break;
                     default:
                         break;
@@ -76,7 +81,7 @@ public static class FieldManager
         switch (unit.tag)
         {
             case Helper.PLAYER_UNIT_TAG:
-                fieldPlayer.Remove(fieldPlayer.Where(u => u.Value == unit).FirstOrDefault().Key);
+                fieldPlayer[fieldPlayer.Where(u => u.Value == unit).FirstOrDefault().Key] = null;
                 switch (unit.UnitType)
                 {
                     case NameTypeUnit.Fire:
@@ -93,7 +98,7 @@ public static class FieldManager
                 }
                 break;
             case Helper.ENEMY_UNIT_TAG:
-                fieldEnemy.Remove(fieldEnemy.Where(u => u.Value == unit).FirstOrDefault().Key);
+                fieldEnemy[fieldEnemy.Where(u => u.Value == unit).FirstOrDefault().Key] = null;
                 switch (unit.UnitType)
                 {
                     case NameTypeUnit.Fire:
@@ -122,5 +127,37 @@ public static class FieldManager
             return FightStatus.Win;
 
         return FightStatus.Null;
+    }
+
+    public static void StartFight()
+    {
+        foreach (var item in fieldPlayer)
+        {
+            if (item.Value == null)
+                continue;
+            GridManager.Instance.UpdateGridNode(item.Value.transform.position, false);
+        }
+        foreach (var item in fieldEnemy)
+        {
+            if (item.Value == null)
+                continue; 
+            GridManager.Instance.UpdateGridNode(item.Value.transform.position, false);
+        }
+
+        foreach (var item in fieldPlayer)
+        {
+            if (item.Value == null)
+                continue;
+
+            item.Value.StartAction();
+        }
+
+        foreach (var item in fieldEnemy)
+        {
+            if (item.Value == null)
+                continue;
+
+            item.Value.StartAction();
+        }
     }
 }

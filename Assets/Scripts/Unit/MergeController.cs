@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using TMPro;
+using WE.Unit;
 
 public class MergeController : MonoBehaviour
 {
-    private Unit unitInfo;
+    private BaseUnit unitInfo;
     private void OnEnable()
     {
-        unitInfo = GetComponent<PlayerUnit>();
+        unitInfo = GetComponent<BaseUnit>();
     }
-    public bool Merge(Unit otherUnit)
+    public bool Merge(BaseUnit otherUnit)
     {
-        if (otherUnit.NameUnit == unitInfo.NameUnit)//same type same tier
+        if (otherUnit.unitStats.unitName == unitInfo.unitStats.unitName)//same type same tier
             return false;
 
         List<UnitData> allChild = unitInfo.Childs.Concat(otherUnit.Childs).ToList();
@@ -23,10 +24,7 @@ public class MergeController : MonoBehaviour
         if (child == null)
             return false;
 
-        //GameObject unitClone = Instantiate(child.unitPrefab, otherUnit.transform.position, Quaternion.identity, GameManager.Instance.playerZone.transform);
-
-        //unitClone.GetComponent<UnitInfo>().data = child;
-        Unit newPlayerUnit = new PlayerUnit(child, otherUnit.transform.position);
+        GameManager.Instance.SpawnBaseUnit(otherUnit.transform.position, child, Helper.PLAYER_UNIT_TAG);
 
         if (!CPlayerPrefs.HasKey(child.unitName))
         {
@@ -43,21 +41,22 @@ public class MergeController : MonoBehaviour
 
     public bool Split()
     {
-        if (GameManager.fields.Where(u => u.Value == null).Count() < 1)
+        if (FieldManager.fieldPlayer.Where(u => u.Value == null).Count() < 1)
             return false;
 
-        UnitData[] parentUnit = GameManager.Instance.GetDataMerge().listUnits.Where(u => u.childs.Contains(unitInfo.Data)).ToArray();
+        UnitData[] parentUnit = GameManager.Instance.GetDataMerge().listUnits.Where(u => u.childs.Contains(unitInfo.unitStats)).ToArray();
         if (parentUnit.Length == 0)
             return false;
 
         Destroy(gameObject);
-        GameManager.Instance.DeleteUnitInField(unitInfo.GetDefaulLoc());
 
-        Vector2 loc = GameManager.fields.Where(u => u.Value == null).First().Key;
+        FieldManager.RemoveFromField(unitInfo.GetDefaulLoc(), unitInfo);
 
-        Unit newPlayerUnit = new PlayerUnit(parentUnit[0], loc);
-        loc = GameManager.fields.Where(u => u.Value == null).First().Key;
-        Unit newPlayerUnit2 = new PlayerUnit(parentUnit[1], loc);
+        Vector2 loc = FieldManager.fieldPlayer.Where(u => u.Value == null).First().Key;
+        GameManager.Instance.SpawnBaseUnit(loc,parentUnit[0], Helper.PLAYER_UNIT_TAG);
+
+        loc = FieldManager.fieldPlayer.Where(u => u.Value == null).First().Key;
+        GameManager.Instance.SpawnBaseUnit(loc, parentUnit[1], Helper.PLAYER_UNIT_TAG);
 
         return true;
     }

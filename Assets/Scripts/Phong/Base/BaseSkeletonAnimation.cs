@@ -19,6 +19,9 @@ namespace WE.Unit.Animation
         public virtual void Init(BaseUnit _owner)
         {
             Owner = _owner;
+            unitSkeletonAnimation.ClearState();
+            unitSkeletonAnimation.skeletonDataAsset = Owner.unitStats.skeletonData;
+            unitSkeletonAnimation.Initialize(true);
         }
 
         public void SetUnitAni(string name, bool loop, float timeScale = 1f)

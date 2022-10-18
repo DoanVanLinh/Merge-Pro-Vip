@@ -2,28 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using WE.Unit;
 
 public class UnitTier : MonoBehaviour
 {
     public GameObject star;
     public Transform starParents;
-    private Unit unit;
+    private BaseUnit unit;
     private void Start()
     {
         GetComponent<Canvas>().worldCamera = Helper.mainCam;
-        unit = GetComponentInParent<Unit>();
+        unit = GetComponentInParent<BaseUnit>();
         LoadTier();
     }
     void LoadTier()
     {
-        int unitTier = unit.Data.tier % 5;
+        int unitTier = unit.unitStats.tier % 5;
 
         unitTier = unitTier == 0 ? 5 : unitTier;
 
         for (int i = 0; i < unitTier; i++)
         {
             Color color = new Color32();
-            ColorUtility.TryParseHtmlString("#" + unit.Data.colorTier, out color);
+            ColorUtility.TryParseHtmlString("#" + unit.unitStats.colorTier, out color);
             Instantiate(star, Vector3.zero, Quaternion.identity, starParents).GetComponent<Image>().color = color;
         }
     }

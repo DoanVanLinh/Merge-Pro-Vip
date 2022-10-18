@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using WE.Unit;
 
 public class Dragable : MonoBehaviour
 {
@@ -9,14 +10,14 @@ public class Dragable : MonoBehaviour
     private Camera mainCam;
     private bool isSelecting;
     private MergeController unitMergeController;
-    private Unit unitInfo;
+    private BaseUnit unitInfo;
     private void Start()
     {
         mainCam = Camera.main;
         defaultLoc = transform.position;
         isSelecting = false;
         unitMergeController = GetComponent<MergeController>();
-        unitInfo = GetComponent<Unit>();
+        unitInfo = GetComponent<BaseUnit>();
     }
     private void OnMouseDown()
     {
@@ -62,11 +63,11 @@ public class Dragable : MonoBehaviour
         {
             transform.position = newLoc;
 
-            Unit otherUnit = GameManager.fields[newLoc];
+            BaseUnit otherUnit = FieldManager.fieldPlayer[newLoc];
             if (otherUnit == null)//to null loc
             {
-                GameManager.fields[newLoc] = unitInfo;
-                GameManager.fields[defaultLoc] = null;
+                FieldManager.AddToField(newLoc, unitInfo);
+                FieldManager.AddToField(defaultLoc, null);
                 defaultLoc = newLoc;
                 unitInfo.SetDefaulLoc();
                 return;
@@ -85,13 +86,13 @@ public class Dragable : MonoBehaviour
         else
             transform.position = defaultLoc;
     }
-    void SwapUnit(ref Unit otherUnit)
+    void SwapUnit(ref BaseUnit otherUnit)
     {
         otherUnit.transform.position = defaultLoc;
         otherUnit.GetComponent<Dragable>().defaultLoc = defaultLoc;
 
-        GameManager.fields[otherUnit.transform.position] = otherUnit;
-        GameManager.fields[transform.position] = unitInfo;
+        FieldManager.fieldPlayer[otherUnit.transform.position] = otherUnit;
+        FieldManager.fieldPlayer[transform.position] = unitInfo;
 
         otherUnit.SetDefaulLoc();
         unitInfo.SetDefaulLoc();

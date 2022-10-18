@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
-
+using WE.Unit;
 public class DataManager : MonoBehaviour
 {
     public static DataManager Instance;
@@ -37,12 +37,11 @@ public class DataManager : MonoBehaviour
     public void SaveFieldData()
     {
         gameData.listUnits = new List<UnitDataJson>();
-        List<Unit> unitDatas = GameManager.fields.Where(f => f.Value != null).Select(f => f.Value).ToList();
+        List<BaseUnit> unitDatas = FieldManager.fieldPlayer.Where(f => f.Value != null).Select(f => f.Value).ToList();
 
         foreach (var item in unitDatas)
         {
-            if (item.CompareTag(Helper.PLAYER_UNIT_TAG))
-                gameData.listUnits.Add(new UnitDataJson(item.Data.unitName, item.GetDefaulLoc().x, item.GetDefaulLoc().y, item.tag));
+            gameData.listUnits.Add(new UnitDataJson(item.unitStats.unitName, item.GetDefaulLoc().x, item.GetDefaulLoc().y, item.tag));
         }
         SaveLoadJson.Create(fileName, gameData);
     }

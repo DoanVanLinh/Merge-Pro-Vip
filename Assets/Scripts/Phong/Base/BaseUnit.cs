@@ -57,6 +57,9 @@ namespace WE.Unit
         public BaseSkill skill;
         public BaseTargeting targeter;
         public BaseSkeletonAnimation skeletonAnimation;
+        public UnitTier unitTier;
+        public UnitTypeImg unitTypeImg;
+        public HealthBar healthBar;
 
         public BaseUnit Target => targeter.Target;
         public UnitData unitStats;
@@ -104,16 +107,20 @@ namespace WE.Unit
 
         public System.Action<BaseUnit> OnUnitDie;
 
-        protected UnitState currentState;
-
-        protected virtual void OnEnable()
-        {
-            Init();
-        }
+        public Vector2 defaultLoc;
+        //protected virtual void Start()
+        //{
+        //    Init();
+        //}
         public virtual void Init()
         {
             if (!IsInited)
             {
+                defaultLoc = transform.position;
+                unitTypeImg.LoadTypeUnit(GameManager.Instance.GetIconTypeByname(unitStats.unitType.ToString()));
+                healthBar.healthBarImage.color = gameObject.tag == Helper.PLAYER_UNIT_TAG ? Color.green : Color.red;
+                healthBar.gameObject.SetActive(false);
+
                 hpAttribute = new UnitAttributte();
                 mpAttribute = new UnitAttributte();
                 damageAttribute = new UnitAttributte();
@@ -144,20 +151,15 @@ namespace WE.Unit
                 attacker?.SetTargeter(targeter);
                 skill?.Init(this);
                 skeletonAnimation?.Init(this);
+                gameObject.AddComponent<BoxCollider2D>();
+                unitTier.SetHealthBarLoc();
+
                 IsInited = true;
                 isAlive = true;
             }
             targeter.OnNewTarget += OnNewTarget;
             skeletonAnimation.SetUnitAni(Helper.IDLE_STATE_ANI, true);
             //StartAction();
-        }
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-
-                StartAction();
-            }
         }
         public virtual void StartAction()
         {
@@ -182,12 +184,15 @@ namespace WE.Unit
         public virtual void TakeDamage(float dmg, BaseUnit source)
         {
             currentHp -= CalculateDamageTaken(dmg, source);
-
+           
             if (currentHp <= 0 && isAlive)
             {
                 currentHp = 0;
+                healthBar.gameObject.SetActive(false);
                 Die();
             }
+            healthBar.gameObject.SetActive(true);
+            healthBar.UpdateHealthBar((float)currentHp / MaxHp);
         }
         protected virtual float CalculateDamageTaken(float dmg, BaseUnit source)
         {
@@ -217,7 +222,7 @@ namespace WE.Unit
         }
         public virtual void Stop()
         {
-     
+
         }
         public virtual void OnTargetDie()
         {
@@ -227,6 +232,15 @@ namespace WE.Unit
         {
             this.enabled = true;
         }
+        public Vector2 GetDefaulLoc()
+        {
+            return defaultLoc;
+        }
+        public void SetDefaulLoc()
+        {
+            defaultLoc = transform.position;
+        }
+
         public virtual T AddEffect<T>() where T : BaseEffect
         {
             T fx = gameObject.AddComponent<T>();

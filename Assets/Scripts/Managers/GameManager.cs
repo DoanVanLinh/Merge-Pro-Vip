@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using Sirenix.OdinInspector;
-using UnityEngine;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
+using UnityEngine;
+using WE.Unit;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,13 +22,12 @@ public class GameManager : MonoBehaviour
             for (int j = 0; j < col; j++)
             {
                 fields[new Vector2(j, i)] = null;
+                FieldManager.fieldPlayer[new Vector2(j, i)] = null;
             }
         }
     }
     #endregion
-    [ShowInInspector]
     public static Dictionary<Vector2, Unit> fields;
-    [ShowInInspector]
     public static Dictionary<Vector2, Unit> fieldEnemy;
 
     public int row;
@@ -41,7 +40,7 @@ public class GameManager : MonoBehaviour
     public int coinsEachLevel;
     public int coinBase;
     public float muiltiCoins;
-
+    public GameObject unitBasePrefab;
     [HideInInspector]
     public bool isOnDeleteField;
     [HideInInspector]
@@ -80,6 +79,34 @@ public class GameManager : MonoBehaviour
         Vector2 loc = fields.Where(f => f.Value == null).Select(f => f.Key).OrderBy(o => random).FirstOrDefault();
 
         new PlayerUnit(unitData, loc);
+    }
+    [Button("Spawn Player Unit Base")]
+    public void SpawnPlayerBaseUnit(string index)
+    {
+        int[] indexUnit = index.Split(',').Select(i => int.Parse(i)).ToArray();
+
+        int amountEmpty = FieldManager.fieldPlayer.Where(f => f.Value == null).Count();
+
+        if (amountEmpty == 0)
+            return;
+
+        float random = Random.Range(-1f, 1f);
+
+        UnitData unitData = GetDataMerge().listUnits[indexUnit[Random.Range(0, indexUnit.Length)]];
+
+        CPlayerPrefs.SetBool(unitData.unitName, true);
+        Vector2 loc = FieldManager.fieldPlayer.Where(f => f.Value == null).Select(f => f.Key).OrderBy(o => random).FirstOrDefault();
+
+        SpawnBaseUnit(loc, unitData, Helper.PLAYER_UNIT_TAG);
+    }
+    public void SpawnBaseUnit(Vector2 loc, UnitData unitData, string tag)
+    {
+        GameObject clone = Instantiate(unitBasePrefab, loc, Quaternion.identity);
+        clone.tag = tag;
+
+        BaseUnit unit = clone.GetComponent<BaseUnit>();
+        unit.unitStats = unitData;
+        unit.Init();
     }
     [Button("Spawn Enemy Unit")]
     private void SpawnEnemyUnit(int index)
@@ -132,7 +159,7 @@ public class GameManager : MonoBehaviour
         {
             foreach (var level in state.listLevel)
             {
-                level.cointReward = (int)(coinBase* muiltiCoins) * ++counterLevel ;
+                level.cointReward = (int)(coinBase * muiltiCoins) * ++counterLevel;
                 UnityEditor.EditorUtility.SetDirty(level);
             }
         }
@@ -141,12 +168,12 @@ public class GameManager : MonoBehaviour
     [Button("Load Level")]
     private void LoadCurrentLevel(int state, int level, string path = "States/")
     {
-        List<Vector2> enemyLoc = fields.Where(f => f.Value != null && f.Value.CompareTag(Helper.ENEMY_UNIT_TAG)).Select(f => f.Key).ToList();
+        List<Vector2> enemyLoc = FieldManager.fieldEnemy.Where(f => f.Value != null).Select(f => f.Key).ToList();
 
         foreach (var item in enemyLoc)
         {
-            Destroy(fields[item].gameObject);
-            fields[item] = null;
+            Destroy(FieldManager.fieldPlayer[item].gameObject);
+            FieldManager.AddToField(item, null);
         }
 
         State currentState = Resources.LoadAll<State>(path).Where(s => s.id == state.ToString()).FirstOrDefault();
@@ -156,7 +183,7 @@ public class GameManager : MonoBehaviour
         foreach (var item in currentLevel.listEnemy)
         {
             if (item.unitTag.Equals(Helper.ENEMY_UNIT_TAG))
-                new EnemyUnit(GetDataMerge().listUnits.Where(u => u.unitName == item.nameUnit).FirstOrDefault(), new Vector2(item.px, item.py));
+                SpawnBaseUnit(new Vector2(item.px, item.py), GetDataMerge().listUnits.Where(u => u.unitName == item.nameUnit).FirstOrDefault(), Helper.ENEMY_UNIT_TAG);
         }
     }
 
@@ -168,20 +195,19 @@ public class GameManager : MonoBehaviour
 
         foreach (var item in data)
         {
-            if (item.unitTag.Equals(Helper.PLAYER_UNIT_TAG))
-                new PlayerUnit(GetDataMerge().listUnits.Where(u => u.unitName == item.nameUnit).FirstOrDefault(), new Vector2(item.px, item.py));
+            SpawnBaseUnit(new Vector2(item.px, item.py), GetDataMerge().listUnits.Where(u => u.unitName == item.nameUnit).FirstOrDefault(), Helper.PLAYER_UNIT_TAG);
         }
 
         LoadCurrentLevel(DataManager.Instance.GetDataGame().GetCurrentState(), DataManager.Instance.GetDataGame().GetCurrentLevel(), "States/");
     }
     private void InitalFields()
     {
-        List<Vector2> playerLoc = fields.Where(f => f.Value != null && f.Value.CompareTag(Helper.PLAYER_UNIT_TAG)).Select(f => f.Key).ToList();
+        List<Vector2> playerLoc = FieldManager.fieldPlayer.Where(f => f.Value != null).Select(f => f.Key).ToList();
 
         foreach (var item in playerLoc)
         {
-            Destroy(fields[item].gameObject);
-            fields[item] = null;
+            Destroy(FieldManager.fieldPlayer[item].gameObject);
+            FieldManager.AddToField(item,null);
         }
     }
     public void StartFight()
@@ -189,6 +215,7 @@ public class GameManager : MonoBehaviour
         isStart = true;
         SetFightStatus(FightStatus.Null);
         DataManager.Instance.SaveFieldData();
+        FieldManager.StartFight();
     }
 
     public void SetFightStatus(FightStatus status)
@@ -240,7 +267,7 @@ public class GameManager : MonoBehaviour
     }
     public int GetCointRewardCurrentLevel(int state, int level)
     {
-       return Resources.LoadAll<State>("States/").Where(s=>s.id == state.ToString()).FirstOrDefault().listLevel.Where(l=>l.id == level.ToString()).First().cointReward;
+        return Resources.LoadAll<State>("States/").Where(s => s.id == state.ToString()).FirstOrDefault().listLevel.Where(l => l.id == level.ToString()).First().cointReward;
     }
 }
 public enum FightStatus
