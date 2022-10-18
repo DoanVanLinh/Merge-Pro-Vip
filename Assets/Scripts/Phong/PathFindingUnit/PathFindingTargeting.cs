@@ -4,11 +4,16 @@ using System.Linq;
 using UnityEngine;
 using WE.Unit.Target;
 using WE.Unit;
+using System.Collections;
+
 public class PathFindingTargeting : BaseTargeting
 {
     private BaseUnit cacheTarget;
     public override void GetTarget()
     {
+        if (Owner == null)
+            return;
+
         ((PathFindingMover)Owner.mover).OnStepDone -= OnStepDone;
 
         Owner.skeletonAnimation.SetUnitAni(Helper.IDLE_STATE_ANI, true);
@@ -38,24 +43,48 @@ public class PathFindingTargeting : BaseTargeting
         }
         else
         {
-            GridManager.Instance.OnGridUpdate += OnGridUpdate;
+            //GridManager.Instance.OnGridUpdate += OnGridUpdate;
+            StartCoroutine(IEStandBy(1f));
         }
     }
+    private bool isStandBy = false;
 
+    IEnumerator IEStandBy(float timeDelay)
+    {
+
+        if (!isStandBy)
+            isStandBy = true;
+        else yield break;
+
+
+        while (true)
+        {
+            if (Owner.Target == null)
+            {
+                yield return null;
+                if (((PathFindingMover)Owner.mover).isStepDone)
+                {
+                    yield return new WaitForSeconds(timeDelay);
+                    
+                    GetTarget();
+                }
+            }
+            else
+            {
+                isStandBy = false;
+                yield break;
+            }
+        }
+    }
     private void OnStepDone()
     {
         ((PathFindingMover)Owner.mover).OnStepDone -= OnStepDone;
         GetTarget();
     }
-    private void OnGridUpdate()
+    public override void OnOwnerDie(BaseUnit o)
     {
-        GridManager.Instance.OnGridUpdate -= OnGridUpdate;
-        if (Owner.Target == null)
-        {
-            Debug.Log("Grid Update" + Time.deltaTime, gameObject);
-            GetTarget();
-        }
-
+        o.OnUnitDie -= OnTargetUnitDie;
+        base.OnOwnerDie(o);
     }
     public override void OnTargetUnitDie(BaseUnit unit)
     {
@@ -63,7 +92,7 @@ public class PathFindingTargeting : BaseTargeting
 
         GameManager.Instance.SetFightStatus(FieldManager.EndFight());
         Owner.OnTargetDie();
-        if (((PathFindingMover)Owner.mover).IsStepDone())
+        if (((PathFindingMover)Owner.mover).isStepDone)
             GetTarget();
     }
     private bool HasPath(NodeBase targetNeighbor)

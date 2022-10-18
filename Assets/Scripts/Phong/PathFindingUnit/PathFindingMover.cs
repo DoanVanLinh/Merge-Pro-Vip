@@ -23,12 +23,15 @@ public class PathFindingMover : BaseMover
     private void Start()
     {
         jumpLoc = transform.position;
+        isStepDone = true;
     }
 
     public override void MoveToAttackPosition()
     {
-        if (nextStep.x == -20)
-            GridManager.Instance.UpdateGridNode(transform.position, false);
+        //if (nextStep.x == -20)
+        //    GridManager.Instance.UpdateGridNode(transform.position, false);
+        if (!isStepDone)
+            return;
 
         if (moveSpeed == 0)
             return;
@@ -42,6 +45,13 @@ public class PathFindingMover : BaseMover
 
     private IEnumerator IEMoving()
     {
+        //int delayCounter = (int)transform.position.y;
+        //for (int i = 0; i < delayCounter; i++)
+        //{
+        //    yield return null;
+        //}
+
+
         while (true)
         {
             yield return null;
@@ -49,6 +59,8 @@ public class PathFindingMover : BaseMover
 
             if (!Moving())
             {
+                if (gameObject.name.Equals("GameObject (37)"))
+                    Debug.Log(Time.deltaTime);
                 ((PathFindingUnit)Owner).unitNode = GridManager.Instance.Tiles.Where(t => t.Key == (Vector2)transform.position).First().Value;
 
                 if (Owner.Target != null)
@@ -60,6 +72,8 @@ public class PathFindingMover : BaseMover
                     }
                     else
                         OnStepDone?.Invoke();
+                else
+                    OnStepDone?.Invoke();
                 yield break;
             }
         }
@@ -94,59 +108,6 @@ public class PathFindingMover : BaseMover
             targetNode = GridManager.Instance.Tiles[new Vector2((float)Math.Round(Owner.Target.transform.position.x * 2, MidpointRounding.AwayFromZero) / 2, (float)Math.Round(Owner.Target.transform.position.y * 2, MidpointRounding.AwayFromZero) / 2)];
         else
             targetNode = GridManager.Instance.Tiles[new Vector2Int((int)Owner.Target.transform.position.x, (int)Owner.Target.transform.position.y)];
-
-        //if (targetNode == null)
-        //{
-        //    return transform.position;
-        //}
-
-        //if (targetNode != cacheTarget)
-        //    if (targetNode.Neighbors.Any(n => n.Walkable))
-        //    {
-        //        targetNeighbor = targetNode.Neighbors.Where(n => n.Walkable).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
-        //        cacheTarget = targetNode;
-        //    }
-
-        //if (targetNeighbor == null)
-        //    if (targetNode.Neighbors.Any(n => n.Walkable))
-        //        targetNeighbor = targetNode.Neighbors.Where(n => n.Walkable).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
-        //    else
-        //    {
-        //        isWait = true;
-        //        return transform.position;
-        //    }
-
-        //if (!targetNeighbor.Walkable)
-        //{
-        //    if (targetNeighbor.transform.position != transform.position)
-        //    {
-
-        //        if (targetNode.Neighbors.Any(n => n.Walkable))
-        //            targetNeighbor = targetNode.Neighbors.Where(n => n.Walkable).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
-        //        else
-        //        {
-        //            if (!targetNode.Neighbors.Contains(targetNeighbor))
-        //            {
-        //                canMove = false;
-        //                isWait = true;
-        //                return transform.position;
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (targetNode.Neighbors.Contains(targetNeighbor))
-        //        {
-        //            isWait = true;
-        //            return transform.position;
-        //        }
-        //        else
-        //        {
-        //            if (targetNode.Neighbors.Any(n => n.Walkable))
-        //                targetNeighbor = targetNode.Neighbors.Where(n => n.Walkable).OrderBy(r => Random.Range(-1f, 1f)).FirstOrDefault();
-        //        }
-        //    }
-        //}
 
         ((PathFindingUnit)Owner).unitNode = GridManager.Instance.Tiles.Where(t => t.Key == new Vector2((int)transform.position.x, (int)transform.position.y)).First().Value;
 
@@ -194,14 +155,9 @@ public class PathFindingMover : BaseMover
         GridManager.Instance.UpdateGridNode(nextStep, false);
 
     }
-
-    public bool IsStepDone()
-    {
-        return (Vector2)transform.position == nextStep;
-    }
-    private void OnDestroy()
-    {
-        GridManager.Instance.UpdateGridNode(((PathFindingUnit)Owner).unitNode.transform.position, true);
-    }
+    //private void OnDestroy()
+    //{
+    //    GridManager.Instance.UpdateGridNode(((PathFindingUnit)Owner).unitNode.transform.position, true);
+    //}
 }
 

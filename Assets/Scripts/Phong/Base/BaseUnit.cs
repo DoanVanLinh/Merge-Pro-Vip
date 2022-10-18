@@ -154,7 +154,10 @@ namespace WE.Unit
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.S))
+            {
+
                 StartAction();
+            }
         }
         public virtual void StartAction()
         {
@@ -196,8 +199,9 @@ namespace WE.Unit
                 return;
 
             isAlive = false;
-            Destroy(gameObject);
+            //Stop();
             OnUnitDie?.Invoke(this);
+            Destroy(gameObject);
         }
         public bool IsOnAttackRange()
         {
@@ -209,13 +213,11 @@ namespace WE.Unit
         }
         protected virtual void OnDestroy()
         {
-            Stop();
             targeter.OnNewTarget -= OnNewTarget;
         }
         public virtual void Stop()
         {
-            mover.Stop();
-            attacker.Stop();
+     
         }
         public virtual void OnTargetDie()
         {

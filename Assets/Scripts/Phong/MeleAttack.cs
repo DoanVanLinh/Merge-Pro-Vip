@@ -19,7 +19,7 @@ namespace WE.Unit.Attack
         private void CheckUnitAfterAttack()
         {
             Owner.attacker.OnAttackDone -= CheckUnitAfterAttack;
-            if (!Owner.IsOnAttackRange())
+            if (Owner.Target == null || !Owner.IsOnAttackRange())
             {
                 Owner.targeter.GetTarget();
                 Stop();

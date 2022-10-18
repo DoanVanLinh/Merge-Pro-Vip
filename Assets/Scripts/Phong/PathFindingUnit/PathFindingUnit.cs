@@ -12,6 +12,8 @@ namespace WE.Unit
         {
             FieldManager.AddToField(transform.position, this);
             unitNode = GridManager.Instance.Tiles.Where(t => t.Key == (Vector2)transform.position).First().Value;
+            GridManager.Instance.UpdateGridNode(transform.position, false);
+
             base.Init();
         }
         public override void Die()
@@ -19,7 +21,7 @@ namespace WE.Unit
             if (unitNode != null)
             {
                 FieldManager.RemoveFromField(unitNode.transform.position, this);
-                GridManager.Instance.UpdateGridNode(transform.position, true);
+                GridManager.Instance.UpdateGridNode(unitNode.transform.position, true);
             }
             base.Die();
         }
