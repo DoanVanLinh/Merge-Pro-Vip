@@ -13,7 +13,8 @@ namespace WE.Unit.Animation
         public SkeletonAnimation unitSkeletonAnimation;
         public Action OnStateEvent;
         public Action OnStateStart;
-        public Action OnStateEnd;
+        public Action<string> OnStateEnd;
+        public Action<string> OnStateComplete;
         public BaseUnit Owner;
 
         public virtual void Init(BaseUnit _owner)
@@ -26,19 +27,27 @@ namespace WE.Unit.Animation
 
         public void SetUnitAni(string name, bool loop, float timeScale = 1f)
         {
-            //if (unitSkeletonAnimation.AnimationName == name)
-            //    return;
+            if (name != Helper.ATTACK_STATE_ANI)
+                if (unitSkeletonAnimation.AnimationName == name)
+                    return;
 
             unitSkeletonAnimation.state.SetAnimation(0, name, loop).TimeScale = timeScale;
             unitSkeletonAnimation.state.Event += State_Event;
             unitSkeletonAnimation.state.Start += State_Start;
             unitSkeletonAnimation.state.End += State_End;
+            unitSkeletonAnimation.state.Complete += State_Complete;
+        }
+
+        private void State_Complete(Spine.TrackEntry trackEntry)
+        {
+            unitSkeletonAnimation.state.Complete -= State_Complete;
+            OnStateComplete?.Invoke(unitSkeletonAnimation.AnimationName);
         }
 
         protected virtual void State_End(Spine.TrackEntry trackEntry)
         {
             unitSkeletonAnimation.state.End -= State_End;
-            OnStateEnd?.Invoke();
+            OnStateEnd?.Invoke(unitSkeletonAnimation.AnimationName);
         }
 
         protected void State_Start(Spine.TrackEntry trackEntry)
@@ -53,6 +62,10 @@ namespace WE.Unit.Animation
             {
                 OnStateEvent?.Invoke();
             }
+        }
+        public float DurationAniState(string nameAni)
+        {
+            return unitSkeletonAnimation.Skeleton.Data.FindAnimation(nameAni).Duration;
         }
     }
 }

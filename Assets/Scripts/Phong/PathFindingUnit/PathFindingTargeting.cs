@@ -89,7 +89,7 @@ public class PathFindingTargeting : BaseTargeting
     public override void OnTargetUnitDie(BaseUnit unit)
     {
         unit.OnUnitDie -= OnTargetUnitDie;
-
+        Owner.attacker.Stop();
         GameManager.Instance.SetFightStatus(FieldManager.EndFight());
         Owner.OnTargetDie();
         if (((PathFindingMover)Owner.mover).isStepDone)
