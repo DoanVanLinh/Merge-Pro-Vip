@@ -30,7 +30,7 @@ namespace WE.Unit.Attack
         {
             while (Owner.IsAlive)
             {
-
+                Owner.skeletonAnimation.SetUnitAni(Helper.ATTACK_STATE_ANI, false, attackSpeed);
                 CallAttack();
                 yield return new WaitForSeconds(attackSpeed);
             }

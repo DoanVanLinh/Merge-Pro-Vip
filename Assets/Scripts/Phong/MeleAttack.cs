@@ -11,8 +11,8 @@ namespace WE.Unit.Attack
     {
         public override void ExcuteAttack()
         {
-            if (Owner.skeletonAnimation.OnStateEvent == null)
-                Owner.skeletonAnimation.OnStateEvent += OnAttackEvent;
+            Owner.skeletonAnimation.OnStateEvent += OnAttackEvent;
+
             Owner.attacker.OnAttackDone += CheckUnitAfterAttack;
         }
 

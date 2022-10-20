@@ -167,7 +167,8 @@ namespace WE.Unit
         }
         public virtual void OnNewTarget()
         {
-            mover.OnMoveDone += OnMoveToAttackPosition;
+            if (mover.OnMoveDone == null)
+                mover.OnMoveDone += OnMoveToAttackPosition;
             skeletonAnimation.SetUnitAni(Helper.MOVE_STATE_ANI, true);
             mover.MoveToAttackPosition();
         }
@@ -178,13 +179,11 @@ namespace WE.Unit
             if (Target == null)
                 return;
 
-            skeletonAnimation.SetUnitAni(Helper.ATTACK_STATE_ANI, true, currentAttackSpeed);
             attacker.StartAttack();
         }
         public virtual void TakeDamage(float dmg, BaseUnit source)
         {
             currentHp -= CalculateDamageTaken(dmg, source);
-           
             if (currentHp <= 0 && isAlive)
             {
                 currentHp = 0;

@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 [CreateAssetMenu(fileName = "State", menuName = "ScriptableObjects/State", order = 1)]
 public class State : ScriptableObject
@@ -13,6 +14,7 @@ public class State : ScriptableObject
     public Color environmentColor;
     public List<Level> listLevel;
 
+#if UNITY_EDITOR
     [Button("Get Data Level")]
     public void GetDataUnit()
     {
@@ -74,10 +76,10 @@ public class State : ScriptableObject
 
             //listUnits.Reverse();
 
-            UnityEditor.EditorUtility.SetDirty(this);
+            EditorUtility.SetDirty(this);
         });
         EditorCoroutine.start(Helper.IELoadData(url, actionComplete));
     }
-
+#endif
 
 }

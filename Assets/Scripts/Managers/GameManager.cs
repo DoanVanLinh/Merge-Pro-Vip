@@ -172,7 +172,7 @@ public class GameManager : MonoBehaviour
 
         foreach (var item in enemyLoc)
         {
-            Destroy(FieldManager.fieldPlayer[item].gameObject);
+            Destroy(FieldManager.fieldEnemy[item].gameObject);
             FieldManager.AddToField(item, null);
         }
 
@@ -182,8 +182,7 @@ public class GameManager : MonoBehaviour
 
         foreach (var item in currentLevel.listEnemy)
         {
-            if (item.unitTag.Equals(Helper.ENEMY_UNIT_TAG))
-                SpawnBaseUnit(new Vector2(item.px, item.py), GetDataMerge().listUnits.Where(u => u.unitName == item.nameUnit).FirstOrDefault(), Helper.ENEMY_UNIT_TAG);
+            SpawnBaseUnit(new Vector2(item.px, item.py), GetDataMerge().listUnits.Where(u => u.unitName == item.nameUnit).FirstOrDefault(), Helper.ENEMY_UNIT_TAG);
         }
     }
 
@@ -207,7 +206,7 @@ public class GameManager : MonoBehaviour
         foreach (var item in playerLoc)
         {
             Destroy(FieldManager.fieldPlayer[item].gameObject);
-            FieldManager.AddToField(item,null);
+            FieldManager.AddToField(item, null);
         }
     }
     public void StartFight()

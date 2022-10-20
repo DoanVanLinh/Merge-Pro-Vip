@@ -26,8 +26,8 @@ namespace WE.Unit.Animation
 
         public void SetUnitAni(string name, bool loop, float timeScale = 1f)
         {
-            if (unitSkeletonAnimation.AnimationName == name)
-                return;
+            //if (unitSkeletonAnimation.AnimationName == name)
+            //    return;
 
             unitSkeletonAnimation.state.SetAnimation(0, name, loop).TimeScale = timeScale;
             unitSkeletonAnimation.state.Event += State_Event;
