@@ -60,6 +60,7 @@ namespace WE.Unit
         public UnitTier unitTier;
         public UnitTypeImg unitTypeImg;
         public HealthBar healthBar;
+        public ManaBar manaBar;
 
         public BaseUnit Target => targeter.Target;
         public UnitData unitStats;
@@ -79,9 +80,9 @@ namespace WE.Unit
         public float MaxAttackRange => attackRangeAttribute.Value;
         public float MaxManaRegen => manaRegenAttribute.Value;
 
-        public float CurrentHp => currentHp;
+        public float CurrentHp { get => currentHp; set => currentHp = value >= MaxHp ? MaxHp : value; }
         public float CurrentMp { get => currentMp; set => currentMp = value; }
-        public float CurrentDamage => currentDamage;
+        public float CurrentDamage => currentDamage.Value;
         public float CurrentMoveSpeed => currentMoveSpeed;
         public float CurrentAttackSpeed => currentAttackSpeed;
         public float CurrentAttackRange => currentAttackRange;
@@ -95,7 +96,7 @@ namespace WE.Unit
 
         protected float currentHp;
         protected float currentMp;
-        protected float currentDamage;
+        public UnitAttributte currentDamage;
         protected float currentMoveSpeed;
         protected float currentAttackSpeed;
         protected float currentAttackRange;
@@ -119,11 +120,12 @@ namespace WE.Unit
                 defaultLoc = transform.position;
                 unitTypeImg.LoadTypeUnit(GameManager.Instance.GetIconTypeByname(unitStats.unitType.ToString()));
                 healthBar.healthBarImage.color = gameObject.tag == Helper.PLAYER_UNIT_TAG ? Color.green : Color.red;
-                healthBar.gameObject.SetActive(false);
+                //healthBar.gameObject.SetActive(false);
 
                 hpAttribute = new UnitAttributte();
                 mpAttribute = new UnitAttributte();
                 damageAttribute = new UnitAttributte();
+                currentDamage = new UnitAttributte();
                 attackSpeedAttribute = new UnitAttributte();
                 attackRangeAttribute = new UnitAttributte();
                 moveSpeedAttribute = new UnitAttributte();
@@ -138,8 +140,9 @@ namespace WE.Unit
                 manaRegenAttribute.SetValueCount(unitStats.manaRegen);
 
                 currentHp = MaxHp;
+
                 currentMp = 0;
-                currentDamage = MaxDamage;
+                currentDamage.SetValueCount(unitStats.damage);
                 currentAttackSpeed = MaxAttackSpeed;
                 currentAttackRange = MaxAttackRange;
                 currentMoveSpeed = MaxMoveSpeed;
@@ -189,9 +192,14 @@ namespace WE.Unit
                 currentHp = 0;
                 healthBar.gameObject.SetActive(false);
                 Die();
+                return;
             }
-            healthBar.gameObject.SetActive(true);
-            healthBar.UpdateHealthBar((float)currentHp / MaxHp);
+            healthBar.gameObject?.SetActive(true);
+            healthBar?.UpdateHealthBar((float)currentHp / MaxHp);
+        }
+        public virtual void UpdateManaBar()
+        {
+            manaBar.UpdateManaBar((float)currentMp / MaxMp);
         }
         protected virtual float CalculateDamageTaken(float dmg, BaseUnit source)
         {
@@ -221,7 +229,8 @@ namespace WE.Unit
         }
         public virtual void Stop()
         {
-
+            attacker.Stop();
+            mover.Stop();
         }
         public virtual void OnTargetDie()
         {
@@ -229,7 +238,7 @@ namespace WE.Unit
         }
         public virtual void Resume()
         {
-            this.enabled = true;
+            StartAction();
         }
         public Vector2 GetDefaulLoc()
         {

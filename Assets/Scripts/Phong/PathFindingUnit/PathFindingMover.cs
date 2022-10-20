@@ -16,6 +16,7 @@ public class PathFindingMover : BaseMover
 
     public bool isJump;
     public bool isStepDone;
+    public bool isMoveDone;
     public AnimationCurve moveCurve;
     Vector2 jumpLoc;
 
@@ -24,6 +25,7 @@ public class PathFindingMover : BaseMover
     {
         jumpLoc = transform.position;
         isStepDone = true;
+        isMoveDone = false;
     }
 
     public override void MoveToAttackPosition()
@@ -70,7 +72,9 @@ public class PathFindingMover : BaseMover
                         if (Owner.Target != null)
                         {
                             OnMoveDone?.Invoke();
+                            isMoveDone = true;
                             Owner.transform.localScale = new Vector3((transform.position - Owner.Target.transform.position).x > 0 ? 1 : -1, 1, 1);
+                            Owner.healthBar.gameObject.transform.localScale = Owner.transform.localScale;
                         }
                     }
                     else
@@ -97,6 +101,7 @@ public class PathFindingMover : BaseMover
             }
             GridManager.Instance.UpdateGridNode(nextStep, false);
             isStepDone = false;
+            isMoveDone = false;
             return true;
         }
         else

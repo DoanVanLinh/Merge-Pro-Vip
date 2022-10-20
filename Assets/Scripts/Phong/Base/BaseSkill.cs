@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
 namespace WE.Unit.Skill
 {
     public class SkillAtributes
@@ -15,6 +17,9 @@ namespace WE.Unit.Skill
 
         protected float maxMana => Owner.MaxMp;
         protected float manaRegen => Owner.CurrentManaRegen;
+
+        public Action onManaFull;
+        public bool isExcutedSkill;
         public virtual void Init(BaseUnit _owner)
         {
             Owner = _owner;
@@ -29,14 +34,26 @@ namespace WE.Unit.Skill
         }
         protected virtual IEnumerator IERegen()
         {
+            yield return new WaitUntil(() => GameManager.Instance.isStart);
             while (Owner.IsAlive)
             {
                 yield return new WaitForSeconds(1);
                 Owner.CurrentMp += manaRegen;
+                Owner.UpdateManaBar();
+
                 if (Owner.CurrentMp >= maxMana)
                 {
-                    Owner.CurrentMp -= maxMana;
-                    ExcuteSkill();
+                    while(true)
+                    {
+                        yield return null;
+                        onManaFull?.Invoke();
+                        yield return new WaitUntil(()=>Owner.Target!=null);
+                        yield return new WaitUntil(() => isExcutedSkill);
+                        isExcutedSkill = false;
+                        Owner.CurrentMp -= maxMana;
+                        Owner.UpdateManaBar();
+                        break;
+                    }
                 }
             }
         }

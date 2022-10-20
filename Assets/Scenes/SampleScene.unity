@@ -160,7 +160,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 52
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &17696641
 MonoBehaviour:
@@ -310,6 +310,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -336,6 +337,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -376,7 +378,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 36
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &40731686
 MonoBehaviour:
@@ -526,6 +528,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -579,6 +582,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -619,7 +623,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 39
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &42841964
 MonoBehaviour:
@@ -769,6 +773,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -822,6 +827,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -862,7 +868,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &49913794
 MonoBehaviour:
@@ -1012,6 +1018,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -1038,6 +1045,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -1187,7 +1195,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &69109309
 MonoBehaviour:
@@ -1337,6 +1345,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -1363,6 +1372,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -1757,7 +1767,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &86947686
 MonoBehaviour:
@@ -1907,6 +1917,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -1933,6 +1944,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -1973,7 +1985,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &120023825
 MonoBehaviour:
@@ -2123,6 +2135,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -2149,6 +2162,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -3015,7 +3029,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &228491936
 MonoBehaviour:
@@ -3165,6 +3179,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -3191,6 +3206,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -3359,7 +3375,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 42
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &253670141
 MonoBehaviour:
@@ -3509,6 +3525,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -3562,6 +3579,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -3837,7 +3855,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 40
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &295543740
 MonoBehaviour:
@@ -3987,6 +4005,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -4040,6 +4059,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -4185,7 +4205,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 33
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &306203457
 MonoBehaviour:
@@ -4335,6 +4355,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -4361,6 +4382,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -4513,7 +4535,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 45
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &382253001
 MonoBehaviour:
@@ -4663,6 +4685,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -4716,6 +4739,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -4756,7 +4780,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &387977978
 MonoBehaviour:
@@ -4906,6 +4930,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -4959,6 +4984,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -5088,7 +5114,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 60
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &416069033
 MonoBehaviour:
@@ -5238,6 +5264,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -5264,6 +5291,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -5733,7 +5761,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 54
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &463850831
 MonoBehaviour:
@@ -5883,6 +5911,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -5909,6 +5938,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -5949,7 +5979,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 47
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &489654046
 MonoBehaviour:
@@ -6099,6 +6129,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -6152,6 +6183,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -6819,7 +6851,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 59
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &660922909
 MonoBehaviour:
@@ -6969,6 +7001,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -6995,6 +7028,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -7223,7 +7257,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &696768508
 MonoBehaviour:
@@ -7373,6 +7407,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -7399,6 +7434,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -7589,7 +7625,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &744389245
 MonoBehaviour:
@@ -7739,6 +7775,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -7792,6 +7829,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -7991,11 +8029,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770352253}
   m_CullTransparentMesh: 1
---- !u!4 &772166689 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
-  m_PrefabInstance: {fileID: 8631547725715498653}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &799234404
 GameObject:
   m_ObjectHideFlags: 0
@@ -8211,7 +8244,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &802882472
 MonoBehaviour:
@@ -8361,6 +8394,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -8387,6 +8421,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -8427,7 +8462,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 55
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &825183970
 MonoBehaviour:
@@ -8577,6 +8612,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -8603,6 +8639,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -8643,7 +8680,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 56
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &828049132
 MonoBehaviour:
@@ -8793,6 +8830,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -8819,6 +8857,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -8859,7 +8898,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &839033910
 MonoBehaviour:
@@ -9009,6 +9048,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -9062,6 +9102,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -9102,7 +9143,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &859193580
 MonoBehaviour:
@@ -9252,6 +9293,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -9278,6 +9320,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -9784,7 +9827,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &936958891
 MonoBehaviour:
@@ -9934,6 +9977,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -9960,6 +10004,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -10397,7 +10442,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1033230007
 MonoBehaviour:
@@ -10547,6 +10592,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -10600,6 +10646,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -10648,7 +10695,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1040438097
 MonoBehaviour:
@@ -10823,7 +10870,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 48
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1059001232
 MonoBehaviour:
@@ -10973,6 +11020,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -11026,6 +11074,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -11066,7 +11115,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 58
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1087196591
 MonoBehaviour:
@@ -11216,6 +11265,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -11242,6 +11292,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -12840,7 +12891,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1236501655
 MonoBehaviour:
@@ -12990,6 +13041,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -13043,6 +13095,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -13083,7 +13136,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1240396726
 MonoBehaviour:
@@ -13233,6 +13286,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -13259,6 +13313,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -13299,7 +13354,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 51
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1243415026
 MonoBehaviour:
@@ -13449,6 +13504,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -13502,6 +13558,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -13773,7 +13830,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 44
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1277180262
 MonoBehaviour:
@@ -13923,6 +13980,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -13976,6 +14034,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -14016,7 +14075,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 57
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1279779658
 MonoBehaviour:
@@ -14166,6 +14225,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -14192,6 +14252,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -14223,7 +14284,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 772166689}
   - {fileID: 1749595440}
   - {fileID: 1869731196}
   - {fileID: 1394094248}
@@ -14285,7 +14345,7 @@ Transform:
   - {fileID: 660922908}
   - {fileID: 416069032}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1316227431
 GameObject:
@@ -14460,7 +14520,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 49
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1323024599
 MonoBehaviour:
@@ -14610,6 +14670,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -14663,6 +14724,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -14931,7 +14993,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1341436999
 MonoBehaviour:
@@ -15081,6 +15143,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -15134,6 +15197,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -15608,7 +15672,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1394094249
 MonoBehaviour:
@@ -15758,6 +15822,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -15811,6 +15876,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -16665,7 +16731,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 46
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1503550282
 MonoBehaviour:
@@ -16815,6 +16881,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -16868,6 +16935,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -17020,7 +17088,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1507369905
 MonoBehaviour:
@@ -17170,6 +17238,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -17196,6 +17265,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -17236,7 +17306,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1508036151
 MonoBehaviour:
@@ -17386,6 +17456,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -17412,6 +17483,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -17865,7 +17937,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 41
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1555778130
 MonoBehaviour:
@@ -18015,6 +18087,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -18068,6 +18141,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -18108,7 +18182,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1555806069
 MonoBehaviour:
@@ -18258,6 +18332,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -18311,6 +18386,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -18967,7 +19043,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1669512942
 MonoBehaviour:
@@ -19117,6 +19193,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -19143,6 +19220,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -19183,7 +19261,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1672339236
 MonoBehaviour:
@@ -19333,6 +19411,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -19359,6 +19438,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -19813,7 +19893,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 34
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1734674414
 MonoBehaviour:
@@ -19963,6 +20043,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -20016,6 +20097,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -20056,7 +20138,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1749595441
 MonoBehaviour:
@@ -20206,6 +20288,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -20232,6 +20315,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -20272,7 +20356,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 53
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1753952468
 MonoBehaviour:
@@ -20422,6 +20506,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -20448,6 +20533,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -20937,7 +21023,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1814748689
 MonoBehaviour:
@@ -21087,6 +21173,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -21113,6 +21200,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -21279,7 +21367,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 35
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1832146406
 MonoBehaviour:
@@ -21429,6 +21517,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -21482,6 +21571,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -21522,7 +21612,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1838460276
 MonoBehaviour:
@@ -21672,6 +21762,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -21725,6 +21816,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -21944,7 +22036,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1860336942
 MonoBehaviour:
@@ -22094,6 +22186,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -22147,6 +22240,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -22187,7 +22281,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1869731197
 MonoBehaviour:
@@ -22337,6 +22431,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -22390,6 +22485,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -23281,7 +23377,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 43
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1982637560
 MonoBehaviour:
@@ -23431,6 +23527,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -23484,6 +23581,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -23524,7 +23622,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1985213441
 MonoBehaviour:
@@ -23674,6 +23772,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -23700,6 +23799,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -23920,7 +24020,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 38
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2029933740
 MonoBehaviour:
@@ -24070,6 +24170,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -24123,6 +24224,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -24413,7 +24515,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2053313141
 MonoBehaviour:
@@ -24563,6 +24665,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -24616,6 +24719,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -24656,7 +24760,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2064279413
 MonoBehaviour:
@@ -24806,6 +24910,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -24832,6 +24937,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -24989,7 +25095,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2082695945
 MonoBehaviour:
@@ -25139,6 +25245,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -25165,6 +25272,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -25205,7 +25313,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 32
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2086838777
 MonoBehaviour:
@@ -25355,6 +25463,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 0
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve: []
@@ -25381,6 +25490,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: c283dab21f384754789896cbbc6376ef, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -25563,7 +25673,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 37
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2115070001
 MonoBehaviour:
@@ -25713,6 +25823,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -25766,6 +25877,7 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
@@ -25948,7 +26060,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315790693}
-  m_RootOrder: 50
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2145874525
 MonoBehaviour:
@@ -26098,6 +26210,7 @@ MonoBehaviour:
   targetNeighbor: {fileID: 0}
   isJump: 1
   isStepDone: 0
+  isMoveDone: 0
   moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -26151,15 +26264,77 @@ MonoBehaviour:
   unitTier: {fileID: 0}
   unitTypeImg: {fileID: 0}
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   unitStats: {fileID: 11400000, guid: 941b9d3e02c29d14ebe6f0d43b09f85b, type: 2}
   defaultLoc: {x: 0, y: 0}
   unitNode: {fileID: 0}
+--- !u!1001 &2483350620671661892
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3171039662917182220, guid: 9ac16e9741b5cd24c8b105c4ef1b51c4, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171039662917182220, guid: 9ac16e9741b5cd24c8b105c4ef1b51c4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171039662917182220, guid: 9ac16e9741b5cd24c8b105c4ef1b51c4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171039662917182220, guid: 9ac16e9741b5cd24c8b105c4ef1b51c4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171039662917182220, guid: 9ac16e9741b5cd24c8b105c4ef1b51c4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171039662917182220, guid: 9ac16e9741b5cd24c8b105c4ef1b51c4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171039662917182220, guid: 9ac16e9741b5cd24c8b105c4ef1b51c4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171039662917182220, guid: 9ac16e9741b5cd24c8b105c4ef1b51c4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171039662917182220, guid: 9ac16e9741b5cd24c8b105c4ef1b51c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171039662917182220, guid: 9ac16e9741b5cd24c8b105c4ef1b51c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171039662917182220, guid: 9ac16e9741b5cd24c8b105c4ef1b51c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748546762608165557, guid: 9ac16e9741b5cd24c8b105c4ef1b51c4, type: 3}
+      propertyPath: m_Name
+      value: Lighting Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748546762608165557, guid: 9ac16e9741b5cd24c8b105c4ef1b51c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9ac16e9741b5cd24c8b105c4ef1b51c4, type: 3}
 --- !u!1001 &8631547725715498653
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1315790693}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 756829361076312501, guid: d184ede4334bcd644911769126ae9490, type: 3}
       propertyPath: m_SizeDelta.x
@@ -26205,21 +26380,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Unit Base
       objectReference: {fileID: 0}
+    - target: {fileID: 8631547725279408769, guid: d184ede4334bcd644911769126ae9490, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8631547725279408824, guid: d184ede4334bcd644911769126ae9490, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8631547725279408828, guid: d184ede4334bcd644911769126ae9490, type: 3}
       propertyPath: m_LocalPosition.z

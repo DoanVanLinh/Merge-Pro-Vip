@@ -16,7 +16,7 @@ MonoBehaviour:
   id: 0
   cointReward: 200
   listEnemy:
-  - nameUnit: Mimic
+  - nameUnit: BlazingTurtle
     px: 1
     py: 7
     unitTag: Enemy Unit

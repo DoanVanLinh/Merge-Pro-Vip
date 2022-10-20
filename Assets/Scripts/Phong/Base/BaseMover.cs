@@ -30,7 +30,10 @@ namespace WE.Unit.Move
             if (Owner.transform.position == pos)
                 OnMoveDone?.Invoke();
         }
- 
+        public virtual void Stop()
+        {
+            StopAllCoroutines();
+        }
     }
 }
 
